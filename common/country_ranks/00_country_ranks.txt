@@ -23,7 +23,7 @@ great_power = {
 	prestige_average_threshold = 5.0
 	prestige_relative_threshold = 0.75
 	
-	infamy_aggressor_scaling = 0.10
+	infamy_aggressor_scaling = 0
 	infamy_target_scaling = -0.10
 
 	valid_country_types = {
@@ -36,6 +36,7 @@ great_power = {
 		country_diplomatic_play_maneuvers_add = 100
 		country_max_declared_interests_add = 5
 		country_loan_interest_rate_mult = -0.5
+		state_migration_pull_mult = 0.25
 	}
 }
 
@@ -50,8 +51,8 @@ major_power = {
 	prestige_average_threshold = 2.5
 	prestige_relative_threshold = 0.5
 	
-	infamy_aggressor_scaling = 0
-	infamy_target_scaling = 0
+	infamy_aggressor_scaling = -0.05
+	infamy_target_scaling = 0.05
 
 	valid_country_types = {
 		recognized
@@ -63,6 +64,7 @@ major_power = {
 		country_diplomatic_play_maneuvers_add = 75
 		country_max_declared_interests_add = 3
 		country_loan_interest_rate_mult = -0.25
+		state_migration_pull_mult = 0.10
 	}
 }
 
@@ -76,7 +78,7 @@ minor_power = {
 	prestige_relative_threshold = 0.15
 	
 	infamy_aggressor_scaling = -0.10
-	infamy_target_scaling = 0.10
+	infamy_target_scaling = 0.10	
 	
 	valid_country_types = {
 		recognized
@@ -106,6 +108,7 @@ insignificant_power = {
 		country_influence_add = 500
 		country_diplomatic_play_maneuvers_add = 50
 		country_loan_interest_rate_mult = 0.25
+		state_migration_pull_mult = -0.25
 	}
 }
 
@@ -149,8 +152,8 @@ unrecognized_regional_power = {
 	prestige_average_threshold = 0.6
 	prestige_relative_threshold = 0.15
 	
-	infamy_aggressor_scaling = -0.2
-	infamy_target_scaling = -0.4
+	infamy_aggressor_scaling = -0.20
+	infamy_target_scaling = -0.40
 
 	valid_country_types = {
 		unrecognized
@@ -162,6 +165,7 @@ unrecognized_regional_power = {
 		country_max_declared_interests_add = 1
 		country_tech_spread_mult = -0.20
 		country_loan_interest_rate_mult = 0.75
+		state_migration_pull_mult = -0.25
 	}
 }
 
@@ -184,9 +188,10 @@ unrecognized_power = {
 		country_diplomatic_play_maneuvers_add = 50
 		country_tech_spread_mult = -0.25
 		country_loan_interest_rate_mult = 1.0
+		state_migration_pull_mult = -0.5
 	}
-}
 
+}
 ###################
 ## DECENTRALIZED ##
 ###################
@@ -201,7 +206,7 @@ decentralized_power = {
 	
 	modifier = {
 		country_diplomatic_play_maneuvers_add = 30
-		building_subsistence_output_mult = -0.15
-		building_throughput_mult = -0.15		
+		building_subsistence_output_mult = -0.10
+		building_throughput_mult = -0.30
 	}
 }
