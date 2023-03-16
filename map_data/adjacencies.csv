@@ -1,6 +1,6 @@
 From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 xC00130;x91b001;sea;-1;6464;1542;6466;1538;;Singapore Strait
-x76546D;x8471EA;sea;-1;6435;1556;6422;1548;;Malacca Strait
+x76546D;x8171EA;sea;-1;6435;1556;6422;1548;;Malacca Strait
 xDBE794;x5CC6B6;sea;-1;6507;1379;6510;1373;;Sunda Strait
 xA8B603;x5ABA94;sea;-1;6701;1326;6704;1324;;Bali Strait
 x7A4DC8;xAD54BC;sea;-1;6558;1452;6602;1470;;Karimata Strait
