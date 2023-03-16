@@ -15,7 +15,18 @@
 		set_relations = { country = c:MOD value = 30 }
 		set_relations = { country = c:PAR value = 30 }
 		set_relations = { country = c:LUC value = 30 }
-		set_relations = { country = c:PAP value = 30 }
+		set_relations = { country = c:PAP value = 30 }	
+		set_relations = { country = c:SCM value = 30 }
+		set_relations = { country = c:MEI value = 30 }
+		set_relations = { country = c:HEK value = 30 }
+		set_relations = { country = c:SAX value = 30 }
+		set_relations = { country = c:HES value = 30 }
+		set_relations = { country = c:NAS value = 30 }
+		set_relations = { country = c:FRM value = 30 }
+		set_relations = { country = c:HAN value = 20 }
+		set_relations = { country = c:BAV value = 30 }
+		set_relations = { country = c:BAD value = 30 }
+		set_relations = { country = c:WUR value = 20 }		
 	}
 	c:BAV = {
 		set_relations = { country = c:WUR value = 50 }
@@ -179,24 +190,24 @@
 		set_relations = { country = c:LIP value = 20 }
 		set_relations = { country = c:LUB value = 30 }
 		set_relations = { country = c:SCW value = 30 }
-		set_relations = { country = c:SCM value = 30 }
+		set_relations = { country = c:SCM value = -30 }
 		set_relations = { country = c:COB value = 30 }
-		set_relations = { country = c:MEI value = 30 }
+		set_relations = { country = c:MEI value = -30 }
 		set_relations = { country = c:WEI value = 30 }
 		set_relations = { country = c:HOH value = 30 }
-		set_relations = { country = c:HEK value = 30 }
+		set_relations = { country = c:HEK value = -30 }
 		set_relations = { country = c:MST value = 30 }
 		set_relations = { country = c:WLD value = 30 }
-		set_relations = { country = c:SAX value = 30 }
+		set_relations = { country = c:SAX value = -30 }
 		set_relations = { country = c:ANH value = 30 }
 		set_relations = { country = c:MEC value = 30 }
-		set_relations = { country = c:HES value = 30 }
-		set_relations = { country = c:NAS value = 30 }
-		set_relations = { country = c:FRM value = 30 }
-		set_relations = { country = c:HAN value = 20 }
-		set_relations = { country = c:BAV value = 30 }
-		set_relations = { country = c:BAD value = 30 }
-		set_relations = { country = c:WUR value = 30 }
+		set_relations = { country = c:HES value = -30 }
+		set_relations = { country = c:NAS value = -30 }
+		set_relations = { country = c:FRM value = -30 }
+		set_relations = { country = c:HAN value = -20 }
+		set_relations = { country = c:BAV value = -30 }
+		set_relations = { country = c:BAD value = -30 }
+		set_relations = { country = c:WUR value = -20 }
 		set_relations = { country = c:GBR value = 20 }
 	}
 	c:QUE = {
