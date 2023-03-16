@@ -4,7 +4,7 @@ Stop early german formation, lock behind a few techs. Do this by changing relati
 
 add in canal bonuses - DONE
 
-Mod in straits to indonesia
+Mod in straits to indonesia - DONE
 
 add in punitive expeditions cb against uncivs
 
