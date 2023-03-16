@@ -2,7 +2,7 @@
  
 Stop early german formation, lock behind a few techs. Do this by changing relationships of minors, especailly south german - DONE
 
-add in canal bonuses
+add in canal bonuses - DONE
 
 Mod in straits to indonesia
 
