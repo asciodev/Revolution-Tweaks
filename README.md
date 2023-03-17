@@ -6,9 +6,9 @@ add in canal bonuses - DONE
 
 Mod in straits to indonesia - DONE
 
-add in punitive expeditions cb against uncivs
+add in punitive expeditions cb against china/unrecognized - DONE
 
-Infamy Tweaks
+Infamy Tweaks - DONE
 
 Japan should have colonialism at start
 
