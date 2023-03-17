@@ -18,7 +18,7 @@ add manuevers to nationalism, pan-nationalism, and edited multilateral alliances
 
 Add dynamite requirement to survey of suez and panama - DONE
 
-switch cape and others to dominion status
+switch cape and others to dominion status - DONE
 
 add strait to new zealand
 
