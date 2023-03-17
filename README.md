@@ -10,17 +10,13 @@ add in punitive expeditions cb against china/unrecognized - DONE
 
 Infamy Tweaks - DONE
 
-Japan should have colonialism at start
+Japan should have colonialism at start - DONE
 
-russia should have colonialism at start
+russia should have colonialism at start - DONE
 
-change how improve relations work
+add manuevers to nationalism, pan-nationalism, and edited multilateral alliances - DONE
 
-Annex all puppets to the british raj when it forms
-
-add manuevers to nationalism, pan-nationalism
-
-Add dynamite requirement to survey of suez and panama
+Add dynamite requirement to survey of suez and panama - DONE
 
 switch cape and others to dominion status
 
