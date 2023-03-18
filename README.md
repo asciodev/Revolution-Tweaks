@@ -24,7 +24,7 @@ add strait to new zealand
 
 lock african colonization behind malaria prevention
 
-lower expel diplomats by 5 infamy
+lower expel diplomats by 5 infamy - DONE
 
 givin colonies malaria modifiers internal africa
 
