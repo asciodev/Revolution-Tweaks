@@ -1,0 +1,6 @@
+﻿l_german:
+ pm_no_foodindustry:0 "Keine Lebensmittel"
+ pm_rum:0 "Rum Stills"
+ pm_whiskey:0 "Whiskey Stills"
+ pm_patent_rum:0 "Rum brennereien"
+ pm_patent_whiskey:0 "Whiskey brennereien"
