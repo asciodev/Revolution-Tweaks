@@ -28,3 +28,4 @@ lower expel diplomats by 5 infamy - DONE
 
 givin colonies malaria modifiers internal africa
 
+Allow command economies without authoritarianism
