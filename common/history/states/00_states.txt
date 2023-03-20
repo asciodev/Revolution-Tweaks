@@ -6982,7 +6982,7 @@ STATES = {
 	s:STATE_BRUNSWICK = {	
 		create_state = {
 			country = c:HAN
-			owned_provinces = { xA001E0 x2180E0 }
+			owned_provinces = {  x2180E0 }
 		}		
 		create_state = {
 			country = c:BRA
@@ -6990,7 +6990,7 @@ STATES = {
 		}		
 		create_state = {
 			country = c:PRU
-			owned_provinces = { x4C16EA }
+			owned_provinces = { x4C16EA xA001E0 }
 		}
 		
 		add_homeland = north_german
