@@ -1,0 +1,427 @@
+﻿je_hungarian_revolution = {
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	should_be_pinned_by_default = yes
+	progressbar = yes
+	is_shown_when_inactive = {
+		AND = {
+			c:AUS = this
+			c:AUS = {
+				OR = {
+					has_law = law_type:law_ethnostate		
+					has_law = law_type:law_national_supremacy				
+				}
+			}
+			hidden_trigger = {
+				NOT = {
+					has_global_variable = hungarian_revolution_ended
+				}
+			}
+		}
+	}
+	immediate = {
+		c:AUS = {
+			save_scope_as = austriascope
+		}
+		cu:hungarian = {
+			save_scope_as = hungarianscope
+		}
+
+		set_variable = {
+			name = hungarian_revolution_countdown_var
+			value = 0
+		}
+		custom_tooltip = {
+			text = austriaturmoiltooltip
+		}
+		hidden_effect = {
+			every_scope_state = {
+				limit = {
+					state_region = {
+						OR = { 
+							is_homeland = cu:czech
+							is_homeland = cu:hungarian
+							is_homeland = cu:slovak
+							is_homeland = cu:polish
+							is_homeland = cu:ukrainian
+							is_homeland = cu:romanian
+							is_homeland = cu:serb
+							is_homeland = cu:croat
+							is_homeland = cu:slovene
+							is_homeland = cu:north_italian
+						}
+					}
+				}
+				add_modifier = {
+					name = austriaturmoil
+					months = long_modifier_time
+				}
+			}
+		}
+	}
+	on_monthly_pulse = {
+		effect = {
+			change_variable = {
+				name = hungarian_revolution_countdown_var
+				add = 1
+			}
+		}
+	}
+	possible = {
+		hidden_trigger = {
+			NOT = {
+				has_global_variable = hungarian_revolution_begun
+				has_global_variable = hungarian_revolution_ended
+			}
+		}
+		OR = {
+			has_technology_researched = nationalism
+			c:FRA = {
+				NOT = {
+					has_law = law_type:law_monarchy #French 1848 Revolution triggering Spring of Nations
+				}
+			}
+		}
+		
+		THIS = {
+			owner = {
+				any_scope_state = {
+					state_region = {
+						is_homeland = cu:hungarian
+					}
+				}
+			}
+		}
+	}
+	current_value = {
+		value = root.var:hungarian_revolution_countdown_var
+	}
+	goal_add_value = {
+		value = 3
+	}
+	on_complete = {
+		trigger_event = { 
+			id = hungarian_revolution.1 
+			popup = yes
+		}
+		c:AUS = {
+			save_scope_as = austriascope
+		}
+		cu:hungarian = {
+			save_scope_as = hungarianscope
+		}
+		custom_tooltip = {
+			text = austriaturmoiltooltipwin
+		}
+		set_global_variable = hungarian_revolution_begun
+		hidden_effect = {
+			s:STATE_TRANSDANUBIA.region_state:HUN = {
+				remove_modifier = austriaturmoil
+			}
+			s:STATE_CENTRAL_HUNGARY.region_state:HUN = {
+				remove_modifier = austriaturmoil
+			}
+			s:STATE_WEST_SLOVAKIA.region_state:HUN = {
+				remove_modifier = austriaturmoil
+			}
+			s:STATE_EAST_SLOVAKIA.region_state:HUN = {
+				remove_modifier = austriaturmoil
+			}
+			s:STATE_BEKES.region_state:HUN = {
+				remove_modifier = austriaturmoil
+			}
+			s:STATE_NORTHERN_TRANSYLVANIA.region_state:HUN = {
+				remove_modifier = austriaturmoil
+			}
+			s:STATE_SOUTHERN_TRANSYLVANIA.region_state:HUN = {
+				remove_modifier = austriaturmoil
+			}
+			s:STATE_BANAT.region_state:HUN = {
+				remove_modifier = austriaturmoil
+			}
+			s:STATE_DELVIDEK.region_state:HUN = {
+				remove_modifier = austriaturmoil
+			}
+		}
+	}
+	complete = {
+		AND = {
+			cu:hungarian = {
+				culture_is_discriminated_in = ROOT 
+			}
+			scope:journal_entry = {
+				is_goal_complete = yes
+			}
+			OR = {
+				year >= 1848
+				c:FRA = {
+					NOT = {
+						has_law = law_type:law_monarchy #French 1848 Revolution triggering Spring of Nations
+					}
+				}
+			}
+		}
+	}
+	weight = 100
+}
+
+je_hungarian_revolution_2 = {
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	should_be_pinned_by_default = yes
+	progressbar = yes
+	is_shown_when_inactive = {
+		AND = {
+			this = c:AUS
+			hidden_trigger = {
+					has_global_variable = hungarian_revolution_begun
+					has_variable = hungarian_revolution_begun_var
+				NOT = {
+					has_global_variable = hungarian_revolution_ended
+					has_variable = hungarian_revolution_ended_var
+				}
+			}
+			c:HUN = {
+				is_subject_of = c:AUS
+			}
+			c:AUS = {
+				NOT = { country_has_primary_culture = cu:hungarian }
+			}
+		}
+	}
+	immediate = {
+		c:AUS = {
+			save_scope_as = austriascope
+			trigger_event = { 
+				id = hungarian_revolution.2
+				popup = yes
+			}
+		}
+		cu:hungarian = {
+			save_scope_as = hungarianscope
+		}
+	}
+	possible = {
+		this = c:AUS
+		hidden_trigger = {
+			has_global_variable = hungarian_revolution_begun
+			has_variable = hungarian_revolution_begun_var
+			NOT = {
+				has_global_variable = hungarian_revolution_ended
+				has_variable = hungarian_revolution_ended_var
+			}
+		}
+		c:AUS = {
+			NOT = {country_has_primary_culture = cu:hungarian }
+		}
+		c:HUN = {
+			is_subject_of = c:AUS
+			has_war_with = c:AUS
+		}
+	}
+	on_complete = {
+		trigger_event = { 
+			id = hungarian_revolution.7
+			popup = yes
+		}
+	}
+	complete = {
+		hidden_trigger = {
+			AND = {
+				has_global_variable = hungarian_revolution_begun
+				OR = {
+					NOT = {
+						exists = c:HUN
+					}
+					c:HUN = {
+						is_at_war = no
+						is_subject_of = c:AUS
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			text = hungarianrevolutionover
+		}
+	}
+
+	fail = {
+		c:HUN = {
+            is_at_war = no
+            is_subject = no
+        }
+	}
+
+	on_fail = {
+		trigger_event = { 
+			id = hungarian_revolution.4
+			popup = yes
+		}
+		if = {
+			limit = {
+				c:AUS = { is_player = yes }
+			}
+			trigger_event = { 
+				id = hungarian_revolution.8
+				popup = yes
+			}
+		}
+	}
+
+	weight = 100
+}
+
+je_italian_independence_war = {
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	should_be_pinned_by_default = yes
+	progressbar = yes
+	is_shown_when_inactive = {
+		AND = {
+			c:AUS = this
+			c:AUS = {
+				OR = {
+					has_law = law_type:law_ethnostate		
+					has_law = law_type:law_national_supremacy				
+				}
+			}
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = italian_independence_countdown_var
+			value = 0
+		}
+	}
+	
+	on_monthly_pulse = {
+		effect = {
+			change_variable = {
+				name = italian_independence_countdown_var
+				add = 1
+			}
+		}
+	}
+	possible = {
+		OR = {
+			has_technology_researched = nationalism
+			c:FRA = {
+				NOT = {
+					has_law = law_type:law_monarchy #French 1848 Revolution triggering Spring of Nations
+				}
+			}
+		}
+		
+		THIS = {
+			owner = {
+				any_scope_state = {
+					state_region = {
+						is_homeland = cu:north_italian
+					}
+				}
+			}
+		}
+	}
+	current_value = {
+		value = root.var:italian_independence_countdown_var
+	}
+	goal_add_value = {
+		value = 4
+	}
+	on_complete = {
+		trigger_event = { 
+			id = italian_independence_war.1 
+			popup = yes
+		}
+		c:AUS = {
+			save_scope_as = austriascope
+		}
+		cu:north_italian = {
+			save_scope_as = italianscope
+		}
+		hidden_effect = {
+			s:STATE_VENETIA.region_state:VEN = {
+				remove_modifier = austriaturmoil
+			}
+			s:STATE_LOMBARDY.region_state:VEN = {
+				remove_modifier = austriaturmoil
+			}
+		}
+	}
+	complete = {
+		AND = {
+			cu:north_italian = {
+				culture_is_discriminated_in = ROOT 
+			}
+			scope:journal_entry = {
+				is_goal_complete = yes
+			}
+			OR = {
+				year >= 1848
+				c:FRA = {
+					NOT = {
+						has_law = law_type:law_monarchy #French 1848 Revolution triggering Spring of Nations
+					}
+				}
+			}
+		}
+	}
+	weight = 100
+}
+
+je_italian_independence_war_2 = {
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	should_be_pinned_by_default = yes
+
+	is_shown_when_inactive = {
+		exists = c:VEN
+		this = c:VEN
+		c:VEN = {
+            is_subject_of = c:AUS
+        }
+	}
+
+	possible = {
+		exists = c:VEN
+		OR = {
+			has_truce_with = c:AUS
+			has_war_with = c:AUS
+		}
+	}
+
+	complete = {
+		exists = c:VEN
+		c:VEN = {
+            is_at_war = no
+            is_subject = no
+			NOT = {
+				has_truce_with = c:AUS
+			}
+        }
+	}
+
+	on_complete = {
+		trigger_event = { 
+			id = italian_independence_war.2
+			popup = yes
+		}
+	}
+
+	fail = {
+		exists = c:VEN
+		c:VEN = {
+			is_at_war = no
+			is_subject_of = c:AUS
+		}
+	}
+
+	on_fail = {
+		c:AUS = {
+			if = {
+				limit = {
+					exists = c:VEN
+				}
+				annex = c:VEN
+			}
+		}
+	}
+
+}

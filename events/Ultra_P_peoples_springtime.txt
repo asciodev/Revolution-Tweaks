@@ -1,0 +1,425 @@
+﻿namespace = peoples_springtime
+
+# The Spark
+# Country has a revolution including Radicals
+peoples_springtime.1 = {
+	type = country_event
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	title = peoples_springtime.1.t
+	desc = peoples_springtime.1.d
+	flavor = peoples_springtime.1.f
+
+	trigger = {
+		NOT = { has_global_variable = peoples_springtime_happening }
+		NOT = { has_global_variable = peoples_springtime_happened }
+		country_is_in_europe = yes
+		has_technology_researched = egalitarianism
+		any_interest_group = {
+			ig_approval <= angry
+			leader = { has_ideology = ideology_radical }
+		}
+	}
+
+	immediate = {
+		set_global_variable = {
+			name = peoples_springtime_happening
+		}
+		set_global_variable = {
+			name = peoples_springtime_recent
+			value = yes
+            days = 4000
+		}
+		random_interest_group = {
+			limit = {
+				ig_approval <= angry
+				leader = { has_ideology = ideology_radical }
+			}
+			leader = { save_scope_as = radical_ig_leader }
+		}
+	}
+
+	duration = 3
+
+	option = {
+		name = peoples_springtime.1.a
+		scope:radical_ig_leader = {
+			add_modifier = {
+				name = revolutionary_hero
+				months = normal_modifier_time
+			}
+		}
+	}
+
+    option = {
+		name = peoples_springtime.1.b
+        default_option = yes
+        scope:radical_ig_leader = {
+        	add_modifier = {
+        		name = treasonous_traitor
+        		months = normal_modifier_time
+        	}
+        }
+	}
+}
+
+# The Spread
+# Neighboring country has the Journal Entry
+peoples_springtime.2 = {
+	type = country_event
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_political_extremism.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/political_extremism"
+
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	title = peoples_springtime.2.t
+	desc = peoples_springtime.2.d
+	flavor = peoples_springtime.2.f
+
+	trigger = {
+		# Triggered by peoples_springtime.4
+	}
+
+	duration = 3
+
+	immediate = {
+		random_interest_group = {
+			limit = {
+				is_marginal = no
+				OR = {
+					AND = {
+						is_interest_group_type = ig_rural_folk
+						NOT = {
+							has_ideology = ideology_bonapartism
+						}
+					}
+					AND = {
+						is_interest_group_type = ig_intelligentsia
+						NOT = {
+							has_ideology = ideology_japanese_imperialist
+						}
+					}
+					is_interest_group_type = ig_trade_unions
+					AND = {
+						is_interest_group_type = ig_petty_bourgeoisie
+						NOR = {
+							has_ideology = ideology_bonapartism
+							has_ideology = ideology_reactionary
+						}
+					}
+					AND = {
+						is_interest_group_type = ig_industrialists
+						NOT = {
+							has_ideology = ideology_orleanist
+						}
+					}
+				}
+				leader = {
+					NOT = { has_ideology = ideology_radical }
+				}
+			}
+			save_scope_as = radical_ig
+		}
+	}
+
+	option = {
+		name = peoples_springtime.2.a
+		scope:radical_ig = {
+			leader = { set_ideology = ideology_radical }
+			add_modifier = {
+				name = revolutionary_hero
+				months = normal_modifier_time
+			}
+
+		}
+	}
+
+    option = {
+		name = peoples_springtime.2.b
+        default_option = yes
+        scope:radical_ig = {
+        	leader = { set_ideology = ideology_radical }
+        	add_modifier = {
+        		name = treasonous_traitor
+        		months = normal_modifier_time
+        	}
+        }
+	}
+}
+
+# More Radical Leaders
+# Once you have the Journal Entry, more IGs want in on the action
+peoples_springtime.3 = {
+	type = country_event
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_political_extremism.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/political_extremism"
+
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	title = peoples_springtime.3.t
+	desc = peoples_springtime.3.d
+	flavor = peoples_springtime.3.f
+
+	trigger = {
+		has_journal_entry = je_springtime_of_the_peoples
+		has_technology_researched = egalitarianism
+
+		any_interest_group = {
+			OR = {
+				AND = {
+					is_interest_group_type = ig_rural_folk
+					NOT = {
+						has_ideology = ideology_bonapartism
+					}
+				}
+				AND = {
+					is_interest_group_type = ig_intelligentsia
+					NOT = {
+						has_ideology = ideology_japanese_imperialist
+					}
+				}
+				is_interest_group_type = ig_trade_unions
+				AND = {
+					is_interest_group_type = ig_petty_bourgeoisie
+					NOR = {
+						has_ideology = ideology_bonapartism
+						has_ideology = ideology_reactionary
+					}
+				}
+				AND = {
+					is_interest_group_type = ig_industrialists
+					NOT = {
+						has_ideology = ideology_orleanist
+					}
+				}
+			}
+			leader = {
+				NOT = { has_ideology = ideology_radical }
+			}
+		}
+	}
+
+	immediate = {
+		random_interest_group = {
+			limit = {
+				OR = {
+					AND = {
+						is_interest_group_type = ig_rural_folk
+						NOT = {
+							has_ideology = ideology_bonapartism
+						}
+					}
+					AND = {
+						is_interest_group_type = ig_intelligentsia
+						NOT = {
+							has_ideology = ideology_japanese_imperialist
+						}
+					}
+					is_interest_group_type = ig_trade_unions
+					AND = {
+						is_interest_group_type = ig_petty_bourgeoisie
+						NOR = {
+							has_ideology = ideology_bonapartism
+							has_ideology = ideology_reactionary
+						}
+					}
+					AND = {
+						is_interest_group_type = ig_industrialists
+						NOT = {
+							has_ideology = ideology_orleanist
+						}
+					}
+				}
+				leader = {
+					NOT = { has_ideology = ideology_radical }
+				}
+			}
+			save_scope_as = radical_ig
+		}
+	}
+
+	duration = 3
+
+	option = {
+		name = peoples_springtime.3.a
+		custom_tooltip = {
+			text = peoples_springtime.3.a.tt
+			create_character = {
+				ig_leader = yes
+				ideology = ideology_radical
+				interest_group = scope:radical_ig
+			}
+		}
+	}
+
+	option = {
+		name = peoples_springtime.3.b
+		scope:radical_ig = {
+			add_modifier = {
+				name = dissident_radical_faction
+				months = short_modifier_time
+			}
+		}
+		default_option = yes
+	}
+}
+
+# Propagation
+# Deliberately spread Radicalism to neighbor
+peoples_springtime.4 = {
+	type = country_event
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_political_extremism.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/political_extremism"
+
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	title = peoples_springtime.4.t
+	desc = peoples_springtime.4.d
+	flavor = peoples_springtime.4.f
+
+	trigger = {
+		has_journal_entry = je_springtime_of_the_peoples
+		any_neighbouring_state = {
+			owner = {
+				has_technology_researched = egalitarianism
+				any_interest_group = {
+					is_marginal = no
+					OR = {
+						AND = {
+							is_interest_group_type = ig_rural_folk
+							NOT = {
+								has_ideology = ideology_bonapartism
+							}
+						}
+						AND = {
+							is_interest_group_type = ig_intelligentsia
+							NOT = {
+								has_ideology = ideology_japanese_imperialist
+							}
+						}
+						is_interest_group_type = ig_trade_unions
+						AND = {
+							is_interest_group_type = ig_petty_bourgeoisie
+							NOR = {
+								has_ideology = ideology_bonapartism
+								has_ideology = ideology_reactionary
+							}
+						}
+						AND = {
+							is_interest_group_type = ig_industrialists
+							NOT = {
+								has_ideology = ideology_orleanist
+							}
+						}
+					}
+					leader = {
+						NOT = { has_ideology = ideology_radical }
+					}
+				}
+				NOT = {
+					has_journal_entry = je_springtime_of_the_peoples
+				}
+			}
+		}
+		any_interest_group = {
+			leader = { has_ideology = ideology_radical }
+		}
+	}
+
+	duration = 3
+
+	cooldown = { months = 18 }
+
+	option = {
+		name = peoples_springtime.4.a
+		random_neighbouring_state = {
+			limit = {
+				owner = {
+					has_technology_researched = egalitarianism
+					any_interest_group = {
+						is_marginal = no
+						OR = {
+							AND = {
+								is_interest_group_type = ig_rural_folk
+								NOT = {
+									has_ideology = ideology_bonapartism
+								}
+							}
+							AND = {
+								is_interest_group_type = ig_intelligentsia
+								NOT = {
+									has_ideology = ideology_japanese_imperialist
+								}
+							}
+							is_interest_group_type = ig_trade_unions
+							AND = {
+								is_interest_group_type = ig_petty_bourgeoisie
+								NOR = {
+									has_ideology = ideology_bonapartism
+									has_ideology = ideology_reactionary
+								}
+							}
+							AND = {
+								is_interest_group_type = ig_industrialists
+								NOT = {
+									has_ideology = ideology_orleanist
+								}
+							}
+						}
+						leader = {
+							NOT = { has_ideology = ideology_radical }
+						}
+					}
+				}
+			}
+			owner = {
+				trigger_event = {
+					id = peoples_springtime.2
+					days = 0
+				}
+			}
+		}
+		every_interest_group = {
+			limit = {
+				leader = { has_ideology = ideology_radical }
+			}
+			add_modifier = {
+				name = spread_the_revolution
+				months = short_modifier_time
+			}
+		}
+	}
+
+	option = {
+		name = peoples_springtime.4.b
+		every_interest_group = {
+			limit = {
+				leader = { has_ideology = ideology_radical }
+			}
+			add_modifier = {
+				name = constrained_the_revolution
+				months = short_modifier_time
+			}
+		}
+		default_option = yes
+	}
+}

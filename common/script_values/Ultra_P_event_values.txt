@@ -1,0 +1,12 @@
+﻿# Election Momentum values
+momentum_small = 0.05
+momentum_medium = 0.1
+momentum_large = 0.15
+momentum_very_large = 0.25
+
+momentum_small_decrease = -0.05
+momentum_medium_decrease = -0.1
+momentum_large_decrease = -0.15
+momentum_very_large_decrease = -0.25
+
+election_event_cooldown_months = 1

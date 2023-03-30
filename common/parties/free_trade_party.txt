@@ -1,0 +1,644 @@
+﻿# Party for IG's that want free trade when it is not passed yet
+# Should usually only appear when the Landowners want Free Trade
+
+free_trade_party = {
+	color = { 150 20 20 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = party_deutschliberale_partei
+				trigger = {
+					exists = c:AUS
+					THIS = c:AUS
+				}
+			}
+			triggered_desc = {
+				desc = party_bulgarian_freetrade
+				trigger = {
+					exists = c:BUL
+					THIS = c:BUL
+				}
+			}
+			triggered_desc = {
+				desc = party_danish_freetrade
+				trigger = {
+					exists = c:DEN
+					THIS = c:DEN
+				}
+			}
+			triggered_desc = {
+				desc = party_fin_free
+				trigger = {
+					exists = c:FIN
+					THIS = c:FIN
+				}
+			}
+			triggered_desc = {
+				desc = party_orleanists
+				trigger = {
+					exists = c:FRA
+					THIS = c:FRA
+					has_law = law_type:law_monarchy
+				}
+			}
+			triggered_desc = {
+				desc = party_liberal_right_party
+				trigger = {
+					exists = c:FRA
+					THIS = c:FRA
+					NOT = { has_law = law_type:law_monarchy }
+				}
+			}
+			triggered_desc = {
+				desc = party_peelites
+				trigger = {
+					exists = c:GBR
+					THIS = c:GBR
+				}
+			}
+			triggered_desc = {
+				desc = party_lub_freetrade
+				trigger = {
+					exists = c:LUB
+					THIS = c:LUB
+				}
+			}
+			triggered_desc = {
+				desc = party_frm_freetrade
+				trigger = {
+					exists = c:FRM
+					THIS = c:FRM
+				}
+			}
+			triggered_desc = {
+				desc = party_ham_freetrade
+				trigger = {
+					exists = c:HAM
+					THIS = c:HAM
+				}
+			}
+			triggered_desc = {
+				desc = party_bre_freetrade
+				trigger = {
+					exists = c:BRE
+					THIS = c:BRE
+				}
+			}
+			triggered_desc = {
+				desc = party_free_conservative_party
+				trigger = {
+					OR = {
+						country_has_primary_culture = cu:north_german
+						country_has_primary_culture = cu:south_german
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_greek_freetrade
+				trigger = {
+					exists = c:GRE
+					THIS = c:GRE
+				}
+			}
+			triggered_desc = {
+				desc = party_hungarian_freetrade
+				trigger = {
+					exists = c:HUN
+					THIS = c:HUN
+				}
+			}
+			triggered_desc = {
+				desc = party_italian_freetrade
+				trigger = {
+					OR = {
+						country_has_primary_culture = cu:north_italian
+						country_has_primary_culture = cu:south_italian
+					}
+				}
+			}
+			triggered_desc = {
+				desc = party_romania_freetrade
+				trigger = {
+					country_has_primary_culture = cu:romanian
+				}
+			}
+			triggered_desc = {
+				desc = party_dutch_freetrade
+				trigger = {
+					exists = c:NET
+					THIS = c:NET
+				}
+			}
+			triggered_desc = {
+				desc = party_free_minded_venstre
+				trigger = {
+					exists = c:NOR
+					THIS = c:NOR
+				}
+			}
+			triggered_desc = {
+				desc = party_historic_party
+				trigger = {
+					exists = c:POR
+					THIS = c:POR
+				}
+			}
+			triggered_desc = {
+				desc = party_party_of_peaceful_renovation
+				trigger = {
+					exists = c:RUS
+					THIS = c:RUS
+				}
+			}
+			triggered_desc = {
+				desc = party_serb_freetrade
+				trigger = {
+					exists = c:SER
+					THIS = c:SER
+				}
+			}
+			triggered_desc = {
+				desc = party_spain_freetrade
+				trigger = {
+					exists = c:SPA
+					THIS = c:SPA
+				}
+			}
+			triggered_desc = {
+				desc = party_old_lantmanna_party
+				trigger = {
+					exists = c:SWE
+					THIS = c:SWE
+				}
+			}
+			triggered_desc = {
+				desc = party_swiss_freetrade
+				trigger = {
+					exists = c:SWI
+					THIS = c:SWI
+				}
+			}
+			triggered_desc = {
+				desc = party_hbc_free
+				trigger = {
+					exists = c:HBC
+					THIS = c:HBC
+				}
+			}
+			triggered_desc = {
+				desc = party_nvs_free
+				trigger = {
+					exists = c:NVS
+					THIS = c:NVS
+				}
+			}
+			triggered_desc = {
+				desc = party_org_free
+				trigger = {
+					exists = c:ORG
+					THIS = c:ORG
+				}
+			}
+			triggered_desc = {
+				desc = party_quebec_free
+				trigger = {
+					exists = c:QUE
+					THIS = c:QUE
+				}
+			}
+			triggered_desc = {
+				desc = party_free_can
+				trigger = {
+					exists = c:CAN
+					THIS = c:CAN
+				}
+			}
+			triggered_desc = {
+				desc = party_free_fsa
+				trigger = {
+					exists = c:FSA
+					THIS = c:FSA
+				}
+			}
+			triggered_desc = {
+				desc = party_csa_freetrade
+				trigger = {
+					exists = c:CSA
+					THIS = c:CSA
+				}
+			}
+			triggered_desc = {
+				desc = party_us_free_bcw
+				trigger = {
+					exists = c:USA
+					THIS = c:USA
+				}
+			}
+			triggered_desc = {
+				desc = party_us_free_acw
+				trigger = {
+					exists = c:USA
+					THIS = c:USA
+					has_global_variable = american_civil_war
+				}
+			}
+			triggered_desc = {
+				desc = party_mexico_free
+				trigger = {
+					exists = c:MEX
+					THIS = c:MEX
+				}
+			}
+			triggered_desc = {
+				desc = party_communications_clique
+				trigger = {
+					exists = c:CHI
+					THIS = c:CHI
+				}
+			}
+			triggered_desc = {
+				desc = party_national_party
+				trigger = {
+					exists = c:CHL
+					THIS = c:CHL
+				}
+			}
+			triggered_desc = {
+				desc = party_free_trade
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/free_trade.dds"
+	}
+	unlocking_technologies = {
+		stock_exchange
+	}
+	# THIS IS RUN ONLY ONCE AT GAME START
+	valid_for_country = {
+		always = yes
+	}
+	available_for_interest_group = {
+		owner = {
+			country_has_voting_franchise = yes
+		}
+		is_marginal = no
+		OR = {
+			is_interest_group_type = ig_industrialists
+			leader = {
+				has_ideology = ideology_market_liberal
+			}
+		}
+		OR = {
+			AND = {
+				is_powerful = yes
+				ig_clout >= 0.25
+			}
+			has_ideology = ideology_orleanist
+		}
+		NOT = {
+			has_ideology = ideology_revolutionary_republican
+		}
+	}
+
+	# Root - IG considering joining
+	# scope:number - the number of IGs that would join this party before the root IG
+	join_weight = {
+		value = {
+			value = -5
+			desc = "base_value"
+		}
+		if = { # capitalists like capitalism
+			limit = {
+				OR = {
+					leader = {
+						has_ideology = ideology_market_liberal
+					}
+					has_ideology = ideology_laissez_faire
+				}
+			}
+			add = {
+				value = 5
+				desc = "from_capitalism"
+			}
+		}
+		# powerful capitalists likely to form their own party
+		if = {
+			limit = {
+				is_powerful = yes
+				OR = {
+					leader = {
+						has_ideology = ideology_market_liberal
+					}
+					has_ideology = ideology_laissez_faire
+				}
+			}
+			add = {
+				value = 10
+				desc = "from_powerful_capitalists"
+			}
+		}
+		# weaker market liberals fall behind powerful industrialists
+		if = {
+			limit = {
+				is_powerful = no
+				owner = {
+					ig:ig_industrialists = {
+						is_powerful = yes
+					}
+				}
+				leader = {
+					has_ideology = ideology_market_liberal
+				}
+			}
+			add = {
+				value = 5
+				desc = "from_powerful_capitalists_other"
+			}
+		}
+		if = { # landowners and industrialists hate labor rights
+			limit = {
+				OR = {
+					has_ideology = ideology_stratocratic
+					has_ideology = ideology_modern_stratocratic
+					has_ideology = ideology_junker_stratocratic
+					has_ideology = ideology_laissez_faire
+					has_ideology = ideology_meritocratic
+				}
+				OR = {
+					owner = {
+						has_law = law_type:law_regulatory_bodies
+						has_law = law_type:law_worker_protections
+					}
+				}
+			}
+			add = {
+				value = 5
+				desc = "from_labor_rights"
+			}
+		}
+		if = { # conservatives hate welfare
+			limit = {
+				OR = {
+					has_ideology = ideology_stratocratic
+					has_ideology = ideology_modern_stratocratic
+					has_ideology = ideology_junker_stratocratic
+					has_ideology = ideology_individualist
+					has_ideology = ideology_meritocratic
+				}
+				OR = {
+					owner = {
+						has_law = law_type:law_wage_subsidies
+						has_law = law_type:law_old_age_pension
+					}
+				}
+			}
+			add = {
+				value = 5
+				desc = "from_welfare"
+			}
+		}
+		if = { # capitalists hate children
+			limit = {
+				owner = {
+					NOT = { has_law = law_type:law_child_labor_allowed }
+				}
+				OR = {
+					leader = {
+						has_ideology = ideology_market_liberal
+					}
+					has_ideology = ideology_laissez_faire
+				}
+			}
+			add = {
+				value = 3
+				desc = "from_hates_children"
+			}
+		}
+		if = { # capitalists want free trade
+			limit = {
+				owner = {
+					NOT = { has_law = law_type:law_free_trade }
+				}
+				OR = {
+					leader = {
+						has_ideology = ideology_market_liberal
+					}
+					has_ideology = ideology_laissez_faire
+				}
+			}
+			add = {
+				value = 5
+				desc = "from_no_free_trade"
+			}
+		}
+		if = { # capitalists want to have power
+			limit = {
+				owner = {
+					NOR = {
+						#has_law = law_type:law_oligarchy
+						has_law = law_type:law_wealth_voting
+						has_law = law_type:law_weighted_wealth_voting
+					}
+				}
+				has_ideology = ideology_plutocratic
+			}
+			add = {
+				value = 3
+				desc = "from_no_oligarchy_wealth_voting"
+			}
+		}
+		if = { # liberal-capitalist anti-autocracy alliance
+			limit = {
+				owner = {
+					has_law = law_type:law_autocracy
+				}
+				has_ideology = ideology_republican
+				has_ideology = ideology_moderate_democrat
+				has_ideology = ideology_revolutionary_republican
+				has_ideology = ideology_american_republican
+			}
+			add = {
+				value = 3
+				desc = "from_autocracy"
+			}
+		}
+		if = { # capitalist-reactionary anti-democracy alliance
+			limit = {
+				owner = {
+					has_law = law_type:law_universal_suffrage
+				}
+				OR = {
+					has_ideology = ideology_paternalistic
+					has_ideology = ideology_republican_paternalistic
+					has_ideology = ideology_junker_paternalistic
+					has_ideology = ideology_scholar_paternalistic
+					has_ideology = ideology_papal_paternalistic
+					leader = {
+						has_ideology = ideology_fascist
+					}
+				}
+			}
+			add = {
+				value = 3
+				desc = "from_universal_suffrage"
+			}
+		}
+		if = { # capitalist-meritocratic taxation alliance
+			limit = {
+				owner = {
+					has_technology_researched = currency_standards
+					NOT = { has_law = law_type:law_per_capita_based_taxation }
+					NOT = { has_law = law_type:law_consumption_based_taxation }
+				}
+				OR = {
+					has_ideology = ideology_plutocratic
+					has_ideology = ideology_meritocratic
+				}
+			}
+			add = {
+				value = 3
+				desc = "from_no_per_capita_tax"
+			}
+		}
+		if = { # capitalist-conservative taxation alliance
+			limit = {
+				owner = {
+					has_law = law_type:law_graduated_taxation
+				}
+				OR = {
+					has_ideology = ideology_plutocratic
+					has_ideology = ideology_meritocratic
+					has_ideology = ideology_stratocratic
+					has_ideology = ideology_junker_stratocratic
+				}
+			}
+			add = {
+				value = 3
+				desc = "from_graduated_taxation"
+			}
+		}
+		if = { # alliance for consumption taxes
+			limit = {
+				owner = {
+					NOT = { has_law = law_type:law_consumption_based_taxation }
+					NOT = { has_law = law_type:law_per_capita_based_taxation }
+				}
+				OR = {
+					has_ideology = ideology_agrarian
+					has_ideology = ideology_stratocratic
+					has_ideology = ideology_junker_stratocratic
+				}
+			}
+			add = {
+				value = 3
+				desc = "from_no_consumption_tax"
+			}
+		}
+		if = { # opposition to command economy
+			limit = {
+				owner = {
+					has_law = law_type:law_command_economy
+					has_technology_researched = central_planning
+				}
+				OR = {
+					has_ideology = ideology_paternalistic
+					has_ideology = ideology_republican_paternalistic
+					has_ideology = ideology_junker_paternalistic
+					has_ideology = ideology_scholar_paternalistic
+					has_ideology = ideology_papal_paternalistic
+					has_ideology = ideology_laissez_faire
+					has_ideology = ideology_agrarian
+					has_ideology = ideology_meritocratic
+					leader = {
+						has_ideology = ideology_market_liberal
+					}
+				}
+			}
+			add = {
+				value = 3
+				desc = "from_command_economy"
+			}
+		}
+		if = { # pro-private schools
+			limit = {
+				owner = {
+					has_technology_researched = academia
+					OR = {
+						has_law = law_type:law_no_schools
+						has_law = law_type:law_religious_schools
+					}
+				}
+				OR = {
+					has_ideology = ideology_individualist
+					has_ideology = ideology_anti_clerical
+					has_ideology = ideology_meritocratic
+				}
+			}
+			add = {
+				value = 3
+				desc = "from_lack_of_private_schools"
+			}
+		}
+		if = { # Orleanists want an autonomous party
+			limit = {
+				has_ideology = ideology_orleanist
+			}
+			add = {
+				value = 10
+				desc = "from_orleanism"
+			}
+		}
+		if = {
+			limit = {
+				is_interest_group_type = ig_industrialists
+				is_powerful = yes
+			}
+			multiply = {
+				value = 2
+				desc = "from_archetype_party"
+			}
+		}
+		if = {
+			limit = {
+				scope:number = 1
+				is_powerful = no
+				is_marginal = no
+			}
+			multiply = {
+				value = 2
+				desc = "from_influential_supporting_member"
+			}
+		}
+		else_if = {
+			limit = {
+				scope:number = 2
+			}
+			multiply = {
+				value = 0.5
+				desc = "from_two_prior_members"
+			}
+		}
+		else_if = {
+			limit = {
+				scope:number = 3
+			}
+			multiply = {
+				value = 0.25
+				desc = "from_three_prior_members"
+			}
+		}
+		else_if = {
+			limit = {
+				scope:number > 3
+			}
+			multiply = {
+				value = 0.1
+				desc = "from_more_than_three_prior_members"
+			}
+		}
+	}
+}

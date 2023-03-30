@@ -1,0 +1,23 @@
+﻿AI_political_stability = {
+	is_shown = {
+		is_player = no
+		NOT = { is_country_type = decentralized }
+	}
+
+	possible = {
+		NOT = { has_modifier = AI_political_stability }
+	}
+	
+	when_taken = {
+		add_modifier = {
+			name = AI_political_stability
+		}
+		add_journal_entry = {
+			type = je_AI_political_stability
+		}
+	}
+
+	ai_chance = {
+		base = 100	
+	}
+}

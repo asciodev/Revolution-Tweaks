@@ -1,0 +1,68 @@
+﻿# Schleswig-Holstein Question
+
+schleswig_holstein_question = {
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	should_be_pinned_by_default = yes
+
+	is_shown_when_inactive = {
+		exists = c:DEN
+		c:DEN = THIS
+		c:HOL = { is_subject_of = c:DEN }
+		c:SCH = { is_subject_of = c:DEN }
+	}
+
+	possible = {
+		is_subject = no
+		c:HOL = { is_subject_of = c:DEN }
+		c:SCH = { is_subject_of = c:DEN }
+		custom_tooltip = {
+			text = is_not_in_diplo_play
+			NOR = {
+				any_diplomatic_play = {
+					any_scope_play_involved = { this = c:DEN }
+				}
+				any_diplomatic_play = {
+					any_scope_play_involved = { this = c:HOL }
+				}
+				any_diplomatic_play = {
+					any_scope_play_involved = { this = c:SCH }
+				}
+			}
+		}
+	}
+
+	complete = {
+		OR = {
+			AND = {
+				c:SCH = {
+					has_technology_researched = nationalism
+				}
+				c:HOL = {
+					has_technology_researched = nationalism
+				}
+			}
+			AND = {
+				c:PRU = {
+					has_technology_researched = nationalism
+				}
+				year >= 1848
+			}
+		}
+	}
+
+	fail = {
+		NOT = {
+			c:HOL = { is_subject_of = c:DEN }
+			c:SCH = { is_subject_of = c:DEN }
+		}
+	}
+
+	on_complete = {
+		c:DEN = {
+			trigger_event = {
+				id = german_unification.10
+			}
+		}
+	}
+	
+}

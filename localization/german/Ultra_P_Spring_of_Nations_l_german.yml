@@ -1,0 +1,11 @@
+﻿l_german:
+ notification_springtime_of_the_people_je_opened_name:0 "Frühling der Völker in [SCOPE.sC('originator').GetName]"
+ notification_springtime_of_the_people_je_opened_desc:0 "Liberale Unruhestifter in [SCOPE.sC('originator').GetName] fordern mehr Freiheiten. Wenn wir dem nicht Einhalt gebieten oder Kompromisse eingehen, könnte dies zu einer Revolution führen."
+ springtime_of_the_people_je_opened_group:0 "Frühling der Völker"
+ notification_springtime_of_the_people_je_opened_tooltip:0 "Der politische Frühling in [SCOPE.sC('originator').GetName] könnte die Bürger anderer Länder dazu inspirieren, im Streben nach Freiheit Unruhe zu stiften."
+ springtime_of_the_people_je_opened:0 "Der Frühling der Völker"
+ notification_springtime_of_the_people_je_over_name:0 "Frühling der Völker in [SCOPE.sC('originator').GetName]"
+ notification_springtime_of_the_people_je_over_desc:0 "Die lange Zeit der Unruhe in [SCOPE.sC('originator').GetName] ist vorbei."
+ springtime_of_the_people_je_opened_group:0 "Der Frühling der Völker"
+ notification_springtime_of_the_people_je_opened_tooltip:0 "Ob die liberalen Kräfte in [SCOPE.sC('originator').GetName] siegreich waren oder besiegt wurden, der Journaleintrag "Frühling der Völker" ist nun geschlossen."
+ springtime_of_the_people_je_opened:0 "Der Frühling der Völker"

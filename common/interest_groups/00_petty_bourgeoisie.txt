@@ -1,0 +1,636 @@
+﻿ig_petty_bourgeoisie = {
+	color = hsv{ 0.65 0.54 0.52 }
+	texture = "gfx/interface/icons/ig_icons/petty_bourgeoisie.dds"
+	
+	ideologies = {
+		ideology_nationalist
+		#ideology_moderate_democrat #removed later by event
+		ideology_reactionary #added later by event
+		ideology_meritocratic
+		ideology_patriotic #added later by event
+	}
+
+	enable = {
+		always = yes
+	}
+	
+	traits = {
+		ig_trait_treasury_bonds
+		ig_trait_middle_managers
+		ig_trait_xenophobia
+	}	
+	
+	on_enable = {}
+	on_disable = {}	
+	on_character_ig_membership = {}
+	
+	pop_potential = {
+		culture_accepted = yes
+		NOR = {
+			is_pop_type = aristocrats
+			is_pop_type = capitalists
+		}
+		#OR = {
+		#	pop_employment_building_group = bg_manufacturing
+		#	pop_employment_building_group = bg_service
+		#	pop_employment_building_group = bg_urban_facilities
+		#	pop_employment_building_group = bg_government
+		#	pop_employment_building_group = bg_military
+		#}
+	}
+
+	pop_weight = {
+		value = 0
+
+		add = {
+			desc = "PRIMARY"
+			if = {
+				limit = { 
+					pop_has_primary_culture = yes
+				}
+				value = 25
+			}
+		}
+
+		multiply = {
+			desc = "RURAL_POP"
+			value = 1.0
+			if = {
+				limit = { 
+					OR = {
+						pop_employment_building_group = bg_agriculture
+						pop_employment_building_group = bg_ranching
+						pop_employment_building_group = bg_plantations				
+					}
+				}
+				value = 0.25
+			}
+		}
+	
+		add = {
+			desc = "POP_SHOPKEEPERS"
+			if = {
+				limit = { 
+					is_pop_type = shopkeepers
+				}
+				value = 200
+			}
+		}	
+		
+		add = {
+			desc = "POP_CLERKS"
+			if = {
+				limit = { 
+					is_pop_type = clerks
+				}
+				value = 75
+			}
+		}
+
+		add = {
+			desc = "POP_BUREAUCRATS"
+			if = {
+				limit = { 
+					is_pop_type = bureaucrats
+				}
+				value = 50
+			}
+		}
+
+		add = {
+			desc = "POP_SOLDIERS"
+			if = {
+				limit = { 
+					is_pop_type = soldiers
+				}
+				value = 25
+			}
+		}
+
+		add = {
+			desc = "POP_ENGINEERS"
+			if = {
+				limit = { 
+					is_pop_type = engineers
+				}
+				value = 50
+			}
+		}
+		
+		add = {
+			desc = "POP_MACHINISTS"
+			if = {
+				limit = { 
+					is_pop_type = machinists
+				}
+				value = 10
+			}
+		}
+		
+		multiply = { #Pops are less attracted to radical ideologies if they're not poor
+			desc = "RADICAL_LEADER"
+			value = 1.0
+			if = {
+				limit = {
+					owner = {					
+						ig:ig_petty_bourgeoisie = {
+							leader = {
+								has_ideology = ideology_fascist
+							}
+						}
+						NAND = {
+							has_law = law_type:law_autocracy
+							ig:ig_petty_bourgeoisie = {
+								is_in_government = yes
+							}
+						}							
+					}
+					NOT = {
+						standard_of_living <= 14
+					}
+				}
+				value = 0.75
+			}
+		}
+
+		multiply = {
+			desc = "TRADE_CENTER"
+			value = 1.0
+			if = {
+				limit = {
+					OR = {
+						is_pop_type = clerks
+						is_pop_type = bureaucrats
+					}
+					pop_employment_building = building_trade_center
+				}
+				value = 1.5
+			}
+		}
+
+		multiply = {
+			desc = "URBAN_CENTER"
+			value = 1.0
+			if = {
+				limit = {
+					OR = {
+						is_pop_type = clerks
+						is_pop_type = bureaucrats
+					}
+					pop_employment_building = building_urban_center
+				}
+				value = 1.5
+			}
+		}
+
+		multiply = {
+			desc = "NOT_GOV"
+			value = 1.0
+			if = {
+				limit = {
+					OR = {
+						is_pop_type = clerks
+						is_pop_type = bureaucrats
+					}
+					NOT = { pop_employment_building_group = bg_government}
+				}
+				value = 1.25
+			}
+		}
+
+		multiply = {
+			desc = "NOT_PRIMARY"
+			value = 1.0
+			if = {
+				limit = {
+					pop_has_primary_culture = no
+				}
+				value = 0.5
+			}
+		}
+		
+		multiply = { 
+			desc = "COUNTERREVOLUTION"
+			value = 1.0
+			if = {
+				limit = {
+					owner = {
+						ig:ig_petty_bourgeoisie = {
+							has_ideology = ideology_reactionary
+						}
+					}
+				}
+				value = 1.5
+			}
+		}
+		
+		add = {
+			desc = "INFAMY" 
+			if = {
+				limit = {
+					owner = { 
+						infamy >= 25
+						infamy < 50
+					}
+				}
+				value = 25
+			}
+		}
+
+		add = {
+			desc = "INFAMY" 
+			if = {
+				limit = {
+					owner = { 
+						infamy >= 50
+						infamy < 100
+					}
+				}
+				value = 50
+			}
+		}
+
+		add = {
+			desc = "INFAMY"
+			if = {
+				limit = {
+					owner = { 
+						infamy >= 100
+					}
+				}
+				value = 100
+			}
+		}
+
+		multiply = { #French Deep State is Napoleon's nostalgic
+			desc = "BONAPARTISTS"
+			value = 1.0
+			if = {
+				limit = {
+					OR = {
+						is_pop_type = clerks
+						is_pop_type = bureaucrats
+					}
+					pop_employment_building_group = bg_government
+					owner = {
+						ig:ig_petty_bourgeoisie = {
+							has_ideology = ideology_bonapartism
+						}
+					}
+				}
+				value = 1.5
+			}
+		}
+
+		multiply = {
+			desc = "law_cultural_exclusion" #they took our jobs!
+			value = 1.0
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_cultural_exclusion
+					}
+					literacy_rate < 0.80
+				}
+				value = 1.25
+			}
+			else_if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_cultural_exclusion
+					}
+				}
+				value = 1.1
+			}
+		}	
+
+		multiply = {
+			desc = "law_multicultural" #they took our jobs!
+			value = 1.0
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_multicultural
+					}
+					literacy_rate < 0.90
+				}
+				value = 1.5
+			}
+			else_if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_multicultural
+					}
+				}
+				value = 1.25
+			}
+		}
+
+		add = {
+			desc = "WEALTH"
+			if = {
+				limit = { 	
+					wealth > 10
+				}
+				value = wealth
+				subtract = 10
+				multiply = 2
+				max = 40
+			}
+			
+		}
+
+		add = {
+			desc = "SOL_25_30"
+			if = {
+				limit = {
+					standard_of_living >= 25
+					standard_of_living < 30
+				}
+				value = 10
+			}
+		}
+
+		add = {
+			desc = "SOL_30_35"
+			if = {
+				limit = {
+					standard_of_living >= 30
+					standard_of_living < 35
+				}
+				value = 20
+			}
+		}	
+
+		add = {
+			desc = "SOL_35_40"
+			if = {
+				limit = {
+					standard_of_living >= 35
+					standard_of_living < 40
+				}
+				value = 30
+			}
+		}
+
+		add = {
+			desc = "SOL_40_45"
+			if = {
+				limit = {
+					standard_of_living >= 40
+					standard_of_living < 45
+				}
+				value = 40
+			}
+		}
+
+		add = {
+			desc = "SOL_45_50"
+			if = {
+				limit = {
+					standard_of_living >= 45
+					standard_of_living < 50
+				}
+				value = 50
+			}
+		}
+
+		add = {
+			desc = "SOL_50_100"
+			if = {
+				limit = {
+					standard_of_living >= 50
+				}
+				value = 75
+			}
+		}
+
+		multiply = {
+			desc = "law_national_guard"
+			value = 1.0
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_national_guard
+					}
+				}
+				value = 1.1
+			}
+		}
+
+		multiply = {
+			desc = "law_no_police"
+			value = 1.0
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_no_police
+					}
+				}
+				value = 1.1
+			}
+		}
+
+		multiply = {
+			desc = "law_no_migration_controls"
+			value = 1.0
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_no_migration_controls
+					}
+				}
+				value = 1.1
+			}
+		}
+
+		add = {
+			desc = "law_graduated_taxation" 
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_graduated_taxation
+					}
+					OR = {
+						strata = middle
+						is_pop_type = clerks
+						is_pop_type = machinists
+					}
+				}
+				value = 50
+			}
+		}
+
+		multiply = {
+			desc = "IG_COUNCIL_REPUBLIC"
+			value = 1.0
+
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_council_republic
+					}
+				}
+				value = 0.1
+			}
+		}
+
+		multiply = {
+			desc = "AFROAMERICAN"
+			value = 1.0
+
+			if = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+					culture = cu:afro_american
+				}
+				value = 0.1
+			}
+		}
+
+		multiply = {
+			desc = "ideology_caudillismo"
+			value = 1.0
+
+			if = {
+				limit = {
+					owner = {
+						ig:ig_armed_forces = {
+							has_ideology = ideology_caudillismo
+						}
+					}
+				}
+				value = 0.75
+			}
+		}
+
+		multiply = {
+			desc = "LEADER_POPULARITY"
+			scope:interest_group = {
+				leader = {
+					value = popularity
+					multiply = 0.0025
+					add = 1
+					max = 1.25
+					min = 0.75
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				scope:interest_group = {
+					is_in_government = yes
+				}
+			}
+			multiply = {
+				desc = "IN_GOVERNMENT_ATTRACTION"
+				value = 1
+				add = scope:interest_group.modifier:interest_group_in_government_attraction_mult
+				min = 0
+			}
+		}
+
+		multiply = {
+			desc = "decentralized_power"	
+			value = 1.0
+			
+			if = {
+				limit = { 
+					owner = {
+						is_country_type = decentralized
+					}
+				}
+				value = 0.0
+			}		
+		}
+
+		multiply = {
+			desc = "IG_IS_MARGINALIZED"
+			value = 1.0
+			
+			scope:interest_group = {
+				if = {
+					limit = {
+						is_marginal = yes
+					}
+					value = 0.5
+				}
+			}
+		}		
+	}
+
+	monarch_weight = {
+		value = 0.25
+	}	
+	
+	commander_weight = {
+		value = 1.0
+	}	
+	
+	noble_chance = {
+		value = 0.1
+	}
+	
+	female_commander_chance = {	
+		value = 0.0
+	}
+	
+	female_politician_chance = {
+		value = 0.0
+
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_women_own_property
+				}
+				
+			}
+			add = {
+				value = 0.025
+			}
+		}
+
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_women_in_the_workplace
+				}
+				
+			}
+			add = {
+				value = 0.075
+			}
+		}
+
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_womens_suffrage
+				}
+				
+			}
+			add = {
+				value = 0.1
+			}
+		}
+	}
+	
+	# The chance that a commander belonging to this IG takes over leadership when it changes
+	# scope:character is the most popular commander in the IG
+	commander_leader_chance = {
+		value = 0.25
+		if = {
+			limit = {
+				exists = scope:character
+			}
+			multiply = {
+				value = 1
+				add = scope:character.popularity
+				min = 0
+			}
+		}
+	}
+}

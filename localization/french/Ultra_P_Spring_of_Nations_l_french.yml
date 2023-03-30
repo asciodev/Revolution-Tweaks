@@ -1,0 +1,11 @@
+﻿l_french:
+ notification_springtime_of_the_people_je_opened_name:0 "Le Printemps des Peuples en [SCOPE.sC('originator').GetName]"
+ notification_springtime_of_the_people_je_opened_desc:0 "Les agitateurs libéraux en [SCOPE.sC('originator').GetName] demandent plus de libertés. A moins que la répression soit assez forte où qu'il y ait des compromis, une Révolution est possible."
+ springtime_of_the_people_je_opened_group:0 "Le Printemps des Peuples"
+ notification_springtime_of_the_people_je_opened_tooltip:0 "Ce "Printemps" politique en [SCOPE.sC('originator').GetName] pourrait inspirer des citoyens des autres pays à créer des troubles au nom de la Liberté."
+ springtime_of_the_people_je_opened:0 "Le Printemps des Peuples"
+ notification_springtime_of_the_people_je_over_name:0 "Le Printemps des Peuples en [SCOPE.sC('originator').GetName]"
+ notification_springtime_of_the_people_je_over_desc:0 "La période d'instabilité prolongée en [SCOPE.sC('originator').GetName] est terminée."
+ springtime_of_the_people_je_opened_group:0 "Le Printemps des Peuples"
+ notification_springtime_of_the_people_je_opened_tooltip:0 "Que les forces libérales en [SCOPE.sC('originator').GetName] soient victorieuses ou vaincues, l'entrée du Journal "Le Printemps des Peuples" est maintenant fermée."
+ springtime_of_the_people_je_opened:0 "Le Printemps des Peuples"

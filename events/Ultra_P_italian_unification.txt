@@ -1,0 +1,1129 @@
+﻿namespace = italian_unification
+namespace = italian_independence_war
+
+# First Italian Independence War
+italian_independence_war.1 = {
+    type = country_event
+    placement = ROOT
+
+    title = italian_independence_war.1.t
+    desc = italian_independence_war.1.d
+    flavor = italian_independence_war.1.f
+
+    event_image = {
+        video = "gfx/event_pictures/europenorthamerica_political_extremism.bk2"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+    immediate = {
+        create_country = {
+            tag = VEN
+            origin = this
+            state = s:STATE_VENETIA.region_state:AUS
+            state = s:STATE_LOMBARDY.region_state:AUS
+        }
+        c:AUS = {
+            create_diplomatic_pact = {
+                country = c:VEN
+                type = puppet
+            }
+        }
+        c:VEN = {
+            activate_law = law_type:law_presidential_republic
+            activate_law = law_type:law_oligarchy
+        }
+	}
+    
+    trigger = {
+        #je_italian_independence_war
+    }
+    
+    option = {
+        name = italian_independence_war.1.a
+		default_option = yes
+        create_diplomatic_play = {
+            escalation = 0
+            war = NO
+            type = dp_annex_war
+            target_country = c:VEN
+            add_war_goal = {
+                holder = c:VEN
+                target_country = c:AUS
+                type = independence
+            }
+            add_war_goal = {
+                holder = c:VEN
+                target_country = c:AUS
+                type = REVOKE_ALL_CLAIMS
+            }
+            add_war_goal = {
+                holder = c:VEN
+                target_country = c:AUS
+                type = war_reparations
+            }
+        }
+
+        c:VEN = {   # Italians should not be loyal to Austria
+            set_secret_goal = {
+                country = c:AUS
+                secret_goal = antagonize
+            }
+            change_relations = {
+                country = c:AUS
+                value = -1000
+            }
+            add_journal_entry = { type = je_italian_independence_war_2 }
+        }
+
+        c:SAR = {   # Italians should help the rebels
+            trigger_event = { # Garibaldi
+                id = italian_unification.3
+                days = 30
+                popup = yes
+            }
+            if = {
+                limit = {
+                    is_player = no
+                }
+                add_technology_researched = nationalism
+            }
+            set_secret_goal = {
+                country = c:AUS
+                secret_goal = antagonize
+            }
+            change_relations = {
+                country = c:AUS
+                value = -100
+            }
+            set_secret_goal = {
+                country = c:VEN
+                secret_goal = protect
+            }
+            change_relations = {
+                country = c:VEN
+                value = 200
+            }
+            if = {
+                limit = {
+                    is_player = no
+                }
+                set_owes_obligation_to = {
+                    country = c:VEN
+                    setting = yes
+                }
+            }
+        }
+
+        c:PAR = {   # Italians should help the rebels
+            set_secret_goal = {
+                country = c:AUS
+                secret_goal = antagonize
+            }
+            change_relations = {
+                country = c:AUS
+                value = -50
+            }
+            set_secret_goal = {
+                country = c:VEN
+                secret_goal = protect
+            }
+            change_relations = {
+                country = c:VEN
+                value = 60
+            }
+            if = {
+                limit = {
+                    is_player = no
+                }
+                set_owes_obligation_to = {
+                    country = c:VEN
+                    setting = yes
+                }
+            }
+        }
+
+        c:MOD = {   # Italians should help the rebels
+            set_secret_goal = {
+                country = c:AUS
+                secret_goal = antagonize
+            }
+            change_relations = {
+                country = c:AUS
+                value = -50
+            }
+            set_secret_goal = {
+                country = c:VEN
+                secret_goal = protect
+            }
+            change_relations = {
+                country = c:VEN
+                value = 60
+            }
+            if = {
+                limit = {
+                    is_player = no
+                }
+                set_owes_obligation_to = {
+                    country = c:VEN
+                    setting = yes
+                }
+            }
+        }
+
+        c:LUC = {   # Italians should help the rebels
+            set_secret_goal = {
+                country = c:AUS
+                secret_goal = antagonize
+            }
+            change_relations = {
+                country = c:AUS
+                value = -50
+            }
+            set_secret_goal = {
+                country = c:VEN
+                secret_goal = protect
+            }
+            change_relations = {
+                country = c:VEN
+                value = 60
+            }
+            if = {
+                limit = {
+                    is_player = no
+                }
+                set_owes_obligation_to = {
+                    country = c:VEN
+                    setting = yes
+                }
+            }
+        }
+
+        c:TUS = {   # Italians should help the rebels
+            set_secret_goal = {
+                country = c:AUS
+                secret_goal = antagonize
+            }
+            change_relations = {
+                country = c:AUS
+                value = -50
+            }
+            set_secret_goal = {
+                country = c:VEN
+                secret_goal = protect
+            }
+            change_relations = {
+                country = c:VEN
+                value = 60
+            }
+            if = {
+                limit = {
+                    is_player = no
+                }
+                set_owes_obligation_to = {
+                    country = c:VEN
+                    setting = yes
+                }
+            }
+        }
+
+        c:PAP = {   # Italians should not help Austria
+            set_secret_goal = {
+                country = c:AUS
+                secret_goal = antagonize
+            }
+            change_relations = {
+                country = c:AUS
+                value = -50
+            }
+        }
+
+        c:SIC = {   # Italians should not help Austria
+            set_secret_goal = {
+                country = c:AUS
+                secret_goal = antagonize
+            }
+            change_relations = {
+                country = c:AUS
+                value = -50
+            }
+        }
+
+        c:FRA = {   # France should not help Austria against fellow revolutionaries
+            set_secret_goal = {
+                country = c:AUS
+                secret_goal = antagonize
+            }
+        }
+
+        c:PRU = {   # Prussia should be neutral - for now
+            set_secret_goal = {
+                country = c:AUS
+                secret_goal = none
+            }
+        }
+        
+        ai_chance = {
+            base = 100
+        }
+    }
+    option = {
+        name = italian_independence_war.1.b
+        create_truce = {
+            country = c:VEN
+            months = 48
+        }
+        custom_tooltip = losesaustrianclaimsita
+        hidden_effect = {
+            s:STATE_VENETIA = {
+                remove_claim = c:AUS
+            }
+            s:STATE_LOMBARDY = {
+                remove_claim = c:AUS
+            }
+        }
+        c:AUS = {
+            remove_diplomatic_pact = {
+                country = c:VEN
+                type = puppet
+            }
+        }
+        ai_chance = {
+            base = 0
+        }
+    }
+}
+
+italian_independence_war.2 = { #Italians Wins
+    type = country_event
+    placement = ROOT
+
+    title = italian_independence_war.2.t
+    desc = italian_independence_war.2.d
+    flavor = italian_independence_war.2.f
+
+    event_image = {
+        video = "gfx/event_pictures/europenorthamerica_political_extremism.bk2"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+    trigger = {
+        AND = {
+            exists = c:VEN
+            OR = {
+            	exists = c:SAR
+            	exists = c:ITA
+            }
+        }
+        THIS = c:VEN
+        c:VEN = {
+            is_at_war = no
+            is_subject = no
+        }
+    }
+    option = { #Ask for being annexed by Sardinia-Piedmont (Or Italy if it already exists)
+        name = italian_independence_war.2.a
+        if = {
+        	limit = {
+        		exists = c:ITA
+        	}
+        	c:ITA = {
+	        	trigger_event = { 
+					id = italian_independence_war.3
+					popup = yes
+				}
+			}
+        }
+        else_if = {
+        	limit = {
+        		exists = c:SAR
+        	}
+        	c:SAR = {
+	        	trigger_event = { 
+					id = italian_independence_war.3
+					popup = yes
+				}
+			}
+        }
+        ai_chance = {
+            base = 100
+        }
+    } 
+}
+
+italian_independence_war.3 = { #Sardinia gets Venetia
+    type = country_event
+    placement = ROOT
+
+    title = italian_independence_war.3.t
+    desc = italian_independence_war.3.d
+    flavor = italian_independence_war.3.f
+
+    event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+    option = { #Yes
+        name = italian_independence_war.3.a
+        default_option = yes
+        if = {
+            limit = {
+                exists = c:VEN
+            }
+            annex = c:VEN
+        }
+        add_journal_entry = { type = je_italy_plebisciti }
+		ai_chance = {
+			base = 1
+		}
+    }
+
+    option = { #No
+        name = italian_independence_war.3.b
+        change_relations = {
+			country = c:VEN
+			value = 20
+		}
+		c:VEN = {
+			set_variable = {
+				name = italian_minor_dont_annex
+				months = normal_modifier_time
+			}
+		}
+		ai_chance = {
+			base = 0
+		}
+    }
+
+}
+
+
+italian_independence_war.4 = { # Plombières
+    type = country_event
+    placement = ROOT
+
+    title = italian_independence_war.4.t
+    desc =  italian_independence_war.4.d
+
+    event_image = {
+        video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+    }
+
+    trigger = {
+        # From je_italy_plombieres JE
+    }
+
+    immediate = {
+        set_global_variable = plombieres_variable
+        set_variable = plombieres_var
+    }
+
+    option = {
+        name =  italian_independence_war.4.a
+        default_option = yes
+        c:SAR = {
+            create_diplomatic_pact = {
+                country = c:FRA
+                type = alliance
+            }
+            s:STATE_LOMBARDY = {
+                add_claim = c:SAR
+            }
+            s:STATE_VENETIA = {
+                add_claim = c:SAR
+            }
+        }
+        c:FRA = {
+            set_secret_goal = {
+                country = c:SAR
+                secret_goal = protect
+            }
+            set_secret_goal = {
+                country = c:AUS
+                secret_goal = antagonize
+            }
+            if = {
+                limit = {
+                    is_player = no
+                }
+                set_owes_obligation_to = {
+                    country = c:SAR
+                    setting = yes
+                }
+            }
+        }
+        c:SAR = {
+            trigger_event = { 
+                id = italian_independence_war.5
+                days = 30
+                popup = yes
+            }
+        }
+
+        ai_chance = {
+            base = 100
+        }
+        #set_global_variable = plombieres_accepted
+    }
+
+    option = {
+        name =  italian_independence_war.4.b
+        ai_chance = {
+            base = 0
+        }
+    }
+}
+
+italian_independence_war.5 = { # Second Independence war
+    type = country_event
+    placement = ROOT
+
+    type = country_event
+    placement = ROOT
+
+    title = italian_independence_war.5.t
+    desc =  italian_independence_war.5.d
+
+    event_image = {
+        video = "gfx/event_pictures/europenorthamerica_before_the_battle.bk2"
+    }
+
+    trigger = {
+        # from italian_independence_war.4
+    }
+
+    immediate = {
+        #set_global_variable = second_independence_war
+    }
+
+    option = {
+        name =  italian_independence_war.5.a
+        default_option = yes
+        c:AUS = {
+            create_diplomatic_play = {
+                escalation = 0
+                war = no
+                target_country = c:SAR
+                type = dp_humiliation
+                add_war_goal = {
+                    holder = c:SAR
+                    target_country = c:AUS
+                    type = return_state
+                    target_state = s:STATE_LOMBARDY.region_state:AUS
+                }
+            }
+        }
+        c:PRU = {
+            set_secret_goal = {
+                country = c:AUS
+                secret_goal = antagonize
+            }
+            change_relations = {
+                country = c:AUS
+                value = -50
+            }
+        }
+        c:RUS = {
+            set_secret_goal = {
+                country = c:AUS
+                secret_goal = antagonize
+            }
+            change_relations = {
+                country = c:AUS
+                value = -50
+            }
+        }
+
+        c:PAR = {   # Italians should not help Austria
+            set_secret_goal = {
+                country = c:AUS
+                secret_goal = antagonize
+            }
+            change_relations = {
+                country = c:AUS
+                value = -50
+            }
+            set_secret_goal = {
+                country = c:SAR
+                secret_goal = protect
+            }
+        }
+
+        c:MOD = {   # Italians should not help Austria
+            set_secret_goal = {
+                country = c:AUS
+                secret_goal = antagonize
+            }
+            change_relations = {
+                country = c:AUS
+                value = -50
+            }
+            set_secret_goal = {
+                country = c:SAR
+                secret_goal = protect
+            }
+        }
+
+        c:LUC = {   # Italians should not help Austria
+            set_secret_goal = {
+                country = c:AUS
+                secret_goal = antagonize
+            }
+            change_relations = {
+                country = c:AUS
+                value = -50
+            }
+            set_secret_goal = {
+                country = c:SAR
+                secret_goal = protect
+            }
+        }
+
+        c:TUS = {   # Italians should not help Austria
+            set_secret_goal = {
+                country = c:AUS
+                secret_goal = antagonize
+            }
+            change_relations = {
+                country = c:AUS
+                value = -50
+            }
+            set_secret_goal = {
+                country = c:SAR
+                secret_goal = protect
+            }
+        }
+
+        c:PAP = {   # Italians should not help Austria
+            set_secret_goal = {
+                country = c:AUS
+                secret_goal = antagonize
+            }
+            change_relations = {
+                country = c:AUS
+                value = -50
+            }
+        }
+
+        c:SIC = {   # Italians should not help Austria
+            set_secret_goal = {
+                country = c:AUS
+                secret_goal = antagonize
+            }
+            change_relations = {
+                country = c:AUS
+                value = -50
+            }
+        }
+
+        c:GBR = {   # UK should not help Austria
+            set_secret_goal = {
+                country = c:AUS
+                secret_goal = antagonize
+            }
+            change_relations = {
+                country = c:AUS
+                value = -50
+            }
+        }
+
+        ai_chance = {
+            base = 100
+        }
+    }
+    option = {
+        name =  italian_independence_war.5.b
+
+        ai_chance = {
+            base = 0
+        }
+    }
+}
+
+italian_independence_war.6 = { # Plebisciti
+    type = country_event
+    placement = ROOT
+
+    title = italian_independence_war.6.t
+    desc = italian_independence_war.6.d
+
+    event_image = {
+        video = "gfx/event_pictures/unspecific_ruler_speaking_to_people.bk2"
+    }
+
+    trigger = {
+       #From je_italy_plebisciti JE
+    }
+
+    immediate = {
+        set_global_variable = plebiscite_variable
+        set_variable = plebiscite_var
+
+        s:STATE_LAZIO = {
+            add_claim = c:SAR
+        }
+        s:STATE_EMILIA = {
+            add_claim = c:SAR
+        }
+        s:STATE_TUSCANY = {
+            add_claim = c:SAR
+        }
+        s:STATE_ROMAGNA = {
+            add_claim = c:SAR
+        }
+         s:STATE_UMBRIA = {
+            add_claim = c:SAR
+        }
+    }
+
+    option = {
+        name = italian_independence_war.6.a
+        default_option = yes
+        ai_chance = {
+            base = 100
+        }
+
+        s:STATE_LAZIO = {
+            set_owner_of_provinces = {
+                country = c:SAR
+                provinces = { "x3040A0" "xB0C0A0" "xB5726E" }           ###   "xB040A0" not Rome
+            }
+        }
+        s:STATE_EMILIA = {
+            every_scope_state = {
+                limit = {
+                    owner = {
+                        country_has_primary_culture = cu:north_italian
+                        is_player = no
+                    }
+                }
+                set_state_owner = c:SAR
+            }
+        }
+        s:STATE_TUSCANY = {
+            every_scope_state = {
+                limit = {
+                    owner = {
+                        country_has_primary_culture = cu:north_italian
+                        is_player = no
+                    }
+                }
+                set_state_owner = c:SAR
+            }
+        }
+        s:STATE_ROMAGNA = {
+            every_scope_state = {
+                limit = {
+                    owner = {
+                        country_has_primary_culture = cu:north_italian
+                        is_player = no
+                    }
+                }
+                set_state_owner = c:SAR
+            }
+        }
+        s:STATE_UMBRIA = {
+            every_scope_state = {
+                limit = {
+                    owner = {
+                        country_has_primary_culture = cu:north_italian
+                        is_player = no
+                    }
+                }
+                set_state_owner = c:SAR
+            }
+        }
+
+        # Cede Nice + Savoy
+        if = {
+            limit = {
+                exists = s:STATE_SAVOY.region_state:SAR
+                has_diplomatic_pact = {
+                    who  = c:FRA
+                    type = alliance
+                }
+            }
+            s:STATE_SAVOY.region_state:SAR = { set_state_owner = c:FRA }
+        }
+        if = {
+            limit = {
+                exists = s:STATE_PROVENCE.region_state:SAR
+                has_diplomatic_pact = {
+                    who  = c:FRA
+                    type = alliance
+                }
+            }
+            s:STATE_PROVENCE.region_state:SAR = { set_state_owner = c:FRA }
+        }
+        change_infamy = -30
+
+        ### Full alliance no longer needed ####
+        if = {
+            limit = {
+                has_diplomatic_pact = {
+                    who  = c:FRA
+                    type = alliance
+                }
+            }
+            c:SAR = {
+                remove_diplomatic_pact = {
+                    country = c:FRA
+                    type = alliance
+                }
+            }
+            c:SAR = {
+                create_diplomatic_pact = {
+                    country = c:FRA
+                    type = defensive_pact
+                }
+            }
+        }
+    }
+
+    option = {
+        name =  italian_independence_war.6.b
+        ai_chance = {
+            base = 0
+        }
+    }
+
+}
+
+italian_independence_war.7 = { # I Mille
+    type = country_event
+    placement = ROOT
+
+    type = country_event
+    placement = ROOT
+
+    title = italian_independence_war.7.t
+    desc =  italian_independence_war.7.d
+
+    event_image = {
+        video = "gfx/event_pictures/europenorthamerica_before_the_battle.bk2"
+    }
+
+    trigger = {
+        #From je_italy_i_mille JE
+    }
+
+    immediate = {
+        set_global_variable = i_mille
+        s:STATE_SICILY = {
+            add_claim = c:SAR
+        }
+        s:STATE_CALABRIA = {
+            add_claim = c:SAR
+        }
+        s:STATE_APULIA = {
+            add_claim = c:SAR
+        }
+        s:STATE_ABRUZZO = {
+            add_claim = c:SAR
+        }
+        s:STATE_CAMPANIA = {
+            add_claim = c:SAR
+        }
+        s:STATE_LAZIO = {
+            add_claim = c:SAR
+        }
+    }
+
+    option = {
+        name =  italian_independence_war.7.a
+        default_option = yes
+        create_diplomatic_play = {
+            target_country = c:SIC
+            war = no
+            type = dp_conquer_state
+            target_state = s:STATE_CAMPANIA.region_state:SIC
+            add_war_goal = {
+                holder = c:SAR
+                target_country = c:SIC
+                type = return_state
+                target_state = s:STATE_CAMPANIA.region_state:SIC
+            }
+            add_war_goal = {
+                holder = c:SAR
+                target_country = c:SIC
+                type = return_state
+                target_state = s:STATE_CALABRIA.region_state:SIC
+            }
+            add_war_goal = {
+                holder = c:SAR
+                target_country = c:SIC
+                type = return_state
+                target_state = s:STATE_APULIA.region_state:SIC
+            }
+            add_war_goal = {
+                holder = c:SAR
+                target_country = c:SIC
+                type = return_state
+                target_state = s:STATE_ABRUZZO.region_state:SIC
+            }
+            add_war_goal = {
+                holder = c:SAR
+                target_country = c:SIC
+                type = return_state
+                target_state = s:STATE_SICILY.region_state:SIC
+            }
+        }
+
+        change_infamy = -75 #Infamy should not be there
+
+        c:SIC = {
+            trigger_event = { 
+                id = italian_independence_war.8
+                days = 10
+                popup = yes
+            }
+        }
+
+        ai_chance = {
+            base = 100
+        }
+
+        c:GBR = {   # Should help Sardinia depending on relations
+            if = {
+                limit = {
+                    c:SAR = {
+                        OR = {
+                            relations:ROOT > 20
+                            AND = {
+                                is_player = no
+                                relations:ROOT > -50
+                            }
+                        }
+                    }
+                       
+                }
+                set_secret_goal = {
+                    country = c:SAR
+                    secret_goal = protect
+                }
+                set_secret_goal = {
+                    country = c:SIC
+                    secret_goal = antagonize
+                }
+                change_relations = {
+                    country = c:SIC
+                    value = -100
+                }
+                change_relations = {
+                    country = c:SAR
+                    value = 100
+                }
+            }
+        }
+        c:FRA = {   # France should not help sicilies
+            set_secret_goal = {
+                country = c:SIC
+                secret_goal = antagonize
+            }
+            set_secret_goal = {
+                country = c:SAR
+                secret_goal = protect
+            }
+            change_relations = {
+                country = c:SIC
+                value = -50
+            }
+        }
+        c:RUS = {   # Russia back-off plox...
+            set_secret_goal = {
+                country = c:SIC
+                secret_goal = antagonize
+            }
+            change_relations = {
+                country = c:SIC
+                value = -50
+            }
+        }
+        c:AUS = {   # Austria back-off plox...
+            set_secret_goal = {
+                country = c:SIC
+                secret_goal = antagonize
+            }
+        }
+    }
+    option = {
+        name =  italian_independence_war.7.b
+
+        ai_chance = {
+            base = 0
+        }
+    }
+}
+
+italian_independence_war.8 = { # Sicily defects
+    type = country_event
+    placement = ROOT
+
+    type = country_event
+    placement = ROOT
+
+    title = italian_independence_war.8.t
+    desc =  italian_independence_war.8.d
+
+    event_image = {
+        video = "gfx/event_pictures/europenorthamerica_before_the_battle.bk2"
+    }
+
+    trigger = {
+        #From italian_independence_war.7 event
+    }
+
+    immediate = {
+        s:STATE_SICILY = {
+            every_scope_state = {
+                limit = {
+                    owner = {
+                        country_has_primary_culture = cu:south_italian
+                    }
+                }
+                set_state_owner = c:SAR
+            }
+        }
+    }
+
+    option = {
+        name =  italian_independence_war.8.a
+
+        c:SIC = {
+            trigger_event = { 
+                id = italian_independence_war.9
+                days = 60
+                popup = yes
+            }
+        }
+
+        ai_chance = {
+            base = 1
+        }
+    }
+}
+
+italian_independence_war.9 = { # Calabria defects
+    type = country_event
+    placement = ROOT
+
+    type = country_event
+    placement = ROOT
+
+    title = italian_independence_war.9.t
+    desc =  italian_independence_war.9.d
+
+    event_image = {
+        video = "gfx/event_pictures/europenorthamerica_before_the_battle.bk2"
+    }
+
+    trigger = {
+        #From italian_independence_war.8 event
+    }
+
+    immediate = {
+        s:STATE_CALABRIA = {
+            every_scope_state = {
+                limit = {
+                    owner = {
+                        country_has_primary_culture = cu:south_italian
+                    }
+                }
+                set_state_owner = c:SAR
+            }
+        }
+    }
+
+    option = {
+        name =  italian_independence_war.9.a
+
+        if = {
+            limit = {
+                c:SIC = {
+                    has_war_with = c:SAR
+                }
+            }
+            c:SIC = {
+                trigger_event = { 
+                    id = italian_independence_war.10
+                    days = 30
+                    popup = yes
+                }
+            }
+        }
+
+        ai_chance = {
+            base = 1
+        }
+    }
+}
+
+italian_independence_war.10 = { # End the conquest
+    type = country_event
+    placement = ROOT
+
+    type = country_event
+    placement = ROOT
+
+    title = italian_independence_war.10.t
+    desc =  italian_independence_war.10.d
+
+    event_image = {
+        video = "gfx/event_pictures/europenorthamerica_before_the_battle.bk2"
+    }
+
+    trigger = {
+        #From italian_independence_war.9 event
+    }
+
+    immediate = {
+        s:STATE_APULIA = {
+            every_scope_state = {
+                limit = {
+                    owner = {
+                        country_has_primary_culture = cu:south_italian
+                    }
+                }
+                set_state_owner = c:SAR
+            }
+        }
+
+        s:STATE_ABRUZZO = {
+            every_scope_state = {
+                limit = {
+                    owner = {
+                        country_has_primary_culture = cu:south_italian
+                    }
+                }
+                set_state_owner = c:SAR
+            }
+        }
+    }
+
+    option = {
+        name =  italian_independence_war.10.a
+
+         s:STATE_CAMPANIA = {
+            every_scope_state = {
+                limit = {
+                    owner = {
+                        country_has_primary_culture = cu:south_italian
+                    }
+                }
+                set_state_owner = c:SAR
+            }
+        }
+
+        ai_chance = {
+            base = 1
+        }
+    }
+}

@@ -1,0 +1,17 @@
+﻿l_simp_chinese:
+
+  ## Distribution of power laws
+
+  law_weighted_universal_suffrage:0 "Weighted Universal Suffrage"
+  law_weighted_universal_suffrage_desc:0 "Every adult man is given a vote. Men who own land or capital property are granted more votes."
+
+  law_weighted_wealth_voting:0 "Weighted Wealth Voting"
+  law_weighted_wealth_voting_desc:0 "Wealthy citizens are given a vote. Men who own land or capital property are granted more votes."
+
+  ## goverment types ##
+
+  gov_absolute_monarchy:0 "Absolute Monarchy"
+  gov_absolute_monarchy_desc:1 "This is a [concept_government] form where the power rests completely with the [Concept('concept_ruler','$RULER_TITLE_KING$')] or [Concept('concept_ruler','$RULER_TITLE_QUEEN$')]."
+  gov_monarchy:0 "Monarchy"
+  gov_monarchy_desc:1 "This is a [concept_government] form where the power rests mainly with the [Concept('concept_ruler','$RULER_TITLE_KING$')] or [Concept('concept_ruler','$RULER_TITLE_QUEEN$')]."
+ 

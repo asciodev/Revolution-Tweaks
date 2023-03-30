@@ -1,0 +1,188 @@
+﻿# This is executed last among all history
+# Used for the mod to unincorporate states when necessary
+
+GLOBAL = {
+
+	#Italy
+
+	s:STATE_PROVENCE = {
+		region_state:SAR={
+			set_state_type = incorporated
+		}
+	}
+	# Austrian Empire
+
+	s:STATE_LOMBARDY = {
+		region_state:AUS={
+			set_state_type = unincorporated
+		}
+	}
+	s:STATE_VENETIA = {
+		region_state:AUS={
+			set_state_type = unincorporated
+		}
+	}
+	#s:STATE_ISTRIA = {
+	#	region_state:AUS={
+	#		set_state_type = unincorporated
+	#	}
+	#}
+	s:STATE_CROATIA = {
+		region_state:AUS={
+			set_state_type = unincorporated
+		}
+	}
+	s:STATE_DALMATIA = {
+		region_state:AUS={
+			set_state_type = unincorporated
+		}
+	}
+	s:STATE_SLAVONIA = {
+		region_state:AUS={
+			set_state_type = unincorporated
+		}
+	}
+	s:STATE_WEST_GALICIA = {
+		region_state:AUS={
+			set_state_type = unincorporated
+		}
+	}
+	s:STATE_EAST_GALICIA = {
+		region_state:AUS={
+			set_state_type = unincorporated
+		}
+	}
+	s:STATE_MOLDAVIA = {
+		region_state:AUS={
+			set_state_type = unincorporated
+		}
+	}
+	#s:STATE_EAST_SLOVAKIA = {
+	#	region_state:AUS={
+	#		set_state_type = unincorporated
+	#	}
+	#}
+	#s:STATE_CENTRAL_HUNGARY = {
+	#	region_state:AUS={
+	#		set_state_type = unincorporated
+	#	}
+	#}
+	s:STATE_DELVIDEK = {
+		region_state:AUS={
+			set_state_type = unincorporated
+		}
+	}
+	s:STATE_BANAT = {
+		region_state:AUS={
+			set_state_type = unincorporated
+		}
+	}
+	#s:STATE_BEKES = {
+	#	region_state:AUS={
+	#		set_state_type = unincorporated
+	#	}
+	#}
+	#s:STATE_NORTHERN_TRANSYLVANIA = {
+	#	region_state:AUS={
+	#		set_state_type = unincorporated
+	#	}
+	#}
+	#s:STATE_SOUTHERN_TRANSYLVANIA = {
+	#	region_state:AUS={
+	#		set_state_type = unincorporated
+	#	}
+	#}
+
+	#Japan political situation
+
+	s:STATE_KYUSHU = {
+		set_variable = {
+			name = western_domain
+		}
+	}
+
+	s:STATE_KANSAI = {
+		set_variable = {
+			name = capital_domain
+		}
+	}
+
+	s:STATE_CHUGOKU = {
+		set_variable = {
+			name = western_domain
+		}
+	}
+
+	s:STATE_SHIKOKU = {
+		set_variable = {
+			name = western_domain
+		}
+	}
+
+	#Egyptian Middle East
+
+	s:STATE_CRETE = {
+		region_state:EGY={
+			set_state_type = unincorporated
+		}
+		add_claim = c:TUR
+	}
+	s:STATE_ADANA = {
+		region_state:EGY={
+			set_state_type = unincorporated
+		}
+	}
+
+	#Egyptian Sudan
+
+	s:STATE_DONGOLA = {
+		region_state:EGY={
+			set_state_type = unincorporated
+		}
+	}
+	s:STATE_ERITREA = {
+		region_state:EGY={
+			set_state_type = unincorporated
+		}
+	}
+	s:STATE_BLUE_NILE = {
+		region_state:EGY={
+			set_state_type = unincorporated
+		}
+	}
+	s:STATE_KORDOFAN = {
+		region_state:EGY={
+			set_state_type = unincorporated
+		}
+	}
+
+	#Northern Mexican States
+
+	s:STATE_TEXAS = {
+		region_state:MEX={
+			set_state_type = unincorporated
+		}
+	}
+	s:STATE_NEVADA = {
+		region_state:MEX={
+			set_state_type = unincorporated
+		}
+	}
+	s:STATE_CALIFORNIA = {
+		region_state:MEX={
+			set_state_type = unincorporated
+		}
+	}
+
+	#claims in North Africa
+
+	s:STATE_WEST_SAHARA = {
+		add_claim = c:SPA
+	}
+
+	s:STATE_MAURITANIA = {
+		add_claim = c:FRA
+	}
+
+
+}

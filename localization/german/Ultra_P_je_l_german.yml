@@ -1,0 +1,98 @@
+﻿l_german:
+
+# Politics related JE
+
+ je_imperialism:0 "Richtung Imperialismus"
+ je_imperialism_reason:0 "Unsere große Nation braucht mehr, als ihr Territorium bieten kann. Kolonien werden uns geben, was uns fehlt, während es eine ehrenvolle Aufgabe ist, fremden Kulturen die Zivilisation zu bringen."
+ 
+ je_cosmopolitan:0 "Beendigung der Diskriminierung"
+ je_cosmopolitan_reason:0 "Es ist unmenschlich, Menschen aufgrund ihrer Herkunft oder Nationalität zu diskriminieren. Echter Fortschritt geht in Richtung einer kosmopolitischen Gesellschaft."
+
+ je_full_democracy:0 "Von der Demokratie"
+ je_full_democracy_reason:0 "In einer echten Demokratie sollte jeder wählen dürfen und nicht nur eine Minderheit."
+
+ je_reaction_PB:0 "Reaktion auf den Sozialismus"
+ je_reaction_PB_reason:0 "Mit dem Aufkommen der sozialistischen Ideen fühlen sich immer mehr Menschen bedroht."
+
+ je_abolish_serfdom:0 "Abschaffung der Leibeigenschafft"
+ je_abolish_serfdom_reason:0 "Die Leibeigenschaft wurde kürzlich abgeschafft, aber es gibt immer noch einflussreiche Leute, die sie wieder einführen wollen. Es wird einige Zeit dauern, bis sie diese endgültig aufgeben."
+ je_abolish_serfdom_goal:0 "Nach fünf Jahren, in denen die Leibeigenschaft abgeschafft ist, werden die Befürworter der Leibeigenschaft zugeben, wie überholt sie war. Versuche, sie wieder einzuführen, oder Bürgerkriege werden die Entwicklung stoppen."
+ 
+ je_abolish_theocracy:0 "Das Ende der Theokratie" 
+ je_abolish_theocracy_reason:0 "Es wird einige Zeit dauern, bis die Kirche das Gefühl der klerikalen Macht vergessen hat." 
+ je_abolish_theocracy_goal:0 "Nach ununterbrochenen zehn Jahren wird die Kirche ihre Unterstützung für die theokratische Regierung aufgeben." 
+
+ 
+ je_theocracy_mode:0 "Aufstieg der Theokratie"
+ je_theocracy_mode_reason:0 "Da die Nation eine theokratische Regierung einführt, ist die Kirche glücklich, sie zu akzeptieren." 
+ 
+ je_vanguardist_securitarian:0 "Sichert die Revolution" 
+ je_vanguardist_securitarian_reason:0 "Wir müssen die Revolution vor konterrevolutionären Kräften schützen." 
+
+ je_AI_political_stability:0 "KI: Politische Stabilität"
+ je_AI_political_stability_reason:0 "Die KI ist nicht dynamisch genug, um mit den starken politischen Bewegungen der Ultra Politics Mod umzugehen und wird wahrscheinlich in Bürgerkriege verfallen, anstatt Gesetze zu erlassen. Daher braucht die KI andere Regeln, solange sie so schlecht ist."
+
+
+
+ #French Politics JE : Road to the third Republic
+
+ je_july_monarchy:0 "Instabile Juli-Monarchie"
+ je_july_monarchy_goal.1:0 "Politische Instabilität kann zu den unvorhersehbarsten Umständen führen."
+ je_july_monarchy_goal.2:0 "Eine starke $ig_variant_intelligentsia$ zwischen 1847 bis 1849 könnte zu neuen Entwicklungen führen..."
+ je_july_monarchy_reason:0 "Die Orléans-Monarchie, die als idealer Kompromiss zwischen Republik und Königtum gedacht war, findet keine breite Unterstützung in der Bevölkerung. Die Legitimisten auf der rechten Seite fordern die Wiedereinsetzung der Bourbonen auf den Thron. Die linksgerichteten Republikaner sind immer noch eine starke Kraft. Je mehr Zeit vergeht, desto starrer und dogmatischer wird Louis-Philippe, und seine Gefolgschaft verliert jegliche Popularität. Die Situation verschlechtert sich allmählich, was zu ungewollten Folgen führen kann."
+
+ je_first_presidential_election:0 "Vorbereitung auf die Präsidentschaftswahlen"
+ je_first_presidential_election_goal:0 "Es sind 10 Monate vergangen."
+ je_first_presidential_election_reason:0 "Es wird erwartet, dass die Präsidentschaftswahlen besonders hitzig werden, da sie vor dem Hintergrund einer tiefen politischen Krise stattfinden. Wir werden sehr viel Glück haben, wenn sie reibungslos verlaufen. Viele Menschen wollen einen Wandel, und diese Wahl ist die letzte Chance, das Land vor einem Blutvergießen zu bewahren."
+ 
+ je_future_of_the_republic:0 "Lösung einer politischen Krise"
+ je_future_of_the_republic_goal.1:0 "[SCOPE.sCharacter('louis_napoleon_leader').GetFirstName] ist Staatsoberhaupt und interest groups $ig_variant_petty_bourgeoisie$ oder $ig_variant_armed_forces$ oder $ig_variant_rural_folk$ sind mächtig und regieren zwischen dem zweiten und vierten Jahr nach den Präsidentschaftswahlen"
+ je_future_of_the_republic_goal.2:0 "[SCOPE.sCharacter('louis_napoleon_leader').GetFirstName] ist Staatsoberhaupt und interest groups $ig_variant_intelligentsia$ und $ig_variant_trade_unions$ werden unterdrückt"
+ je_future_of_the_republic_reason:0 "Nach den Präsidentschaftswahlen ist die revolutionäre Euphorie abgeflaut, und die radikalen Stimmungen haben sich verstärkt. Einige führende Politiker beginnen, von der Notwendigkeit zu sprechen, mit "harter Hand" für Ordnung zu sorgen."
+ 
+ je_creating_a_second_empire:0 "Vorbereitung für die Volksabstimmung"
+ je_creating_a_second_empire_goal:0 "Es sind zwölf Monate vorbeigegangen"
+ je_creating_a_second_empire_reason:0 "Jetzt, wo Louis-Napoleon die ganze Macht hat, muss er die Volksabstimmung vorbereiten, die die Gründung eines neuen Reiches legitimieren wird!"
+
+ je_fall_of_french_empire:0 "Der Fall des zweiten Kaiserreichs"
+ je_fall_of_french_empire_reason:0 "Der französische Kaiser ist von seinen Feinden in Paris gestürzt worden und es stellt sich nur noch die Frage, welche Form die französische Regierung nun annehmen wird."
+
+ #Hungarian Revolution
+
+ je_hungarian_revolution:0 "Ungarische Revolution"
+ je_hungarian_revolution_reason:0 "Die ungarischen Adligen stehen Schlange und bereiten sich auf die künftige Emanzipation vor, sollte es dazu kommen, wird die Revolution unvermeidlich sein."
+ je_hungarian_revolution_goal:0 "Revolution wird nach drei Monaten passieren"
+
+ je_hungarian_revolution_2:0 "Das Ende des ungarischen Aufstandes"
+ je_hungarian_revolution_2_reason:0 "Die Integrität des Imperiums ist bedroht. Wir müssen den ungarischen Aufstand niederschlagen, bevor das Imperium zusammenbricht!"
+
+ #German politics
+
+ schleswig_holstein_question:0 "Die Schleswig-Holsteinische Frage"
+ schleswig_holstein_question_reason:0 "Der deutsche Nationalismus führt zu Spannungen in den Herzogtümern Schleswig und Holstein. Ein Aufstand dort ist nur eine Frage der Zeit..."
+ is_not_in_diplo_play:0 "Dänemark befindet sich in keinem Diplomatischen Spiel."
+
+ schleswig_war:0 "Deutsch-Dänischer Krieg"
+
+ #Italian unification
+
+ je_italian_independence_war:0 "Italienischer Aufstand"
+ je_italian_independence_war_reason:0 "Die italienischen Adligen stehen bereit und bereiten sich auf eine künftige Emanzipation vor; sollte es dazu kommen, wird ein Aufstand unvermeidlich sein. Unabhängige italienische Fürstentümer könnten dies als Gelegenheit nutzen..."
+ je_italian_independence_war_goal:0 "Ein Aufstand wird in vier Monaten erfolgen"
+
+ je_italian_independence_war_2:0 "Unabhängigkeitskrieg"
+ je_italian_independence_war_2_reason:0 "Erlangung der Unabhängigkeit"
+
+ je_italy_plombieres:0 "Verbündet euch mit Frankreich"
+ je_italy_plombieres_reason:0 "Unsere mächtigen französischen Nachbarn können unschätzbare Verbündete sein, die uns gegen Österreich helfen."
+
+ je_italy_plebisciti:0 "Organisiert Volksabstimmungen"
+ je_italy_plebisciti_reason:0 "Die italienischen Patrioten der norditalienischen Staaten können Volksabstimmungen über den Beitritt zu einem vereinigten Italien organisieren. Die Befreiung der italienischen Gebiete unter österreichischer Herrschaft wird unserem Staat das nötige Prestige verleihen, um dies zu tun."
+ 
+ je_italy_i_mille:0 "Zug der Tausend"
+ je_italy_i_mille_reason:0 "Das Königreich der beiden Sizilien bleibt das einzige Hindernis für die italienische Einigung. Es muss beseitigt werden."
+
+ #Japanese Politics
+
+ je_meiji_restoration_dummy:0 "Kaiserliche Restauration"
+ je_meiji_restoration_dummy_reason:0 "Dummy-Journaleintrag für KI Japan"

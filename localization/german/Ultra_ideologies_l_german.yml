@@ -1,0 +1,91 @@
+﻿l_german:
+
+## Interest Group Ideologies 
+
+# Vanilla Renamed
+
+ ideology_republican:0 "Demokrat"
+ ideology_republican_desc:0 "#lore Diese Gruppe ist der Ansicht, dass die besten Politiker von der Öffentlichkeit gewählt werden und unterstützt eine demokratische Regierungsform.#!"
+ 
+ ideology_patriotic:0 "Sicherheitspolitiker"
+ ideology_patriotic_desc:0 "#lore Diese Gruppe ist ihrem Land treu ergeben und will hart gegen diejenigen vorgehen, die Dissens verbreiten wollen..#!"
+
+ ideology_reactionary:0 "Caesarist"
+ ideology_reactionary_desc:0 "#lore Auf der Suche nach einer starken Führung glaubt diese Gruppe an den plebiszitären Charakter der Wahlen, an die Verachtung des Parlaments und an den Verzicht auf autonome Kompetenzen innerhalb der Regierung.#!"
+ 
+ # Ultra's additions
+ 
+ ideology_moderate_democrat:0 "Moderater Demokrat"
+ ideology_moderate_democrat_desc:0 "#lore Diese Gruppe ist der Ansicht, dass die besten Führungskräfte durch öffentliche Wahlen bestimmt werden und unterstützt eine demokratische Regierungsform.#!""
+ 
+ ideology_nationalist:0 "Nationalist"
+ ideology_nationalist_desc:0 "#lore Diese Gruppe betrachtet das Konzept der Nation als die grundlegende Basis jedes organisierten Staates. Infolgedessen wird jedes Element, das als fremd angesehen wird, diskriminiert.#!"
+ 
+ ideology_segregationist:0 "Rassentrenner"
+ ideology_segregationist_desc:0 "#lore Diese Gruppe glaubt an das Konzept der Rassenungleichheit und diskriminiert daher Menschen auf dieser Grundlage.#!"
+ 
+ ideology_imperialist:0 "Imperialist"
+ ideology_imperialist_desc:0 "#lore Diese Gruppe glaubt an die Überlegenheit ihrer Zivilisation und möchte sie in jeden Winkel der Welt tragen.#!"
+ 
+ ideology_cosmopolitan:0 "Kosmopolit"
+ ideology_cosmopolitan_desc:0 "#lore Diese Gruppe glaubt an eine ideale Gesellschaft, in der alle Menschen zusammenleben können. In der Praxis sind noch einige Gemeinsamkeiten wie die Sprache erforderlich.#!"
+ 
+ ideology_prussian_military:0 "Preußisches Militär"
+ ideology_prussian_military_desc:0 "#lore Das preußische Militär ist der Ansicht, dass jeder Bürger ein potenzieller Soldat ist und für den Krieg geeignet ist.#!"
+
+ ideology_junker_stratocratic:0 "Junker-Stratokrat"
+ ideology_junker_stratocratic_desc:0 "#lore Diese Gruppe befürwortet die Aufrechterhaltung einer Hierarchie in der Gesellschaft durch traditionelle Formen der Besteuerung und Arbeitsbeziehungen, wobei sie nicht an die Leibeigenschaft glaubt.#!"
+
+ ideology_modern_stratocratic:0 "Moderner Stratokrat"
+ ideology_modern_stratocratic_desc:0 "#lore Diese Gruppe befürwortet die Aufrechterhaltung einer Hierarchie in der Gesellschaft durch traditionelle Formen der Besteuerung und Arbeitsbeziehungen.#!"
+
+ ideology_bonapartism:0 "Bonapartist"
+ ideology_bonapartism_desc:0 "#lore Auf der Suche nach einer starken Führung glaubt diese Gruppe an den plebiszitären Charakter der Wahlen, an die Verachtung des Parlaments und an den Verzicht auf autonome Kompetenzen innerhalb der Regierung.#!"
+
+ ideology_orleanist:0 "Orleanist"
+ ideology_orleanist_desc:0 "#lore Diese Gruppe unterstützt eine konstitutionelle Monarchie mit einem parlamentarischen System nach britischem Vorbild und befürwortet wirtschaftsliberale Werte.#!"
+
+ ideology_missionary_moralist:0 "Evangelist"
+ ideology_missionary_moralist_desc:0 "#lore Die aus Übersee stammenden Missionare setzen sich gegen die Verfolgung von Ausländern ein, möglicherweise nur zu ihrem eigenen Vorteil.#!"
+ 
+ ideology_moralist_theocratic:0 "Theokrat"
+ ideology_moralist_theocratic_desc:0 "#lore Diese Gruppe ist der Meinung, dass der Staat von religiösen Institutionen regiert werden sollte..#!"
+
+ ideology_japanese_imperialist:0 "Japanischer Monarchist"
+ ideology_japanese_imperialist_desc:0 "#lore Diese Gruppe glaubt, dass der Staat vom rechtmäßigen Kaiser von Japan regiert werden sollte, der von großen Männern des Hofes weise beraten wird.#!"
+
+ ideology_westernizer:0 "Verwestlicher"
+ ideology_westernizer_desc:0 "#lore Diese Gruppe ist der Meinung, dass sich der Staat modernisieren sollte, nach dem Vorbild der am weitesten entwickelten Länder der westlichen Zivilisation..#!"
+
+ ideology_evangelical_pious:0 "Evangelical"
+ ideology_evangelical_pious_desc:0 "#lore This group believes compulsory state education is needed so everyone can read the Bible for themselves.#!"
+
+ #Credit to Caesar15
+
+ ideology_revolutionary_republican:0 "Radikaler Republikaner"
+ ideology_revolutionary_republican_desc:0 "#lore Diese Gruppe ist der Ansicht, dass die besten Politiker von der gesamten Öffentlichkeit gewählt werden und nicht nur von einer wohlhabenden Elite. Sie sind auch leidenschaftlich gegen die Monarchie.#!"
+ 
+ ideology_american_republican:0 "Amerikanischer Republikaner"
+ ideology_american_republican_desc:0 "#lore Diese amerikanische Gruppe ist der Meinung, dass die besten Politiker von der gesamten Öffentlichkeit gewählt werden und nicht nur von einer wohlhabenden Elite. Sie sind auch leidenschaftlich gegen die Monarchie.#!"
+ 
+ ideology_prussian_anti_clerical:0 "Preußischer Anti-Klerikaler"
+ ideology_prussian_anti_clerical_desc:1 "#lore Diese Gruppe befürwortet die vollständige Trennung der organisierten Religion vom Politik- und Bildungssystem. Sie glauben, dass rationale Köpfe an der Spitze der Regierung stehen sollten.#!"
+ 
+ ideology_chartist_leader:0 "Chartist"
+ ideology_chartist_leader_desc:0 "#lore Dieser Politiker strebt die Einführung des allgemeinen Wahlrechts im Vereinigten Königreich an.#!"
+
+ #Party modifiers
+
+ from_nationalist:0 "Nationalismus"
+ from_bonapartist:0 "Bonapartismus"
+ from_industrialists_in_party:0 "Kapitalistisch ausgerichtete Partei"
+ from_trade_unions_in_party:0 "Sozialistisch ausgerichtete Partei"
+ from_orleanism:0 "Orleanismus"
+ from_capitalists_social_security:0 "Sozialversicherungsgesetz"
+ from_capitalists_worker_protections:0 "Arbeitnehmerschutzgesetz"
+ from_industrialists_ig:0 "Industrielle in der Partei"
+ from_rural_folk_ig:0 "Landvolk in der Partei"
+ from_devout_in_party:0 "Gläubige in der Partei"
+
+ 
+ 

@@ -1,0 +1,32 @@
+﻿BKV = {
+	color = { 234 240 68 }
+	
+	country_type = recognized
+
+	tier = principality
+	
+	cultures = { ukrainian romanian }
+	capital = STATE_MOLDAVIA
+}
+
+NGF = {
+	color = {41 37 37}
+	
+	country_type = recognized
+
+	tier = kingdom
+
+	cultures = { north_german south_german }
+	capital = STATE_BRANDENBURG
+}
+
+SGF = {
+	color = { 176 18 7}
+	
+	country_type = recognized
+
+	tier = kingdom
+
+	cultures = { south_german north_german }
+	capital = STATE_BAVARIA
+}

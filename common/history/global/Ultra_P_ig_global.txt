@@ -1,0 +1,313 @@
+﻿# This is executed last among all history
+
+GLOBAL = {
+
+	every_country = {
+		add_taxed_goods = g:services
+	}
+
+	every_country = {
+		ig:ig_petty_bourgeoisie = { 
+			remove_ideology = ideology_reactionary
+			remove_ideology = ideology_patriotic
+			add_ideology = ideology_moderate_democrat
+		}
+	}
+	
+	every_country = {
+		limit = {
+			NOR = {
+				has_law = law_type:law_serfdom
+			}
+		}
+		ig:ig_landowners = { 
+			remove_ideology = ideology_stratocratic
+			add_ideology = ideology_modern_stratocratic
+		}
+	}
+
+	c:MON = { #In the mod Montenegro starts with Serfdom
+		ig:ig_landowners = { 
+			remove_ideology = ideology_modern_stratocratic
+			add_ideology = ideology_stratocratic
+		}
+	}
+
+	c:TUR = { #In the mod Ottoman starts with Serfdom
+		ig:ig_landowners = { 
+			remove_ideology = ideology_modern_stratocratic
+			add_ideology = ideology_stratocratic
+		}
+	}
+
+	c:JAP = { #In the mod Japan starts without Serfdom
+		ig:ig_landowners = { 
+			remove_ideology = ideology_stratocratic
+			add_ideology = ideology_modern_stratocratic
+		}
+
+		ig:ig_industrialists = {
+			set_interest_group_name = ig_zaibatsu
+		}
+
+		ig:ig_intelligentsia = {
+			set_interest_group_name = ig_imperial_court
+			remove_ideology = ideology_anti_slavery
+			remove_ideology = ideology_moderate_democrat
+			remove_ideology = ideology_anti_clerical
+			remove_ideology = ideology_liberal
+			add_ideology = ideology_japanese_imperialist
+			add_ideology = ideology_westernizer
+		}
+	}
+
+	c:PRU = {
+		ig:ig_armed_forces = {
+			set_interest_group_name = ig_prussian_military
+			remove_ideology = ideology_jingoist
+			add_ideology = ideology_prussian_military
+		}
+		ig:ig_landowners = { 
+			remove_ideology = ideology_modern_stratocratic
+			add_ideology = ideology_junker_stratocratic
+		}
+		ig:ig_intelligentsia = {
+			set_ig_suppression = no
+			remove_ideology = ideology_anti_clerical
+			add_ideology = ideology_prussian_anti_clerical
+		}
+		ig:ig_devout = {
+			set_ig_bolstering = no
+		}
+	}
+
+	c:FRA = {
+		every_interest_group = {
+			limit = { is_in_government = yes }
+			remove_ruling_interest_group = yes
+		}
+		ig:ig_intelligentsia = {
+			set_ig_suppression = no
+			remove_ideology = ideology_moderate_democrat
+			add_ideology = ideology_revolutionary_republican
+		}
+		ig:ig_petty_bourgeoisie = {
+			remove_ideology = ideology_moderate_democrat
+			add_ideology = ideology_bonapartism
+			add_ideology = ideology_patriotic
+		}
+		ig:ig_armed_forces = {
+			add_ideology = ideology_bonapartism
+		}
+		ig:ig_rural_folk = {
+			add_ideology = ideology_bonapartism
+		}
+		ig:ig_industrialists = {
+			remove_ideology = ideology_plutocratic
+			add_ideology = ideology_orleanist
+			add_ruling_interest_group = yes
+		}
+
+		add_journal_entry = { 
+			type = je_july_monarchy
+		}
+	}
+
+	c:USA = {
+		ig:ig_intelligentsia = {
+			set_ig_suppression = no
+			remove_ideology = ideology_moderate_democrat
+			add_ideology = ideology_american_republican
+		}
+		ig:ig_landowners = {
+			add_ruling_interest_group = yes
+		}
+		ig:ig_devout = {
+			add_ruling_interest_group = yes
+		}
+		ig:ig_rural_folk = {
+			add_ruling_interest_group = yes
+		}
+	}
+
+	c:NET = {
+		ig:ig_landowners = {
+			add_ideology = ideology_pro_slavery
+		}
+	}
+	
+	c:PAP = {
+		ig:ig_devout = {
+		    remove_ideology = ideology_moralist
+			add_ideology = ideology_moralist_theocratic
+		}
+	}	
+	
+	c:MON = {
+		ig:ig_devout = {
+		    remove_ideology = ideology_moralist
+			add_ideology = ideology_moralist_theocratic
+		}
+	}	
+	
+	c:ZAI = {
+		ig:ig_devout = {
+		    remove_ideology = ideology_moralist
+			add_ideology = ideology_moralist_theocratic
+		}
+	}
+
+	c:CHC = {
+		ig:ig_devout = {
+		    remove_ideology = ideology_moralist
+			add_ideology = ideology_moralist_theocratic
+		}
+	}	
+	
+	every_country = {
+		limit = {
+			OR = {
+				country_has_primary_culture = cu:yankee
+				country_has_primary_culture = cu:dixie
+				country_has_primary_culture = cu:anglo_canadian
+				country_has_primary_culture = cu:mexican
+				country_has_primary_culture = cu:central_american
+				country_has_primary_culture = cu:north_andean
+				country_has_primary_culture = cu:south_andean
+				country_has_primary_culture = cu:brazilian
+				country_has_primary_culture = cu:platinean
+				country_has_primary_culture = cu:cariban
+			}
+		}
+		ig:ig_intelligentsia = {
+			remove_ideology = ideology_nationalist
+			add_ideology = ideology_segregationist
+		}
+	}
+	
+	every_country = {
+		limit = {
+			OR = {
+				country_has_primary_culture = cu:afro_american
+				country_has_primary_culture = cu:afro_caribbean
+				country_has_primary_culture = cu:afro_caribeno
+				country_has_primary_culture = cu:afro_brazilian
+				country_has_primary_culture = cu:afro_antillean
+			}
+		}
+		ig:ig_intelligentsia = {
+			remove_ideology = ideology_nationalist
+			add_ideology = ideology_cosmopolitan
+		}
+	}
+	
+	c:HAW = {
+		ig:ig_intelligentsia = {
+			remove_ideology = ideology_nationalist
+			remove_ideology = ideology_segregationist
+			add_ideology = ideology_cosmopolitan
+		}
+		ig:ig_devout = { 
+		    remove_ideology = ideology_moralist
+		    add_ideology = ideology_missionary_moralist
+		}
+		add_primary_culture = cu:yankee
+	}
+    
+    every_country = {
+		limit = {
+			OR = {
+				country_has_primary_culture = cu:yankee
+				country_has_primary_culture = cu:dixie
+				country_has_primary_culture = cu:north_german
+				country_has_primary_culture = cu:swiss
+				country_has_primary_culture = cu:swedish
+				country_has_primary_culture = cu:norwegian
+				country_has_primary_culture = cu:danish
+				country_has_primary_culture = cu:finnish
+			}
+		}
+		ig:ig_devout = {
+			remove_ideology = ideology_pious
+			add_ideology = ideology_evangelical_pious
+		}
+	}
+    
+    c:NET = {
+		ig:ig_devout = {
+			remove_ideology = ideology_pious
+			add_ideology = ideology_evangelical_pious
+		}
+	}
+    c:ORA = {
+		ig:ig_devout = {
+			remove_ideology = ideology_pious
+			add_ideology = ideology_evangelical_pious
+		}
+	}
+    c:TRN = {
+		ig:ig_devout = {
+			remove_ideology = ideology_pious
+			add_ideology = ideology_evangelical_pious
+		}
+	}
+    c:USA = {
+		ig:ig_devout = {
+			remove_ideology = ideology_pious
+			add_ideology = ideology_evangelical_pious
+		}
+	}
+    c:TEX = {
+		ig:ig_devout = {
+			remove_ideology = ideology_pious
+			add_ideology = ideology_evangelical_pious
+		}
+	}
+    c:WUR = {
+		ig:ig_devout = {
+			remove_ideology = ideology_pious
+			add_ideology = ideology_evangelical_pious
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

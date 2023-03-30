@@ -1,0 +1,6 @@
+colors = {	
+	monarchy_blue 	= 	rgb { 0.19 0.55 0.91 }
+	napoleonic_blue 	= 	rgb { 0.18 0.39 0.67 }
+
+	austria_hungary_brown = hsv360 { 14 60 46 }	
+} 

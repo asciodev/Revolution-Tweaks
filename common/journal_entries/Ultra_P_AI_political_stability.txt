@@ -1,0 +1,24 @@
+﻿# triggered by on_law_enactment_started
+je_AI_political_stability = {
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	is_shown_when_inactive = {
+
+	}
+
+	possible = {
+		has_modifier = AI_political_stability
+	}
+
+	complete = {
+		is_player = yes
+		has_modifier = AI_political_stability
+	}
+
+	on_complete = {
+		remove_modifier = AI_political_stability
+	}
+
+
+	weight = 100
+}

@@ -1,0 +1,17 @@
+﻿l_french:
+
+  ## Distribution of power laws
+
+  law_weighted_universal_suffrage:0 "Suffrage Universel Pondéré"
+  law_weighted_universal_suffrage_desc:0 "On donne un vote à chque homme adulte. Ceux possédant du capital foncier ou financier s'en voient accorder d'avantage."
+
+  law_weighted_wealth_voting:0 "Vote des riche Pondéré"
+  law_weighted_wealth_voting_desc:0 "Les riches peuvent voter. Ceux possédant d'avantage de capital foncier ou financier s'en voient accorder d'avantage."
+
+  ## goverment types ##
+
+  gov_absolute_monarchy:0 "Monarchie Absolue"
+  gov_absolute_monarchy_desc:1 "C'est un [concept_government] ou le pouvoir réside entièrement en la personne du [Concept('concept_ruler','$RULER_TITLE_KING$')] ou de la [Concept('concept_ruler','$RULER_TITLE_QUEEN$')]."
+  gov_monarchy:0 "Monarchy"
+  gov_monarchy_desc:1 "C'est un [concept_government] ou le pouvoir réside principalement en la personne du [Concept('concept_ruler','$RULER_TITLE_KING$')] ou de la [Concept('concept_ruler','$RULER_TITLE_QUEEN$')]."
+ 

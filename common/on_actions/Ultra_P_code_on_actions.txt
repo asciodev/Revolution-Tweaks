@@ -1,0 +1,239 @@
+﻿
+# Root = Character
+on_character_death = {
+	effect = {
+		if = {
+			limit = {
+				is_ruler = yes
+				exists = c:HAW
+				owner = c:HAW
+				owner = {
+					has_law = law_type:law_monarchy
+					NOT = { has_variable = death_of_kamehameha }
+					NOT = { has_global_variable = gp_hawaii_interest }
+				}
+			}
+			owner = {
+				trigger_event = hawaii_events.1
+			}
+		}
+		
+		if = {
+			limit = {
+				has_variable = expedition_leader_var
+			}
+			owner = {
+				trigger_event = expedition_events.110
+			}
+		}
+
+		if = {
+			limit = {
+				is_ruler = yes
+				exists = c:FRA
+				owner = c:FRA
+				has_variable = is_bonapartist
+				owner = { 
+					has_law = law_type:law_monarchy 
+					NOT = { any_scope_character = { is_heir = yes } }
+				}
+			}
+			owner = { create_random_bonapartist_ruler = yes }
+		}
+		if = {
+			limit = {
+				is_ruler = yes
+				exists = c:FRA
+				owner = c:FRA
+				has_variable = is_orleanist
+				owner = { 
+					has_law = law_type:law_monarchy 
+					NOT = { any_scope_character = { is_heir = yes } }
+				}
+			}
+			owner = { create_random_orleanist_ruler = yes }
+		}
+		if = {
+			limit = {
+				is_ruler = yes
+				exists = c:FRA
+				owner = c:FRA
+				has_variable = is_legitimist
+				owner = { 
+					has_law = law_type:law_monarchy 
+					NOT = { any_scope_character = { is_heir = yes } }
+				}
+			}
+			owner = { create_random_legitimist_ruler = yes }
+		}
+	}
+}
+
+# Root = owner Country of the Law
+# executed when enactment of any law begins
+on_law_enactment_started = {
+	effect = {
+		if = {
+			limit = {
+				has_law = law_type:law_monarchy
+				OR = {
+					is_enacting_law = law_type:law_presidential_republic
+					is_enacting_law = law_type:law_parliamentary_republic
+					is_enacting_law = law_type:law_council_republic
+				}
+			}
+			set_variable = {
+				name = abolishing_monarchy_var
+				value = 0
+			}
+			add_journal_entry = { type =  je_abolish_monarchy }
+		}
+		if = {
+			limit = {
+				has_law = law_type:law_serfdom
+				OR = {
+					is_enacting_law = law_type:law_serfdom_banned
+					is_enacting_law = law_type:law_regulatory_bodies
+					is_enacting_law = law_type:law_worker_protections
+				}
+			}
+			set_variable = {
+				name = abolishing_serfdom_var
+				value = 0
+			}
+			add_journal_entry = { type =  je_abolish_serfdom }
+		}
+		if = {
+			limit = {
+				has_law = law_type:law_theocracy
+				OR = {
+					is_enacting_law = law_type:law_presidential_republic
+					is_enacting_law = law_type:law_parliamentary_republic
+					is_enacting_law = law_type:law_council_republic
+				}
+			}
+			set_variable = {
+				name = abolishing_theocracy_var
+				value = 0
+			}
+			add_journal_entry = { type =  je_abolish_theocracy }
+		}
+	}
+}
+
+# Root = owner Country of the Law
+# executed when enactment stops for any reason. Could be because the law has
+# been enacted, or because the enactment has been stopped by the player.
+#
+# NOTE: at the point in time when this on-action is triggered, the law
+# is still considered being enacted, therefore the `currently_enacting_law` link
+# will work as expected, even though the enactment is _just_ about to end
+on_law_enactment_ended = {
+	effect = {
+		if = {
+			limit = {
+				exists = c:FRA
+		        c:FRA = ROOT
+				is_enacting_law = law_type:law_monarchy
+				ig:ig_industrialists = { 
+					is_in_government = yes
+					is_powerful = yes
+					has_ideology = ideology_orleanist
+				}
+				ruler = {
+					NOR = { 
+						has_variable = is_louis_napoleon 
+						has_variable = is_bonapartist 
+						has_variable = is_legitimist 
+					}
+				}
+			}
+		}
+		trigger_event = { id = french_politics.14 days = 0 }
+		if = {
+			limit = {
+				exists = c:FRA
+		        c:FRA = ROOT
+				is_enacting_law = law_type:law_monarchy
+				OR = {
+					ig:ig_petty_bourgeoisie = { 
+						is_in_government = yes
+						is_powerful = yes
+						has_ideology = ideology_bonapartism
+					}
+					ig:ig_armed_forces = { 
+						is_in_government = yes
+						is_powerful = yes 
+						has_ideology = ideology_bonapartism
+					}
+				}
+				ruler = {
+					NOR = { 
+						has_variable = is_legitimist 
+						has_variable = is_orleanist 
+					}
+				}
+			}
+		}
+		trigger_event = { id = french_politics.13 days = 0 }
+		if = {
+			limit = {
+				exists = c:FRA
+		        c:FRA = ROOT
+				is_enacting_law = law_type:law_monarchy
+				ig:ig_landowners = { 
+					is_in_government = yes
+					is_powerful = yes 
+					has_ideology = ideology_paternalistic
+				}
+				ruler = {
+					NOR = { 
+						has_variable = is_louis_napoleon 
+						has_variable = is_bonapartist 
+						has_variable = is_orleanist 
+					}
+				}	
+			}
+		}
+		trigger_event = { id = french_politics.12 days = 0 }
+	}
+}
+
+on_heir_born = {
+	effect = {
+		if = {
+			limit = {
+				exists = c:FRA
+				owner = c:FRA
+				owner = { 
+					ruler = { has_variable = is_bonapartist }
+					has_law = law_type:law_monarchy 
+				}
+			}
+			owner = { create_random_bonapartist_heir = yes }
+		}
+		if = {
+			limit = {
+				exists = c:FRA
+				owner = c:FRA
+				owner = { 
+					ruler = { has_variable = is_orleanist }
+					has_law = law_type:law_monarchy 
+				}
+			}
+			owner = { create_random_orleanist_heir = yes }
+		}
+		if = {
+			limit = {
+				exists = c:FRA
+				owner = c:FRA
+				owner = { 
+					ruler = { has_variable = is_legitimist }
+					has_law = law_type:law_monarchy 
+				}
+			}
+			owner = { create_random_legitimist_heir = yes }
+		}
+		post_notification = heir_born_notification
+	}
+}

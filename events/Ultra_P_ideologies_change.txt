@@ -1,0 +1,316 @@
+﻿namespace = ideologies_change
+
+ideologies_change.1 = { #Nationalist => Imperialist
+	type = country_event
+	placement = root
+	title = ideologies_change.1.t
+	desc = ideologies_change.1.d
+	flavor = ideologies_change.1.f
+
+	duration = 3
+
+	event_image = {
+		video = "gfx/event_pictures/africa_construction_colony.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/africa/construction_colony"
+
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	trigger = {
+		# triggered by je_imperialism
+	}
+
+	option = {
+		name = ideologies_change.1.a
+		default_option = yes
+		ig:ig_intelligentsia = {
+			remove_ideology = ideology_nationalist
+			add_ideology = ideology_imperialist
+		}
+		ig:ig_industrialists = {
+			add_ideology = ideology_imperialist
+		}
+		if = {
+			limit = {
+				AND = {
+					is_player = no
+					NOT = {
+						has_law = law_type:law_colonial_exploitation
+					}
+				}
+			}
+			activate_law = law_type:law_colonial_exploitation
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = ideologies_change.1.b
+		# Only industrialists becomes imperialists
+		ig:ig_industrialists = {
+			add_ideology = ideology_imperialist
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+ideologies_change.2 = { # => cosmopolitan
+	type = country_event
+	placement = root
+	title = ideologies_change.2.t
+	desc = ideologies_change.2.d
+	flavor = ideologies_change.2.f
+
+	duration = 3
+
+	event_image = {
+		video = "gfx/event_pictures/unspecific_world_fair.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/world_fair"
+
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	trigger = {
+		#from je_cosmopolitan
+	}
+
+	option = {
+		name = ideologies_change.2.a
+		default_option = yes
+		ig:ig_intelligentsia = {
+			remove_ideology = ideology_nationalist
+			remove_ideology = ideology_imperialist
+			remove_ideology = ideology_segregationist
+			add_ideology = ideology_cosmopolitan
+		}
+	}
+}
+
+ideologies_change.3 = { # => democrat
+	type = country_event
+	placement = root
+	title = ideologies_change.3.t
+	desc = ideologies_change.3.d
+	flavor = ideologies_change.3.f
+
+	duration = 3
+
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	trigger = {
+		#from je_full_democracy
+	}
+
+	option = {
+		name = ideologies_change.3.a
+		default_option = yes
+		ig:ig_intelligentsia = {
+			remove_ideology = ideology_moderate_democrat
+			add_ideology = ideology_republican
+		}
+	}
+}
+
+ideologies_change.4 = { # => reactionary
+	type = country_event
+	placement = root
+	title = ideologies_change.4.t
+	desc = ideologies_change.4.d
+	flavor = ideologies_change.4.f
+
+	duration = 3
+
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_political_extremism.bk2"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/political_extremism"
+
+	trigger = {
+		#from je_reaction_PB
+	}
+
+	option = {
+		name = ideologies_change.4.a
+		default_option = yes
+		ig:ig_petty_bourgeoisie = {
+			remove_ideology = ideology_moderate_democrat
+			add_ideology = ideology_reactionary
+			add_ideology = ideology_patriotic
+			if = {
+				limit = {
+					leader = {
+						OR = {
+							has_ideology = ideology_radical
+							has_ideology = ideology_reformer
+						}
+					}
+				}
+				leader = {
+					set_ideology = ideology_moderate
+				}
+			}
+		}
+	}
+}
+
+# Serfdom Stamped Out
+ideologies_change.5 = {
+	type = country_event
+	placement = root
+	title = ideologies_change.5.t
+	desc = ideologies_change.5.d
+	flavor = ideologies_change.5.f
+
+	duration = 3
+
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_london_center.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/london_center"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	trigger = {
+		# triggered by je_abolish_serfdom
+	}
+
+	option = {
+		name = ideologies_change.5.a
+		default_option = yes
+		ig:ig_landowners = {
+			remove_ideology = ideology_stratocratic
+			add_ideology = ideology_modern_stratocratic
+		}
+	}
+}
+
+#Theocracy = owned
+ideologies_change.6 = {
+	type = country_event
+	placement = root
+	title = ideologies_change.6.t
+	desc = ideologies_change.6.d
+	flavor = ideologies_change.6.f
+
+	duration = 3
+
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_london_center.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/london_center"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	trigger = {
+		# triggered by je_abolish_theocracy
+	}
+
+	option = {
+		name = ideologies_change.6.a
+		default_option = yes
+		ig:ig_devout = {
+			remove_ideology = ideology_moralist_theocratic
+			add_ideology = ideology_moralist
+		}
+		custom_tooltip = {
+			text = no_more_royalists
+			set_variable = monarchy_stamped_out_var
+		}
+		every_interest_group = {
+			limit = {
+				leader = {
+					has_ideology = ideology_theocrat	
+				}
+			}
+			leader = {
+				set_ideology = ideology_moderate
+			}
+		}
+	}
+}
+
+ideologies_change.7 = { #Devout like theocracy now
+	type = country_event
+	placement = root
+	title = ideologies_change.7.t
+	desc = ideologies_change.7.d
+	flavor = ideologies_change.7.f
+
+	duration = 3
+
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_london_center.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/london_center"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	trigger = {
+		# triggered by je_theocracy_mode
+	}
+
+	option = {
+		name = ideologies_change.7.a
+		default_option = yes
+		ig:ig_devout = {
+			remove_ideology = ideology_moralist
+			add_ideology = ideology_moralist_theocratic
+		}
+	}
+}
+
+ideologies_change.8 = { #TU become Securitarian
+	type = country_event
+	placement = root
+	title = ideologies_change.8.t
+	desc = ideologies_change.8.d
+	flavor = ideologies_change.8.f
+
+	duration = 3
+
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_london_center.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/london_center"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	trigger = {
+		# triggered by je_vanguardist_securitarian
+	}
+
+	option = {
+		name = ideologies_change.8.a
+		default_option = yes
+		ig:ig_trade_unions = {
+			add_ideology = ideology_patriotic
+		}
+	}
+}

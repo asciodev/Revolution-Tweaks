@@ -1,0 +1,492 @@
+﻿ig_industrialists = {
+	color = hsv{ 0.06 0.60 0.89 }
+	texture = "gfx/interface/icons/ig_icons/industrialists.dds"
+	
+	ideologies = {
+		ideology_plutocratic
+		ideology_laissez_faire
+		ideology_individualist
+	}
+	
+	enable = {
+		always = yes
+	}
+	
+	traits = {
+		ig_trait_job_creators
+		ig_trait_engines_of_progress
+		ig_trait_tax_avoidance
+	}	
+	
+	on_enable = {}
+	on_disable = {}
+	on_character_ig_membership = {}
+	
+	pop_potential = {
+		OR = {
+			is_pop_type = capitalists
+			is_pop_type = engineers
+			is_pop_type = shopkeepers
+			is_pop_type = aristocrats
+		}
+	}
+	
+	pop_weight = {
+		value = 0
+
+		add = {
+			desc = "WEALTH"
+			if = {
+				limit = { 
+					wealth > 25
+					NOT = { is_pop_type = aristocrats }
+					NOT = { is_pop_type = farmers }
+				}
+
+				value = wealth
+				subtract = 20
+				multiply = 4
+				max = 250
+
+			}
+			
+		}
+	
+		add = {
+			desc = "POP_CAPITALISTS"
+			if = {
+				limit = { 
+					is_pop_type = capitalists
+				}
+				value = 200
+			}
+		}	
+	
+		add = {
+			desc = "POP_ENGINEERS"
+			if = {
+				limit = { 
+					is_pop_type = engineers
+				}
+				value = 50
+			}
+		}
+
+		add = { #Some workers supports the capitalists
+			desc = "POP_MACHINISTS"
+			if = {
+				limit = { 
+					is_pop_type = machinists
+				}
+				value = 10
+			}
+		}	
+
+		add = { #Some workers supports the capitalists
+			desc = "POP_LABORERS"
+			if = {
+				limit = { 
+					is_pop_type = laborers
+				}
+				value = 5
+			}
+		}
+		
+		multiply = { #Pops are less attracted to radical ideologies if they're not poor
+			desc = "RADICAL_LEADER"
+			value = 1.0
+			if = {
+				limit = {
+					owner = {					
+						ig:ig_industrialists = {
+							leader = {
+								has_ideology = ideology_fascist
+							}
+						}
+						NAND = {
+							has_law = law_type:law_autocracy
+							ig:ig_industrialists = {
+								is_in_government = yes
+							}
+						}							
+					}
+					NOT = {
+						standard_of_living <= 20
+					}
+				}
+				value = 0.75
+			}
+		}
+
+		add = {
+			desc = "POP_SHOPKEEPERS"
+			if = {
+				limit = { 
+					is_pop_type = shopkeepers
+				}
+				value = 50
+			}
+		}
+
+		add = {
+			desc = "POP_ARISTOCRATS"
+			if = {
+				limit = { 
+					is_pop_type = aristocrats
+				}
+				value = 25
+			}
+		}
+
+		add = {
+			desc = "NON_SLAVE_STATE"
+			if = {
+				limit = {
+					is_pop_type = aristocrats
+					owner = {
+						THIS = c:USA
+						ig:ig_landowners = {
+							has_ideology = ideology_pro_slavery
+						}
+					}
+					state = { 
+						is_slave_state = no
+					}
+				}
+				value = 100
+			}
+		}
+
+		add = {
+			desc = "ORLEANISTS"
+			if = {
+				limit = {
+					is_pop_type = aristocrats
+					owner = {
+						ig:ig_industrialists = {
+							has_ideology = ideology_orleanist
+						}
+					}
+				}
+				value = 150
+			}
+		}
+
+		add = {
+			desc = "SOL_25_30"
+			if = {
+				limit = {
+					standard_of_living >= 25
+					standard_of_living < 30
+				}
+				value = 10
+			}
+		}
+
+		add = {
+			desc = "SOL_30_35"
+			if = {
+				limit = {
+					standard_of_living >= 30
+					standard_of_living < 35
+				}
+				value = 20
+			}
+		}	
+
+		add = {
+			desc = "SOL_35_40"
+			if = {
+				limit = {
+					standard_of_living >= 35
+					standard_of_living < 40
+				}
+				value = 30
+			}
+		}
+
+		add = {
+			desc = "SOL_40_45"
+			if = {
+				limit = {
+					standard_of_living >= 40
+					standard_of_living < 45
+				}
+				value = 40
+			}
+		}
+
+		add = {
+			desc = "SOL_45_50"
+			if = {
+				limit = {
+					standard_of_living >= 45
+					standard_of_living < 50
+				}
+				value = 50
+			}
+		}
+
+		add = {
+			desc = "SOL_50_100"
+			if = {
+				limit = {
+					standard_of_living >= 50
+				}
+				value = 75
+			}
+		}
+
+		multiply = {
+			desc = "law_graduated_taxation"
+			value = 1.0
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_graduated_taxation
+					}
+				}
+				value = 1.1
+			}
+		}
+
+		multiply = {
+			desc = "law_traditionalism"
+			value = 1.0
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_traditionalism
+					}
+				}
+				value = 1.25
+			}
+		}
+
+		multiply = {
+			desc = "law_command_economy"
+			value = 1.0
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_command_economy
+					}
+				}
+				value = 1.25
+			}
+		}
+
+		multiply = {
+			desc = "law_isolationism"
+			value = 1.0
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_isolationism
+					}
+				}
+				value = 1.25
+			}
+		}
+
+		multiply = {
+			value = 1.0
+			desc = "IG_EMPLOYED_MIC"
+
+			if = {
+				limit = {
+					OR = {
+						pop_employment_building = building_war_machine_industry
+						pop_employment_building = building_arms_industry
+						pop_employment_building = building_munition_plants
+						AND = {
+							pop_employment_building = building_shipyards
+							workplace = {
+								OR = {
+									has_active_production_method = pm_military_shipbuilding_wooden
+									has_active_production_method = pm_military_shipbuilding_wooden_2
+									has_active_production_method = pm_military_shipbuilding_steam
+									has_active_production_method = pm_military_shipbuilding_steam_2
+								}
+							}
+						}
+					}
+				}
+				value = 0.5
+			}
+		}	
+
+		multiply = {
+			desc = "IG_COUNCIL_REPUBLIC"
+			value = 1.0
+
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_council_republic
+					}
+					NOT = {
+						is_pop_type = capitalists
+					}
+				}
+				value = 0
+			}
+		}
+
+		multiply = {
+			desc = "YANKEE"
+			value = 1.0
+
+			if = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+					culture = cu:yankee
+				}
+				value = 2
+			}
+		}
+
+		multiply = {
+			desc = "WOMENVOTE"
+			value = 1.0
+
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_womens_suffrage
+					}
+				}
+				value = 0.9
+			}
+		}
+		
+		multiply = {
+			desc = "LEADER_POPULARITY"
+			scope:interest_group = {
+				leader = {
+					value = popularity
+					multiply = 0.0025
+					add = 1
+					max = 1.25
+					min = 0.75
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				scope:interest_group = {
+					is_in_government = yes
+				}
+			}
+			multiply = {
+				desc = "IN_GOVERNMENT_ATTRACTION"
+				value = 1
+				add = scope:interest_group.modifier:interest_group_in_government_attraction_mult
+				min = 0
+			}
+		}
+
+		multiply = {
+			desc = "decentralized_power"	
+			value = 1.0
+			
+			if = {
+				limit = { 
+					owner = {
+						is_country_type = decentralized
+					}
+				}
+				value = 0.0
+			}		
+		}
+
+		multiply = {
+			desc = "IG_IS_MARGINALIZED"
+			value = 1.0
+			
+			scope:interest_group = {
+				if = {
+					limit = {
+						is_marginal = yes
+					}
+					value = 0.5
+				}
+			}
+		}
+	}
+	
+	monarch_weight = {
+		value = 0.5
+	}	
+	
+	commander_weight = {
+		value = 0.5
+	}	
+	
+	noble_chance = {
+		value = 0.3
+	}
+	
+	female_commander_chance = {	
+		value = 0.0
+	}
+	
+	female_politician_chance = {
+		value = 0.0
+
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_women_own_property
+				}
+				
+			}
+			add = {
+				value = 0.025
+			}
+		}
+
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_women_in_the_workplace
+				}
+				
+			}
+			add = {
+				value = 0.025
+			}
+		}
+
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_womens_suffrage
+				}
+				
+			}
+			add = {
+				value = 0.1
+			}
+		}
+	}
+	
+	# The chance that a commander belonging to this IG takes over leadership when it changes
+	# scope:character is the most popular commander in the IG
+	commander_leader_chance = {
+		value = 0.25
+		if = {
+			limit = {
+				exists = scope:character
+			}
+			multiply = {
+				value = 1
+				add = scope:character.popularity
+				min = 0
+			}
+		}
+	}
+}

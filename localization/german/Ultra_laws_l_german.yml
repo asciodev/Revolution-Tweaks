@@ -1,0 +1,17 @@
+﻿l_german:
+
+  ## Distribution of power laws
+
+  law_weighted_universal_suffrage:0 "Klassenwahlrecht"
+  law_weighted_universal_suffrage_desc:0 "Jeder erwachsene Mann erhält eine Stimme. Männer, die Land oder Kapitalbesitz besitzen, erhalten mehr Stimmen."
+
+  law_weighted_wealth_voting:0 "Zensuswahlrecht"
+  law_weighted_wealth_voting_desc:0 "Wohlhabende Bürger erhalten eine Stimme. Männer, die Land oder Kapitalbesitz besitzen, erhalten mehr Stimmen."
+
+  ## goverment types ##
+
+  gov_absolute_monarchy:0 "Absolute Monarchie"
+  gov_absolute_monarchy_desc:1 "Dies ist eine [concept_government]-Form, bei der die Macht vollständig bei dem [Concept('concept_ruler','$RULER_TITLE_KING$')] oder [Concept('concept_ruler','$RULER_TITLE_QUEEN$')] liegt."
+  gov_monarchy:0 "Monarchie"
+  gov_monarchy_desc:1 "Dies ist eine [concept_government]-Form, bei der die Macht hauptsächlich bei dem [Concept('concept_ruler','$RULER_TITLE_KING$')] oder [Concept('concept_ruler','$RULER_TITLE_QUEEN$')] liegt."
+ 

@@ -1,0 +1,42 @@
+﻿napoleonic_france = {
+	color = "napoleonic_blue"
+	possible = {
+		exists = c:FRA
+		THIS = c:FRA
+		OR = { 
+			AND = {
+				has_law = law_type:law_monarchy
+				OR = {
+					ruler = { has_variable = is_bonapartist }
+					has_variable = french_empire_created
+				}
+			}
+			has_law = law_type:law_parliamentary_republic
+			has_law = law_type:law_presidential_republic
+		}
+	}
+}
+
+monarchy_france = {
+	color = "monarchy_blue"
+
+	possible = {
+		exists = c:FRA
+		THIS = c:FRA
+		has_law = law_type:law_monarchy
+		NOR = {
+			ruler = { has_variable = is_bonapartist }
+			ruler = { has_variable = is_orleanist }
+		}
+	}
+}
+
+austria_hungary = {
+	color = "austria_hungary_brown"
+
+	possible = {
+		exists = c:AUS
+		THIS = c:AUS
+		country_has_primary_culture = cu:hungarian
+	}
+}

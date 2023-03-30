@@ -1,0 +1,128 @@
+﻿gov_constitutional_monarchy = {
+	transfer_of_power = hereditary
+
+	male_ruler = "RULER_TITLE_KING"
+	female_ruler = "RULER_TITLE_QUEEN"
+	
+	male_heir = "RULER_TITLE_PRINCE"
+	female_heir = "RULER_TITLE_PRINCESS"
+	
+	possible = {
+		has_law = law_type:law_monarchy
+		OR = {
+			has_law = law_type:law_weighted_wealth_voting 
+			has_law = law_type:law_wealth_voting 
+			has_law = law_type:law_census_voting
+			has_law = law_type:law_weighted_universal_suffrage
+			has_law = law_type:law_universal_suffrage 
+		}
+		AND = { 
+			exists = c:FRA 
+			c:FRA = ROOT
+		}
+		NOT = { owner = { ruler = { has_variable = is_bonapartist } } }
+	}
+}
+
+gov_absolute_monarchy = {
+
+	transfer_of_power = hereditary
+
+	male_ruler = "RULER_TITLE_KING"
+	female_ruler = "RULER_TITLE_QUEEN"
+	
+	male_heir = "RULER_TITLE_PRINCE"
+	female_heir = "RULER_TITLE_PRINCESS"
+	
+	possible = {
+		has_law = law_type:law_monarchy
+		has_law = law_type:law_autocracy 
+		AND = { 
+			exists = c:FRA 
+			c:FRA = ROOT
+		}
+		NOT = { owner = { ruler = { has_variable = is_bonapartist } } }
+	}
+}
+
+gov_monarchy = {
+
+	transfer_of_power = hereditary
+
+	male_ruler = "RULER_TITLE_KING"
+	female_ruler = "RULER_TITLE_QUEEN"
+	
+	male_heir = "RULER_TITLE_PRINCE"
+	female_heir = "RULER_TITLE_PRINCESS"
+	
+	possible = {
+		has_law = law_type:law_monarchy
+		OR = { 
+			has_law = law_type:law_oligarchy 
+			has_law = law_type:law_elder_council 
+			has_law = law_type:law_landed_voting 
+		}
+		AND = { 
+			exists = c:FRA 
+			c:FRA = ROOT
+		}
+		NOT = { owner = { ruler = { has_variable = is_bonapartist } } }
+	}
+}
+
+gov_empire = {
+
+	transfer_of_power = hereditary
+
+	male_ruler = "RULER_TITLE_EMPEROR"
+	female_ruler = "RULER_TITLE_EMPRESS"
+	
+	male_heir = "RULER_TITLE_PRINCE"
+	female_heir = "RULER_TITLE_PRINCESS"
+	
+	possible = {
+		has_law = law_type:law_monarchy
+		OR = { 
+			has_law = law_type:law_oligarchy 
+			has_law = law_type:law_elder_council 
+			has_law = law_type:law_landed_voting 
+		}
+		OR = {
+			country_tier = hegemony
+			country_tier = empire
+		}
+		OR = {
+			NOT = {this = c:FRA}
+			owner = { ruler = { has_variable = is_bonapartist } }
+		}
+	}
+}
+
+gov_constitutional_empire = {
+	transfer_of_power = hereditary
+
+	male_ruler = "RULER_TITLE_EMPEROR"
+	female_ruler = "RULER_TITLE_EMPRESS"
+	
+	male_heir = "RULER_TITLE_PRINCE"
+	female_heir = "RULER_TITLE_PRINCESS"
+	
+	possible = {
+		has_law = law_type:law_monarchy
+		OR = {
+			has_law = law_type:law_weighted_wealth_voting
+			has_law = law_type:law_wealth_voting 
+			has_law = law_type:law_census_voting
+			has_law = law_type:law_weighted_universal_suffrage 
+			has_law = law_type:law_universal_suffrage 
+		}
+		OR = {
+			country_tier = hegemony
+			country_tier = empire
+		}
+		OR = {
+			NOT = {this = c:FRA}
+			owner = { ruler = { has_variable = is_bonapartist } }
+		}
+	}
+}

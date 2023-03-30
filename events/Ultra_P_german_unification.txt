@@ -1,0 +1,406 @@
+﻿namespace = german_unification
+
+# Annex a German country
+german_unification.2 = {
+	type = country_event
+	placement = ROOT
+
+	title = german_unification.2.t
+	desc = german_unification.2.d
+	flavor = german_unification.2.f
+
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	duration = 3
+
+	cooldown = { months = 4 }
+
+	trigger = {
+		root.infamy < infamy_threshold:infamous
+		OR = {
+			country_tier = kingdom
+			country_tier = principality
+		}
+		any_country = {
+			trigger_if = {
+				limit = {
+					ROOT = { # fixed bug where country being annexed needed pan-nationalism instead of the country doing the annexing (change needed in both trigger and immediate sections)
+						has_technology_researched = pan-nationalism
+					}
+				}
+				OR = {
+					country_has_primary_culture = cu:north_german
+					country_has_primary_culture = cu:south_german
+				}
+			}
+			trigger_else_if = {
+				limit = {
+					ROOT = {
+						country_has_primary_culture = cu:north_german
+					}
+				}
+				country_has_primary_culture = cu:north_german
+			}
+			trigger_else_if = {
+				limit = {
+					ROOT = {
+						country_has_primary_culture = cu:south_german
+					}
+				}
+				country_has_primary_culture = cu:south_german
+			}
+			OR = {
+				has_diplomatic_pact = {
+					who = ROOT
+					type = customs_union
+				}
+				has_diplomatic_pact = {
+					who = ROOT
+					type = protectorate
+				}
+			}
+			OR = {
+				is_subject = no
+				is_subject_of = ROOT
+			}
+			country_rank < rank_value:major_power
+			relations:root >= relations_threshold:amicable
+			is_player = no
+			NOT = { has_variable = german_minor_dont_annex }
+		}
+	}
+
+	immediate = {
+		random_country = {
+			limit = {
+				trigger_if = {
+					limit = {
+						ROOT = { # fixed bug where country being annexed needed pan-nationalism instead of the country doing the annexing (change needed in both trigger and immediate sections)
+							has_technology_researched = pan-nationalism
+						}
+					}
+					OR = {
+						country_has_primary_culture = cu:north_german
+						country_has_primary_culture = cu:south_german
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						ROOT = {
+							country_has_primary_culture = cu:north_german
+						}
+					}
+					country_has_primary_culture = cu:north_german
+				}
+				trigger_else_if = {
+					limit = {
+						ROOT = {
+							country_has_primary_culture = cu:south_german
+						}
+					}
+					country_has_primary_culture = cu:south_german
+				}
+				OR = {
+					has_diplomatic_pact = {
+						who = ROOT
+						type = customs_union
+					}
+					has_diplomatic_pact = {
+						who = ROOT
+						type = protectorate
+					}
+				}
+				OR = {
+					is_subject = no
+					is_subject_of = ROOT
+				}
+				country_rank < rank_value:major_power
+				relations:root >= relations_threshold:amicable
+				is_player = no
+				NOT = { has_variable = german_minor_dont_annex }
+			}
+			save_scope_as = german_annex_country
+		}
+	}
+
+	option = {
+		name = german_unification.2.a
+		default_option = yes
+		annex = scope:german_annex_country
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = german_unification.2.b
+		change_relations = {
+			country = scope:german_annex_country
+			value = 20
+		}
+		scope:german_annex_country = {
+			set_variable = {
+				name = german_minor_dont_annex
+				days = 1825
+			}
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+# Bismarck
+german_unification.3 = {
+	type = country_event
+	placement = ROOT
+
+	title = german_unification.3.t
+	desc = german_unification.3.d
+	flavor = german_unification.3.f
+
+	gui_window = event_window_1char_tabloid
+
+	left_icon = scope:bismarck_scope
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/misc/1Character_Banner"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	duration = 3
+
+	trigger = {
+		NOT = { has_global_variable = bismarck_variable }
+		ig:ig_landowners = {
+			is_powerful = yes
+			is_in_government = yes
+		}
+		game_date < 1898.1.1
+		game_date > 1847.1.1 #first entry into parliament
+	}
+
+	immediate = {
+		set_global_variable = bismarck_variable
+		create_character = {
+			first_name = Otto
+			last_name = von_Bismarck
+			ig_leader = yes
+			interest_group = ig_landowners
+			female = no
+			birth_date = 1815.4.1
+			dna = dna_otto_von_bismarck
+			ideology = ideology_royalist
+			traits = {
+				direct
+				cautious
+			}
+		}
+		ig:ig_landowners = {
+			save_scope_as = junkers
+			leader = {
+				save_scope_as = bismarck_scope
+			}
+		}
+	}
+
+	option = {
+		name = german_unification.3.a
+		default_option = yes
+		show_as_tooltip = {
+			create_character = {
+				first_name = Otto
+				last_name = von_Bismarck
+				#role = politician # Remove this line
+				ig_leader = yes
+				interest_group = ig_landowners
+				female = no
+				birth_date = 1815.4.1
+				ideology = ideology_royalist
+				traits = {
+					direct
+					cautious
+				}
+			}
+		}
+		scope:bismarck_scope = {
+			add_modifier = {
+				name = bismarck_popular
+			}
+		}
+		add_modifier = {
+			name = realpolitik
+			months = normal_modifier_time
+		}
+	}
+	option = {
+		name = german_unification.3.b
+		default_option = yes
+		show_as_tooltip = {
+			create_character = {
+				first_name = Otto
+				last_name = von_Bismarck
+				#role = politician # Remove this line
+				ig_leader = yes
+				interest_group = ig_landowners
+				female = no
+				birth_date = 1815.4.1
+				ideology = ideology_royalist
+				traits = {
+					direct
+					cautious
+				}
+			}
+		}
+		scope:bismarck_scope = {
+			add_modifier = {
+				name = bismarck_unpopular
+			}
+		}
+		add_modifier = {
+			name = germany_aggressive_expansion
+			months = normal_modifier_time
+		}
+	}
+}
+
+# Schleswig War
+german_unification.10 = {
+	type = country_event
+	
+	title = german_unification.10.t
+	desc = german_unification.10.d
+	flavor = german_unification.10.f
+	
+	event_image = {
+		video = "gfx/event_pictures/unspecific_politicians_arguing.bk2"
+	}
+	
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/asia/politician_parliament_motion"
+	
+	duration = 3
+	
+	cooldown = { months = normal_modifier_time }
+	
+	immediate = {
+		c:HOL = {
+			make_independent = yes
+		}
+		c:SCH = {
+			make_independent = yes
+			if = {
+				limit = { is_ai = yes }
+				c:HOL = {
+					create_diplomatic_pact = {
+						country = c:SCH
+						type = personal_union
+					}
+				}
+			}
+			else = {
+				create_diplomatic_play = {
+					name = schleswig_war
+					target_country = c:DEN
+					type = dp_independence
+				}
+			}
+		}
+		c:HOL = {
+			create_diplomatic_play = {
+				name = schleswig_war
+				target_country = c:DEN
+				type = dp_independence
+			}
+		}
+		random_diplomatic_play = {
+			limit = {
+				any_scope_play_involved = {
+					THIS = ROOT
+				}
+			}
+			save_scope_as = sch_play
+		}
+		scope:sch_play = {
+			add_war_goal = {
+				holder = c:DEN
+				target_country = c:SCH
+				type = make_dominion
+			}
+			add_war_goal = {
+				holder = c:DEN
+				target_country = c:HOL
+				type = make_dominion
+			}
+		}
+		if = {
+			limit = { c:SCH = { is_ai = yes } }
+			scope:sch_play = {
+				add_war_goal = {
+					holder = c:HOL
+					type = conquer_state
+					target_state = s:STATE_SCHLESWIG_HOLSTEIN.region_state:SCH
+				}
+			}
+		}
+		c:PRU = {	# Should help
+			set_secret_goal = {
+				country = c:HOL
+				secret_goal = protect
+			}
+			set_secret_goal = {
+				country = c:SCH
+				secret_goal = protect
+			}
+			set_secret_goal = {
+				country = c:DEN
+				secret_goal = antagonize
+			}
+		}
+		c:HOL = { #Help please
+			change_relations = {
+				country = c:PRU
+				value = 50
+			}
+		}
+		c:SCH = { #Help please
+			change_relations = {
+				country = c:PRU
+				value = 50
+			}
+		}
+	}
+	
+	option = {
+		name = german_unification.10.a
+		default_option = yes
+		
+		show_as_tooltip = {
+			create_diplomatic_play = {
+				name = schleswig_war
+				target_country = c:DEN
+				type = dp_independence
+			}
+		}
+		c:HOL = {
+			change_relations = {
+				country = c:DEN
+				value = -50
+			}
+		}
+		c:SCH = {
+			change_relations = {
+				country = c:DEN
+				value = -50
+			}
+		}
+	}
+}

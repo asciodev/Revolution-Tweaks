@@ -1,0 +1,210 @@
+﻿# This is executed last among all history
+
+GLOBAL = {
+
+	every_country = {
+		limit = {
+			OR = {
+				country_has_primary_culture = cu:yankee
+				country_has_primary_culture = cu:dixie
+				country_has_primary_culture = cu:anglo_canadian
+				country_has_primary_culture = cu:mexican
+				country_has_primary_culture = cu:central_american
+				country_has_primary_culture = cu:north_andean
+				country_has_primary_culture = cu:south_andean
+				country_has_primary_culture = cu:brazilian
+				country_has_primary_culture = cu:platinean
+				country_has_primary_culture = cu:cariban
+			}
+		}
+		activate_law = law_type:law_racial_segregation
+	}
+
+	c:FRA = {
+		activate_law = law_type:law_national_supremacy
+		activate_law = law_type:law_mercantilism
+		#activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_no_womens_rights
+	}
+
+	c:BEL = {
+		activate_law = law_type:law_census_voting
+		activate_law = law_type:law_national_supremacy
+		activate_law = law_type:law_dedicated_police
+	}
+
+	c:SWI = {
+		activate_law = law_type:law_national_supremacy
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_agrarianism
+	}
+
+	c:LUX = {
+		activate_law = law_type:law_national_supremacy
+		activate_law = law_type:law_agrarianism
+		activate_law = law_type:law_peasant_levies
+	}
+
+	c:NET = {
+		activate_law = law_type:law_legacy_slavery
+		activate_law = law_type:law_national_militia
+		#activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_local_police
+	}
+
+	c:SPA = {
+		activate_law = law_type:law_national_supremacy
+		activate_law = law_type:law_peasant_levies
+		activate_law = law_type:law_hereditary_bureaucrats
+		activate_law = law_type:law_agrarianism
+		activate_law = law_type:law_colonial_resettlement
+	}
+
+	c:POR = {
+		activate_law = law_type:law_national_supremacy
+		activate_law = law_type:law_peasant_levies
+		activate_law = law_type:law_hereditary_bureaucrats
+		activate_law = law_type:law_agrarianism
+		#activate_law = law_type:law_no_colonial_affairs
+	}
+
+	c:AUS = {
+		#activate_law = law_type:law_agrarianism #Makes Austria ahistoricaly drops from GP by 1860...
+		#activate_law = law_type:law_serfdom #serfdom was abolished in most of the empire in late 18th century. Only Galicia was under serfdom. Non-unitary Austria to be considered?
+		activate_law = law_type:law_land_based_taxation
+		activate_law = law_type:law_professional_army
+	}
+
+	c:EGY = {
+		activate_law = law_type:law_national_supremacy
+		activate_law = law_type:law_state_religion
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_censorship
+		activate_law = law_type:law_land_based_taxation
+	}
+
+	c:GRE = {
+		activate_law = law_type:law_traditionalism
+	}
+
+	c:ION = {
+		activate_law = law_type:law_agrarianism
+	}
+
+	c:HAW = {
+		activate_law = law_type:law_cultural_exclusion
+	}
+
+	c:HAN = {
+		activate_law = law_type:law_agrarianism
+	}
+
+	c:JAP = {
+		add_technology_researched = colonization
+		activate_law = law_type:law_colonial_resettlement
+		activate_law = law_type:law_serfdom_banned
+		activate_law = law_type:law_ethnostate
+	}
+
+	c:LUC = {
+		activate_law = law_type:law_agrarianism
+	}
+
+	c:MOD = {
+		activate_law = law_type:law_agrarianism
+	}
+
+	c:MON = {
+		activate_law = law_type:law_serfdom
+	}
+
+	c:PAR = {
+		activate_law = law_type:law_agrarianism
+	}
+
+	c:SAR = {
+		activate_law = law_type:law_interventionism
+	}
+
+	c:SAX = {
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_protectionism
+	}
+
+	c:WEI = {
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_protectionism
+	}
+
+	c:SCW = {
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_protectionism
+	}
+
+	c:COB = {
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_protectionism
+	}
+
+	c:MEI = {
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_protectionism
+	}
+
+	c:SIC = {
+		activate_law = law_type:law_traditionalism
+		activate_law = law_type:law_land_based_taxation
+	}
+
+	c:TUR = {
+		activate_law = law_type:law_serfdom
+	}
+
+	c:TUS = {
+		activate_law = law_type:law_agrarianism
+	}
+
+	c:GBR = {
+		activate_law = law_type:law_no_home_affairs
+		#activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_weighted_wealth_voting
+	}
+	
+	c:USA = {
+		activate_law = law_type:law_freedom_of_conscience
+		activate_law = law_type:law_universal_suffrage
+	}
+
+	c:NSW = {
+		activate_law = law_type:law_colonial_resettlement
+	}
+
+	c:WAS = {
+		activate_law = law_type:law_colonial_resettlement
+	}
+
+	c:DEI = {
+		activate_law = law_type:law_colonial_resettlement
+	}
+
+	c:ORG = {
+		activate_law = law_type:law_colonial_resettlement
+	}
+
+	c:ONT = {
+		activate_law = law_type:law_colonial_resettlement
+	}
+
+	c:QUE = {
+		activate_law = law_type:law_colonial_resettlement
+	}
+
+	c:SAF = {
+		activate_law = law_type:law_colonial_resettlement
+	}
+
+	c:PRU = {
+		add_technology_researched = labor_movement #allow to pass children work restriction on time
+	}
+
+}

@@ -1,0 +1,247 @@
+﻿l_english:
+
+#Ideology change events
+
+ ideologies_change.1.t:0 "Imperialism"
+ ideologies_change.1.d:0 "[ROOT.GetCountry.GetName] has proved to be the pinacle of Civilization. It falls on our great nation's shoulders to shine the light of modernity into every uncivilized corner of the world, to educate and instill in the less developed peoples the divine values of our glorious culture."
+ ideologies_change.1.f:0 ""Obviously there might be some "material benefits", bringing Civilization is not free!""
+ ideologies_change.1.a:0 "Fully embrace Imperialism. We shall have our place in the sun."
+ ideologies_change.1.b:0 "Stay away from such non-sense."
+ 
+ ideologies_change.2.t:0 "Cosmopolitism"
+ ideologies_change.2.d:0 "[ROOT.GetCountry.GetName] is a country open to the rest of the World. Artificial barriers like "Race" and "Nation" are just obstacles to a prosperous, peaceful society."
+ ideologies_change.2.f:0 ""You are welcome but you still need to learn our language.""
+ ideologies_change.2.a:0 "I have a dream...""
+
+ ideologies_change.3.t:0 "On Democracy"
+ ideologies_change.3.d:0 "People of [ROOT.GetCountry.GetName] need to really matter in politics. It is a fundamental injustice that some get to vote and others do not."
+ ideologies_change.3.f:0 ""No more half-backed measures, our people deserve to decide for themselves!""
+ ideologies_change.3.a:0 "One Man, one Vote!"
+
+ ideologies_change.4.t:0 "Reaction to the Socialist threat"
+ ideologies_change.4.d:0 "People of [ROOT.GetCountry.GetName] have built a functional and moderate liberal democracy, but with the rise of new socialist ideas, Civilization is in danger. At least, that's what the Petite Bourgeoise think."
+ ideologies_change.4.f:0 ""For the defense of our society, it is worth giving up some liberties for more security.""
+ ideologies_change.4.a:0 "Better dead than Red!"
+
+ ideologies_change.5.t:0 "Serfdom stamped out"
+ ideologies_change.5.d:0 "[ROOT.GetCountry.GetName] has abolished Serfdom for years. This has lead to an objectively better situation even for those who defended it."
+ ideologies_change.5.f:0 "Relics of the Dark Ages are no longer needed!"
+ ideologies_change.5.a:0 "There is a better means to preserve Nobility..."
+ 
+ ideologies_change.6.t:0 "The End of Theocracy" 
+ ideologies_change.6.d:0 "[ROOT.GetCountry.GetName] has brought an end to the backwards practice of Theocracy, it seems the Church has finally given up on wielding governmental power."
+ ideologies_change.6.f:0 "No longer is our nation controlled by a corrupt clergy!" 
+ ideologies_change.6.a:0 "The Church must adapt." 
+ 
+ ideologies_change.7.t:0 "The Rise of Theocracy"
+ ideologies_change.7.d:0 "With the Rise of Theocratic Governance, the Clergy has welcomed their new role, proclaiming the new Government Holy, and that the Faithful are obligated to defend it."
+ ideologies_change.7.f:0 "Faith and State are now one and the same." 
+ ideologies_change.7.a:0 "Praise God!" 
+ 
+ ideologies_change.8.t:0 "In Defense of the Revolution" 
+ ideologies_change.8.d:0 "Counter-Revolutionary forces threaten the Revolution, especially within [ROOT.GetCountry.GetName], we must adopt measures to protect it." 
+ ideologies_change.8.f:0 "For the defense of our revolution, it is important that protective measures are instated." 
+ ideologies_change.8.a:0 "I assure you commissar..." 
+
+
+ #French Politics events
+
+ #### July Monarchy and 1848 Revolution ####
+
+ french_politics.1.t:0 "Orleans Monarchy strengthening"
+ french_politics.1.d:0 "The Orleans monarchy, which marked the transition of power from the house of Bourbon to its younger branch, the House of Orleans, was a triumph of popular sovereignty over the principle of the divine right of the king, and also established a liberal order, a triumph for the bourgeoisie and the final defeat of the landed aristocracy. Despite all the opposition, the rule of the House of Orleans seems increasingly immutable even to the most radical opponents of the regime."
+ french_politics.1.f:0 "«In the midst of the agitation that enemy or blind passions are fomenting, one conviction animates and sustains me, and that is that we possess in the constitutional monarchy, in the union of the great powers of the State, the most assured means of overcoming all these obstacles, and of satisfying all the moral and material interests of our beloved fatherland. Let us firmly maintain, according to the Charter, the social order and all its conditions. Let us faithfully guarantee, according to the Charter, the public liberties and all their developments. We will hand over intact to the generations that will come after us the deposit that has been entrusted to us, and they will bless us for having founded and defended the edifice under the shelter of which they will live happy and free.» - Louis-Philippe d'Orléans"
+ french_politics.1.a:0 "All Hails to the King of the Frenchs!"
+
+ french_politics.2.t:0 "Proclamation of the Second Republic"
+ french_politics.2.d:0 "Discontent with the political situation reached its peak as crowds poured into the streets of Paris and erected barricades. In what many saw as an accident, a French guardsman opened fire with his musket on the townspeople and carried out a massacre. Rioting engulfed the entire city like fire, with crowds chanting "Long live the reforms!" and "Down with the king!" Despite assurances that the situation was under control, the king fled the country... Now the government is faced with the task of creating a new system, beginning with the organization of the election of a new head of state."
+ french_politics.2.f:0 "«Citizens, for me, the red flag, I will never adopt it, and I am going to tell you why I'm against it with all the strength of my patriotism. It's that the tricolor has toured the world with the Republic and the Empire, with your freedoms and your glories, and the red flag has only toured the Champ-de-Mars, dragged in the blood of the people.» - Alphonse de Lamartine"
+ french_politics.2.a:0 "Vive La République!"
+
+ french_politics.3.t:0 "Banquet Campaigns"
+ french_politics.3.d:0 "In order to propagate reforms while circumventing strict prohibitions on unions and assemblies, first in Paris and later in large provincial cities, wealthy members of the reform movement began to organize public banquets. In their speeches they loudly spoke of reform projects and sometimes sharply criticized the government. The main goal of this movement was the liberalization of the electoral laws."
+ french_politics.3.f:0 "«Program of the banquet. \nThe gates of the site where the banquet is organized will open at three o'clock. \nThe banquet will be presided over by monsieur Bouchard, doctor, first deputy of the city. \nAt four o'clock, monsieur de Lamartine will take his place. \nFrom three to four, and from four to the time of the president's toast, monsieurs artists and amateurs will perform pieces of harmony. \nNo toasts are to be given except those of the president and of monsieur de Lamartine. \nNo songs or shouts will be allowed. \nComplaints and requests will be addressed to the commissioners in charge of the banquet police. \nThe greatest order must reign, in order to let this demonstration have its fruitful influence»."
+ french_politics.3.a:0 "Repress them!"
+ french_politics.3.b:0 "They are harmless, aren't they?"
+
+ laissez_faire:0 "Challenged Authority"
+ laissez_faire_desc:0 "Banquet campaigns are strengthening Republican influence."
+
+ #### Bonaparte's coup ####
+
+ french_politics.4.t:0 "Presidential Elections"
+ french_politics.4.d:0 "Although [SCOPE.sCharacter('forces_leader').GetFullName] was expected to do well in the French presidential election, no one could have counted on him to do so well, he was able to become someone for everyone... and even gain the support of the Orleanists. The provisional government candidate, [SCOPE.sCharacter('industrialists_leader').GetFullName], who led the efforts to suppress the riots in Paris, is disliked by the masses, which does not add to his popularity."
+ french_politics.4.f:0 "«Workers and all of you who have raised arms against the Fatherland and against the Republic, for the last time in the name of all that is honorable and sacred to men, I call upon you to lay down your arms. The Constituent Assembly, the entire nation is asking you to do so. You are told that you are in for a cruel revenge. So say your enemies and our enemies! You are told that you will be sacrificed in cold blood! Come to us, come as penitent and obedient brothers to the law, and the arms of the Republic will be open to you.» - Louis-Eugène Cavaignac"
+ french_politics.4.a:0 "[SCOPE.sCharacter('forces_leader').GetFullName] will restore order!"
+ french_politics.4.b:0 "[SCOPE.sCharacter('industrialists_leader').GetFullName] will become our president!"
+ french_politics.7.t:0 "Arrest of Louis-Napoleon!"
+ french_politics.7.d:0 "Louis-Napoleon Bonaparte, unsuccessful in his bid for the presidency of the Republic, attempted a coup d'état. His attempt to draw high-ranking officers into the plot was unsuccessful. Moreover, a general loyal to the government managed to send a telegram to the War Ministry warning of a possible attempted mutiny, after which Louis-Napoleon was arrested along with his entourage."
+ french_politics.7.f:0 "«Louis Bonaparte knew only one thing, his goal. All his policy was there. To crush the republicans, to disdain the royalists.» - Victor Hugo"
+ french_politics.7.a:0 "Take him to the prison!"
+ french_politics.5.t:0 "Coup d'État"
+ french_politics.5.d:0 "Overnight, the most influential figures of the opposition political parties were arrested, military troops occupied strategic squares and streets in Paris, and proclamations were posted on house corners announcing the dissolution of Parliament and the restoration of universal suffrage, inviting the people to allow the head of state to really govern the country. The next day barricades were erected in several places, but all attempts at rebellion were quickly crushed. Soon a popular vote of seven and a half million votes to 650,000 approved the head of state's proposals, and Louis Napoleon promulgated a new constitution, modeled on the «constitutions of the empire»."
+ french_politics.5.f:0 "«If, on the contrary, you still have confidence in me, give me the means of accomplishing the great mission which I hold from you. This mission consists in closing the era of revolutions, in satisfying the legitimate wants of the people, and in protecting them against subversive passions. It consists, especially, in creating institutions which can survive men, and which will be foundations upon which one can build something durable.» - Louis-Napoléon Bonaparte"
+ french_politics.5.a:0 "Vive le Prince-Président!"
+ french_politics.8.t:0 "Proclamation of the Second Empire"
+ french_politics.8.d:0 "For the first time the fate of France was decided not in the capital but in the provinces. The plebiscite for the restoration of the empire, organized after the establishment of the regime of personal power, brought Louis-Napoleon the expected success. Seventy-six percent of voters voted for the empire, and soon Louis-Napoleon Bonaparte was proclaimed «emperor of the French» under the name Napoleon III."
+ french_politics.8.f:0 "«There is, nevertheless, one apprehension, and that I shall set at rest. A spirit of distrust leads certain persons to say that the empire means war. I say, the empire means peace. France longs for peace, and if France is satisfied the world is tranquil. War is not made with pleasure, it is made by necessity, and in these changing times where everywhere, next to so many elements of prosperity spring so many causes of death, we may say truthfully “Woe to whoever might give the signal for a collision in Europe, of which the consequences would be beyond our imaginations!”» - Louis-Napoléon Bonaparte"
+ french_politics.8.a:0 "Vive L'Empereur!"
+
+ dyn_c_kingdom_of_france:0 "Kingdom of France"
+ dyn_c_french_empire:0 "French Empire"
+ dyn_c_french_republic:0 "French Republic"
+ dyn_c_french_commune:0 "French Commune"
+ dyn_c_french_state:0 "French State"
+
+ #### Fall of the Empire ####
+
+ french_politics.10.t:0 "Fall of the Second Empire"
+ french_politics.10.d:0 "The emperor had finally lost support among the common people, the intelligentsia, and the bourgeoisie. All hopes for a bright future and the ascension of France to greatness, which had arisen at the time of the proclamation of the Second Empire, have dissipated. The Emperor had by his actions nurtured many enemies among the liberals in Paris, and now they chose the moment to strike. They assembled at the Palais des Bourbons, where they announced the overthrow of the Emperor and the proclamation of the Third French Republic. The Bonapartist forces were unable to oppose them, and were forced with great reluctance to acknowledge what had happened."
+ french_politics.10.f:0 "«Frenchmen! The people have forestalled the Chamber that was hesitating. To save the country in danger, they claimed for the Republic: it is announced, and this revolution is led to the public law’s and public safety’s names. Citizens, watch over the city that is given to you; tomorrow, you will be with the army of the country’s avengers!» - Léon Gambetta"
+ french_politics.10.a:0 "Vive la Troisième République!"
+
+ #### Possible Restauration events ####
+
+ french_politics.12.t1:0 "Third Restoration"
+ french_politics.12.t2:0 "Bourbon Restoration"
+ french_politics.12.d1:0 "Despite the obstructions of the Orleanist regime, the supporters of Legitimism and the Bourbon dynasty were able to seize the reins of power from the rapidly losing popularity of the Orleanist party. The provisional government urged Henri d'Artois, grandson of Charles X, deposed in the 1830 revolution, to return from exile and accept the crown of France."
+ french_politics.12.d2:0 "Despite the regime's obstacles, the supporters of legitimacy and the Bourbon dynasty were able to seize the reins of power from the rapidly losing popularity of the political forces. A provisional government, assembled from the supporters of the Restoration, called upon the head of the house of Bourbon to return from exile and accept the crown of France."
+ french_politics.12.f1:0 "«The monarchy in France is the royal house of France indissolubly united to the nation. I therefore maintain my right, which is the surest guarantee of yours, and, taking God as my witness, I declare to France and to the world that, faithful to the laws of the kingdom and to the traditions of my forefathers, I will religiously preserve until my last breath the deposit of the hereditary monarchy which Providence has entrusted to me for safekeeping, and which is the only port of salvation in which, after so many storms, this France, the object of all my love, will be able to find at last rest and happiness.» - Henri, Count of Chambord"
+ french_politics.12.f2:0 "«The first retreat of my unfortunate brother Louis XVI was the signal of his doom. They pretend to blame only you, they tell me, "Send your ministers away and we will get along". I will not send you back. If I yield to their demands this time, they will do to us as they did to my brother.» - Charles X"
+ french_politics.12.a:0 "Vive le Roi!"
+
+ french_politics.13.t:0 "Bonapartist Coup"
+ french_politics.13.d:0 "Supporters of the House of Bonaparte organized a coup d'état using their agents among the army. Troops loyal to Bonaparte and the rebels surrounded the capital and forced the Guard to lay down their arms. The government was forced to flee the unrest-ridden Paris, while the Bonapartists were already celebrating their victory."
+ french_politics.13.f:0 "«I swear to preserve the integrity of the territory of the Republic; to respect and observe the laws of concord and freedom of worship; to respect and observe the equality of rights, political and civil liberty, the irrevocability of the sale of national goods; to levy no taxes, to impose no taxes only by operation of law; to preserve the institution of the Legion of Honor; to govern only for the interests, happiness and glory of the French people.» - Napoleon Bonaparte"
+ french_politics.13.a:0 "Vive l'Empereur!"
+
+ french_politics.14.t:0 "Orleanist Restoration"
+ french_politics.14.d:0 "Political instability in the country has heated up to the limit. In the streets of Paris, the first opponents of the monarchy's restoration clashed with the police and the gendarmerie, pushed by several leaders, demonstrators pursued the troops with cobblestones, bricks or flower pots. Despite this state of affairs, the riots only strengthened the influence of the supporters of the Restoration. Meeting in the Palais des Bourbons, the deputies decided, by 47 votes to 3, to offer the French crown to the Duke of Orleans."
+ french_politics.14.f:0 "«Citizens of Paris! The deputies of France, assembled at this moment in Paris, expressed their desire that I should go to the capital to exercise there the function of Lieutenant General of the kingdom. I did not hesitate to come and share your perils, placed myself among your heroic population, and made every effort to keep you safe from civil war and anarchy. When I returned to Paris, I proudly wore those glorious colors which you took away, and which I myself wore for a long time. The Houses are meeting; they will confer on the means of securing a regime of laws and maintaining the rights of the nation. The Charter will henceforth be the truth.» - Louis-Philippe d'Orléans"
+ french_politics.14.a:0 "La Liberté rouvre ses bras!"
+
+ #Austrian Politics events
+
+ # Hungarian Revolution
+hungarian_revolution.1.t:0 "Revolution in Pest"
+hungarian_revolution.1.d:0 "Tensions in the Hungarian realm have reached a boiling point and revolution has become inevitable. With support from Slovaks, Germans, Rusyns, Hungarian Sloevenes and various other peoples, the Hungarian Government, newly formed, has declared independence."
+hungarian_revolution.1.f:0 "On your feet, Magyar,the homeland calls! The time is here, now or never! Shall we be slaves or free? This is the question, choose your answer! By the God of the Hungarians, We vow, We vow, that we won't be slaves any longer!"
+hungarian_revolution.1.a:0 "Put the rabid dog down!"
+hungarian_revolution.1.b:0 "It isn't not worth the fight"
+hungarian_revolution.1.c:0 "Perhaps they have a point after all.."
+hungarian_revolution.2.t:0 "Request Assistance"
+hungarian_revolution.2.d:0 "[ROOT.GetCountry.GetName] has faced disaster after disaster on the battlefield against the #bold Hungarian #! army, if this misfortune continues we may be forced to capitulate, perhaps we can seek assistance "
+hungarian_revolution.2.f:0 ""The house of Habsburg-Lorraine, perjured in the sight of God and man, had forfeited the Hungarian throne."
+hungarian_revolution.2.a:0 "Perhaps the Gendarme of Europe can assist us..."
+hungarian_revolution.2.b:0 "The Kaiser does not beg."
+hungarian_revolution.3.t:0 "Austria asks us for help"
+hungarian_revolution.3.d:0 " [SCOPE.sCountry('austriascope').GetName] has requested assistance in dealing with their recent #bold Hungarian #! Revolts, while it would be advantageous and Austria would forever be in our favour if we interviene perhaps out attention could be better used elsewhere."
+hungarian_revolution.3.a:0 "We accept. To War!"
+hungarian_revolution.3.b:0 "Why do we care again?"
+hungarian_revolution.4.t:0 "The Revolution Triumphant"
+hungarian_revolution.4.d:0 "The Revolution stands triumphant, Thousands of Hungarians have gathered around Pest to celebrate the proclamation of a new Hungarian state, both nations must now look to lick their wounds and recover from the ravages of war.."
+hungarian_revolution.4.f:0 "The Hungarian name will be great again, Worthy of its old, great honor. \n -Sandor Petofi"
+hungarian_revolution.4.a:0 "Cum Deo pro Patria et Libertate!"
+hungarian_revolution.5.t:0 "Russia Sends Assistance"
+hungarian_revolution.5.d:0 "Our Russian friends have thankfully accepted our call of assistance and have sent us the help we so desperately need. Perhaps this war is not lost yet."
+hungarian_revolution.5.a:0 "Hurrah for Mother Russia!"
+hungarian_revolution.6.t:0 "Russia rejects our pleas."
+hungarian_revolution.6.d:0 "The response from the Russian embassy in Vienna has been nothing if not cold, the Russians have stated that they have no plans of assisting us in putting down this secession, we're on our own."
+hungarian_revolution.6.a:0 "May God save us."
+hungarian_revolution.7.t:0 "The Revolution in Tatters"
+hungarian_revolution.7.d:0 "Our army stand triumphant, The Hungarian revolt has been quelled and at least for now, the mere idea of secession has been dismantled."
+hungarian_revolution.7.a:0 "Long live the Kaiser!"
+
+hungarian_partisans:0 "Hungarian Partisans"
+hungarian_partisans_desc:0 "Hungarian Partisans fighting for Independance on their own land"
+russianassistance:0 "Russian Assistance"
+russianassistance_desc:0 "The Russians have agreed to send help to quell the rebellion."
+
+hungarian_revolution_dp:0 "Hungarian Revolution"
+
+austriaturmoiltooltip:0 " [SCOPE.sCountry('austriascope').GetName] will get Turmoil on all [SCOPE.sCulture('hungarianscope').GetName] lands."
+austriaturmoiltooltipwin:0 " [SCOPE.sCountry('austriascope').GetName] will lose Turmoil effects on all [SCOPE.sCulture('hungarianscope').GetName] lands."
+russiaacceptshelp:0 "[SCOPE.sCountry('russia_scope').GetName] will assist [SCOPE.sCountry('austriascope').GetName] in their war."
+hungarianrevolutionover:0 " The Hungarian Revolution has been crushed. "
+losesaustrianclaimshun:0 "Austria will lose all claims to Hungary"
+askingrussiahungary:0 "We shall ask [SCOPE.sCountry('russia_scope').GetName] for assistance."
+austriaturmoil:0 "Separatism"
+russiarejectsshelp:0 "[SCOPE.sCountry('russia_scope').GetName] will refuse to send any assistance to [SCOPE.sCountry('austriascope').GetName]"
+
+hungarian_revolution.8.t:0 "The Empire collapses!"
+hungarian_revolution.8.d:0 "After the sucess of Hungarian Revolution, others minorities created coordinated uprisings to achieve independence."
+hungarian_revolution.8.f:0 "Ruina Imperii"
+hungarian_revolution.8.a:0 "Put them down!"
+hungarian_revolution.8.b:0 "Preserve ourselves for now..."
+
+#German Politics events
+
+# Prussian Market Acceptance 
+DIPLOMATIC_ACCEPTANCE_PRUSSIA:0 "Zollverein"
+
+german_unification.10.t:0 "The Schelswig-Holstein War"
+german_unification.10.d:0 "Recent developments in Schelswig-Holstein has caused a rise in nationalism and a strong German identity. Many within the duchy are sympathetic to this cause and it has reached a boiling point.\nA local prince has taken a Jägerkorps and some students from a local university to take over the fortress of Rendsburg and has expelled the local garrison. Declaring his intent to start a war for independence."
+german_unification.10.f:0 ""Today we're no longer Danish subjects, we're instead taking our destiny into our own hands!""
+german_unification.10.a:0 "Escalation is our only choice"
+
+#Italian Politics events
+
+DIPLOMATIC_ACCEPTANCE_ITALIA:0 "Italian Custom Union"
+
+italian_independence_war.1.t:0 "Italian Uprising"
+italian_independence_war.1.d:0 "As turmoil expends in the Empire, the Italians, encouraged by the news of a French Revolution, massively revolted in Lombardy and Venetia. They have already called independent Italian principalties for help in this so called "Independence War" ""
+italian_independence_war.1.f:0 "«Italy is a geographical expression.» - Klemens von Metternich "
+italian_independence_war.1.a:0 "Escalation is our only choice"
+italian_independence_war.1.b:0 "We don't need them"
+
+italian_independence_war.2.t:0 "Victory!"
+italian_independence_war.2.d:0 "The Austrians have renounced to their claims in Lombardy and Venetia. Still there is no point staying independent but vulnerable while Italy is to be unified."
+italian_independence_war.2.f:0 "Join our Italian brothers!"
+italian_independence_war.2.a:0 "Ask them"
+
+italian_independence_war.3.t:0 "Venetia asks for annexation"
+italian_independence_war.3.d:0 "People of Northern Italy managed to free themselves from Austrian rule. Now they ask for joining a unified Italy!"
+italian_independence_war.3.f:0 "For an united Nation!"
+italian_independence_war.3.a:0 "Accept"
+italian_independence_war.3.b:0 "Not yet"
+
+losesaustrianclaimsita:0 "Austria will lose all claims to Venetia and Lombardy"
+
+italian_independence_war.4.t:0 "The Plombières Agreement"
+italian_independence_war.4.d:0 "France can be a powerful ally against Austria, but every deal comes at a price. In exchange for the help, France wants our Transalpine territories and Nice."
+italian_independence_war.4.a:0 "A fair deal"
+italian_independence_war.4.b:0 "No, Nice and Savoy are ours!"
+
+ita_partially_lazio:0 "We own any provinces of Lazio"
+
+italian_independence_war.5.t:0 "Italian Independence War"
+italian_independence_war.5.d:0 "With the support of France we can expel the foreigner from Italian soil. If we manage to win, the patriots in other Italian states will rush under the banner of a united Italy."
+italian_independence_war.5.a:0 "The time has come!"
+italian_independence_war.5.b:0 "We are not ready, yet."
+
+italian_independence_war.6.t:0 "The Plebiscites"
+italian_independence_war.6.d:0 "After the victory in Lombardy, many patriots in the various Italian states are organizing plebiscites to join the forecoming kingdom. Obviously, France expects similar plebiscites to be held in Nice and Savoy, about the territories we own to them."
+italian_independence_war.6.a:0 "Soon Italy will be united!"
+italian_independence_war.6.b:0 "Piedmont is not Italy, remember."
+
+italian_independence_war.7.t:0 "The Mille Expedition"
+italian_independence_war.7.d:0 "Southern Italy is waiting to be freed from a hateful regime. Our generals are convinced that an insurrection in Sicily will quickly lead to the collapse of the Two Sicilies. It is time to act."
+italian_independence_war.7.a:0 "Here we make Italy or we die!"
+italian_independence_war.7.b:0 "We are not ready, yet."
+
+italian_independence_war.8.t:0 "Sicily defects!"
+italian_independence_war.8.d:0 "Partisans and paramilitary units from Piedmont have reached the rebellious Sicily, rallied the populace and some traitrous soldiers and quickly overran our garrisons."
+italian_independence_war.8.a:0 "Those traitors will pay!"
+
+italian_independence_war.9.t:0 "Calabria defects!"
+italian_independence_war.9.d:0 "The enemy crossed the straits into Calabria where our soldiers joined their ranks instead of fighting. The situation is confusing and the government seems to lose control of the situation..."
+italian_independence_war.9.a:0 "They are coming!"
+
+italian_independence_war.10.t:0 "The King flees!"
+italian_independence_war.10.d:0 "Earlier this morning the first Piedmontese detachments entered Naples, nearly unopposed despite orders to defend. The Bourbon king fled the city in panic, leaving what remains of the kingdom to the Italian partisans. Two-Sicilies are no more, Italy has completed its unification."
+italian_independence_war.10.a:0 "Farewell!"
+
+
+
+ 
+

@@ -1,0 +1,448 @@
+﻿#always there
+je_imperialism = {
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	
+	is_shown_when_inactive = {
+		has_technology_researched = colonization
+		ig:ig_intelligentsia = {
+			NOR = {
+				has_ideology = ideology_segregationist
+				has_ideology = ideology_imperialist
+				has_ideology = ideology_cosmopolitan
+			}
+		}
+		country_rank >= rank_value:minor_power
+		NOT = { is_country_type = unrecognized }
+		NOT = { is_country_type = decentralized }
+	}
+	
+	possible = {
+		has_technology_researched = nationalism
+		has_technology_researched = colonization
+		country_rank >= rank_value:minor_power
+		NOT = { is_country_type = unrecognized }
+		NOT = { is_country_type = decentralized }
+	}
+
+	complete = {
+		has_technology_researched = civilizing_mission
+		has_technology_researched = handcranked_machine_gun
+		country_rank >= rank_value:great_power
+		ig:ig_intelligentsia = {
+			has_ideology = ideology_nationalist
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = ideologies_change.1 }
+	}
+
+	invalid = {
+		ig:ig_intelligentsia = {
+			OR = {
+				has_ideology = ideology_segregationist
+				has_ideology = ideology_imperialist
+				has_ideology = ideology_cosmopolitan
+			}
+		}
+	}
+
+	weight = 300
+}
+
+#cosmopolitism
+
+je_cosmopolitan = {
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	is_shown_when_inactive = {
+		has_technology_researched = egalitarianism
+		ig:ig_intelligentsia = {
+			NOT = {
+				has_ideology = ideology_cosmopolitan
+			}
+		}
+	}
+	
+	possible = {
+		has_technology_researched = human_rights
+		ig:ig_intelligentsia = {
+			NOT = {
+				has_ideology = ideology_cosmopolitan
+			}
+		}
+	}
+
+	complete = {
+		AND = {
+			has_technology_researched = behaviorism
+			ig:ig_intelligentsia = {
+	            leader = {
+	            	OR = { #Any left/liberal ideology
+	                	has_ideology = ideology_communist
+	                	has_ideology = ideology_vanguardist
+	                	has_ideology = ideology_anarchist
+	                	has_ideology = ideology_social_democrat
+	                	has_ideology = ideology_pacifist
+	                	has_ideology = ideology_reformer
+	                	has_ideology = ideology_radical
+	                	has_ideology = ideology_republican_leader
+	                	has_ideology = ideology_atheist
+	                	has_ideology = ideology_chartist_leader
+	                }
+	            }
+	        }
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = ideologies_change.2 }
+	}
+
+	invalid = {
+		ig:ig_intelligentsia = {
+			OR = {
+				has_ideology = ideology_cosmopolitan
+			}
+		}
+	}
+	weight = 300
+}
+
+je_full_democracy = {
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	is_shown_when_inactive = {
+		has_technology_researched = democracy
+		ig:ig_intelligentsia = {
+			NOR = {
+				has_ideology = ideology_republican
+				has_ideology = ideology_revolutionary_republican
+				has_ideology = ideology_american_republican
+			}
+		}
+	}
+	
+	possible = {
+		has_technology_researched = egalitarianism
+		ig:ig_intelligentsia = {
+			NOR = {
+				has_ideology = ideology_republican
+				has_ideology = ideology_revolutionary_republican
+				has_ideology = ideology_american_republican
+			}
+		}
+	}
+
+	complete = {
+		has_technology_researched = human_rights
+	}
+
+	on_complete = {
+		trigger_event = { id = ideologies_change.3 }
+	}
+
+	invalid = {
+		ig:ig_intelligentsia = {
+			OR = {
+				has_ideology = ideology_republican
+				has_ideology = ideology_revolutionary_republican
+				has_ideology = ideology_american_republican
+			}
+		}
+	}
+	weight = 300
+}
+
+je_reaction_PB = {
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	is_shown_when_inactive = {
+		has_technology_researched = nationalism
+		ig:ig_petty_bourgeoisie = {
+			NOT = {
+				has_ideology = ideology_reactionary
+			}
+			has_ideology = ideology_moderate_democrat
+		}
+	}
+	
+	possible = {
+		
+		ig:ig_petty_bourgeoisie = {
+			NOT = {
+				has_ideology = ideology_reactionary
+			}
+		}
+		OR = { #Needs to be somewhat democratic
+			has_law = law_type:law_weighted_wealth_voting
+			has_law = law_type:law_wealth_voting
+			has_law = law_type:law_census_voting
+			has_law = law_type:law_weighted_universal_suffrage
+			has_law = law_type:law_universal_suffrage
+			has_law = law_type:law_anarchy
+		}
+	}
+
+	complete = {
+		OR = {
+			ig:ig_trade_unions = {
+				is_powerful = yes
+			}
+			any_interest_group = { 
+			    is_powerful = yes
+			    leader = {
+				    OR = { 
+						has_ideology = ideology_communist
+						has_ideology = ideology_vanguardist
+						has_ideology = ideology_anarchist
+					}
+				}
+			}
+		}
+		has_technology_researched = socialism
+	}
+
+	on_complete = {
+		trigger_event = { id = ideologies_change.4 }
+	}
+
+	invalid = {
+		ig:ig_petty_bourgeoisie = {
+			has_ideology = ideology_reactionary
+		}
+	}
+	weight = 300
+}
+
+je_abolish_serfdom = {
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	
+	# triggered by on_law_enactment_started
+
+	on_monthly_pulse = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_law = law_type:law_serfdom }
+					NOT = {
+						any_civil_war = {
+							civil_war_progress > 0.5
+							is_civil_war_type = revolution
+						}
+					}
+				}
+				change_variable = {
+					name = abolishing_serfdom_var
+					add = 1
+				}
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+		NOT = { has_law = law_type:law_serfdom }
+		NOT = {
+			any_civil_war = {
+				civil_war_progress > 0.5
+				is_civil_war_type = revolution
+			}
+		}
+	}
+
+	on_complete = {
+		trigger_event = {
+			id = ideologies_change.5
+		}
+	}
+
+	invalid = {
+		NOR = {
+			is_enacting_law = law_type:law_serfdom_banned
+			is_enacting_law = law_type:law_regulatory_bodies
+			is_enacting_law = law_type:law_worker_protections
+			has_law = law_type:law_serfdom_banned
+			has_law = law_type:law_regulatory_bodies
+			has_law = law_type:law_worker_protections
+		}
+	}
+
+	current_value = {
+		value = root.var:abolishing_serfdom_var
+	}
+
+	goal_add_value = {
+		add = 60
+	}
+
+	progressbar = yes
+
+	weight = 100
+}
+
+# triggered by on_law_enactment_started
+je_abolish_theocracy = {
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	on_monthly_pulse = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_law = law_type:law_theocracy }
+					NOT = {
+						any_civil_war = {
+							civil_war_progress > 0.5
+							is_civil_war_type = revolution
+						}
+					}
+					NOT = {
+						any_interest_group = {
+							law_stance = {
+								law = law_type:law_theocracy
+								value > neutral
+							}
+							is_powerful = yes
+						}
+					}
+				}
+				change_variable = {
+					name = abolishing_theocracy_var
+					add = 1
+				}
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+		NOT = { has_law = law_type:law_theocracy }
+		NOT = {
+			any_civil_war = {
+				civil_war_progress > 0.5
+				is_civil_war_type = revolution
+			}
+		}
+		NOT = {
+			any_interest_group = {
+				law_stance = {
+					law = law_type:law_theocracy
+					value > neutral
+				}
+				is_powerful = yes
+			}
+		}
+	}
+
+	on_complete = {
+		trigger_event = {
+			id = ideologies_change.6
+		}
+	}
+
+	invalid = {
+		NOR = {
+			is_enacting_law = law_type:law_presidential_republic
+			is_enacting_law = law_type:law_parliamentary_republic
+			is_enacting_law = law_type:law_council_republic
+			has_law = law_type:law_presidential_republic
+			has_law = law_type:law_parliamentary_republic
+			has_law = law_type:law_council_republic
+		}
+	}
+
+	current_value = {
+		value = root.var:abolishing_theocracy_var
+	}
+
+	goal_add_value = {
+		add = 120
+	}
+
+	progressbar = yes
+
+	weight = 100
+}
+
+je_theocracy_mode = {
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	is_shown_when_inactive = {
+		ig:ig_devout = {
+			NOT = {
+				has_ideology = ideology_moralist_theocratic
+			}
+			has_ideology = ideology_moralist
+		}
+	}
+	
+	possible = {
+		
+		ig:ig_devout = {
+			NOT = {
+				has_ideology = ideology_moralist_theocratic
+			}
+			has_ideology = ideology_moralist
+		}
+		OR = { 
+			has_law = law_type:law_theocracy
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = ideologies_change.7 }
+	}
+
+	invalid = {
+		ig:ig_devout = {
+			has_ideology = ideology_moralist_theocratic
+		}
+	}
+	weight = 300
+}
+
+je_vanguardist_securitarian = {
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	is_shown_when_inactive = {
+		ig:ig_trade_unions = {
+			NOT = {
+				has_ideology = ideology_patriotic
+			}
+			has_ideology = ideology_moralist
+		}
+		has_law = law_type:law_council_republic
+	}
+	
+	possible = {
+		
+		ig:ig_trade_unions = {
+			NOT = {
+				has_ideology = ideology_patriotic
+			}
+			has_ideology = ideology_vanguardist
+		}
+		OR = { 
+			has_law = law_type:law_autocracy
+			has_law = law_type:law_oligarchy 
+		}
+		OR = { 
+			has_law = law_type:law_council_republic
+		}		
+	}
+
+	on_complete = {
+		trigger_event = { id = ideologies_change.8 }
+	}
+
+	invalid = {
+		ig:ig_trade_unions = {
+			has_ideology = ideology_patriotic
+		}
+	}
+	weight = 300
+}

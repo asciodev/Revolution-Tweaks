@@ -1,0 +1,98 @@
+﻿l_french:
+
+# Politics related JE
+
+ je_imperialism:0 "Vers l'Impérialisme"
+ je_imperialism_reason:0 "Notre grande Nation a besoin de d'avantage que ce que son territoire peut fournir. Les colonies vont nous apporter ce qui nous manque, tout en ammenant la Civilisation aux contrées sauvages."
+ 
+ je_cosmopolitan:0 "En finir avec les discriminations"
+ je_cosmopolitan_reason:0 "Il est inhumain de discriminer les gens sur des critères ethniques ou culturels. Les vrais progressistes veulent une société cosmopolitaine."
+
+ je_full_democracy:0 "A propos de la Démocracie..."
+ je_full_democracy_reason:0 "Une véritable démocracie doit permettre à tous de s'exprimer et pas seulement une minorité privilégiée."
+
+ je_reaction_PB:0 "Réaction au Socialisme"
+ je_reaction_PB_reason:0 "Avec la montée en popularité des idées socialistes, de plus en plus de gens se sentent menacés."
+
+ je_abolish_serfdom:0 "Abolition du Servage"
+ je_abolish_serfdom_reason:0 "Le Servage a été abolis récemment, mais ils reste encore des puissants souhaitants son rétablissement. Il faudra du temps avant qu'ils ne finissent par se résigner..."
+ je_abolish_serfdom_goal:0 "Après 5 ans d'abolission du servage, ses partisants ne pourront que constater à quel point il était obsolète. Tenter de le rétablir ou entrer en guerre civile stoppera la progression."
+ 
+ je_abolish_theocracy:0 "La fin de la Théocracie" 
+ je_abolish_theocracy_reason:0 "Il faudra du temps pour que l'Eglise renonce au pouvoir clérical..." 
+ je_abolish_theocracy_goal:0 "Après 10 ans sans interruption, L'Eglise abandonnera ses prétentions." 
+
+ 
+ je_theocracy_mode:0 "Vers la Théocracie"
+ je_theocracy_mode_reason:0 "L'Eglise est heureuse que la Nation adopte une gouvernance théocratique." 
+ 
+ je_vanguardist_securitarian:0 "Sécuriser la Révolution" 
+ je_vanguardist_securitarian_reason:0 "Nous devons protégérer la Révolution des forces contre-revolutionnaires." 
+
+ je_AI_political_stability:0 "Stabilité Politique de l'IA"
+ je_AI_political_stability_reason:0 "L'IA manque de réactivité pour supporter des réglages où les mouvements politiques sont puissants, tombant dans des guerres civiles qu'un joueur éviterait facilement. C'est pourquoi, tant qu'elle est si imcopétante, elle doit jouer avec ses propres règles."
+
+
+
+ #French Politics JE : Road to the third Republic
+
+ je_july_monarchy:0 "l'instable Monarchie de Juillet"
+ je_july_monarchy_goal.1:0 "L'instabilité politique peut mener à des conséquences imprévisibles..."
+ je_july_monarchy_goal.2:0 "Une puissante $ig_variant_intelligentsia$ entre 1847 et 1849 pourrait provoquer quelques changements..."
+ je_july_monarchy_reason:0 "La Monarchie de Juillet, qui était supposée être le compromis idéal entre Monarchie et République, n'est pas vraiment populaire. A droite, les Légitimistes réclame le retour des Bourbons ; A gauche, les républicains restent une force considérable. plus le temps passe, plus Louis-Philippe devient rigide et dogmatique, et son entourage perd tout crédit. La situation se dégradant progressivement, des événements imprévisibles pourraient arriver..."
+
+ je_first_presidential_election:0 "Préparations de l'Election Présidentielle"
+ je_first_presidential_election_goal:0 "Cela fera 10 mois"
+ je_first_presidential_election_reason:0 "Cette Election Présidentielle s'annonce particulièrement disputée au vu du climat politique. La demande de changement étant extrêmement forte, la Nation sera chanceuse si cela se passe sans accrocs."
+ 
+ je_future_of_the_republic:0 "Résoudre la Crise Politique"
+ je_future_of_the_republic_goal.1:0 "[SCOPE.sCharacter('louis_napoleon_leader').GetFirstName] est le Chef d'Etat et les groupes d'intérêts $ig_variant_petty_bourgeoisie$ ou $ig_variant_armed_forces$ ou $ig_variant_rural_folk$ sont puissants et au gouvernement entre la 2ème et la 4èmle année suivant l'Election Présidentielle"
+ je_future_of_the_republic_goal.2:0 "[SCOPE.sCharacter('louis_napoleon_leader').GetFirstName] est le Chef d'Etat et les groupes d'intérêts $ig_variant_intelligentsia$ et $ig_variant_trade_unions$ sont marginalisés"
+ je_future_of_the_republic_reason:0 "Après l'Election Présidentielle, la ferveur révolutionnaire est retombée, tandis que la radicalité d'une minorité ne fait que monter. Certains politiques parlent de plus en plus ouvertement à rétablir l'ordre d'une «main ferme»."
+ 
+ je_creating_a_second_empire:0 "Préparation pour le Plébiscite"
+ je_creating_a_second_empire_goal:0 "Cela fera 1 an"
+ je_creating_a_second_empire_reason:0 "Maintenant que Louis-Napoleon a tous les pouvoirs, il doit se préparer au plébiscite qui le légitimera à la tête d'un nouvel Empire!"
+
+ je_fall_of_french_empire:0 "La Chute du Second Empire"
+ je_fall_of_french_empire_reason:0 "L'Empereur a été renversé par ses ennemis politiques à Paris, et la seule question restant est la forme du prochain gouvernement."
+
+ #Hungarian Revolution
+
+ je_hungarian_revolution:0 "Révolution Hongroise"
+ je_hungarian_revolution_reason:0 "La noblesse hongroise se prépare pour leur prochaine émancipation, si cela arrive, la Révolution est innévitable."
+ je_hungarian_revolution_goal:0 "La Révolution arrivera après 3 mois."
+
+ je_hungarian_revolution_2:0 "Mater l'insurrection hongroise"
+ je_hungarian_revolution_2_reason:0 "L'intégrité de l'Empire est menacée. Nous devons écraser la révolte hongroise avant que l'Empire ne s'effondre!"
+
+ #German politics
+
+ schleswig_holstein_question:0 "La question du Schleswig-Holstein"
+ schleswig_holstein_question_reason:0 "Le nationalisme allemand envenime les choses dans les duchés du Schleswig et du Holstein. Une révolte n'est qu'une question de temps..."
+ is_not_in_diplo_play:0 "Le Danemark n'est pas dans un coup diplomatique."
+
+ schleswig_war:0 "La Guerre du Schleswig"
+
+ #Italian unification
+
+ je_italian_independence_war:0 "Soulèvement italien"
+ je_italian_independence_war_reason:0 "La noblesse italienne se prépare pour leur prochaine émancipation, si cela arrive, la Révolution est innévitable. Les principautés italiennes indépendantes pourraient utiliser cela comme une opportunité..."
+ je_italian_independence_war_goal:0 "Le soulèvement arrivera après 4 mois"
+
+ je_italian_independence_war_2:0 "Guerre d'Indépendance"
+ je_italian_independence_war_2_reason:0 "Obtenir l'indépendance"
+
+ je_italy_plombieres:0 "S'allier à la France"
+ je_italy_plombieres_reason:0 "Nos puissants voisins français sont de potentiels alliés contre l'Autriche."
+
+ je_italy_plebisciti:0 "Organiser les Plébiscites"
+ je_italy_plebisciti_reason:0 "Les patriotes italiens des principautés du Nord pourraient organiser des plébiscites pour une Italie unifiée. Libérer les territoire sous occupation autrichienne rendrait notre Etat assez prestigieux pour assurer un résultat politique."
+ 
+ je_italy_i_mille:0 "L'Expédition des Milles"
+ je_italy_i_mille_reason:0 "Le Royaume des Deux-Siciles est le dernier obstacle à l'unification Italienne. Il doit être abbatu."
+
+ #Japanese Politics
+
+ je_meiji_restoration_dummy:0 "Restauration Impériale"
+ je_meiji_restoration_dummy_reason:0 "Journal fictif pour l'IA japonaise"

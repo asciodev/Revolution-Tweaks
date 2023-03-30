@@ -1,0 +1,888 @@
+﻿ig_intelligentsia = {
+	color = hsv{ 0.13 0.64 0.99 }
+	texture = "gfx/interface/icons/ig_icons/intelligensia.dds"
+	
+	ideologies = {
+		ideology_nationalist
+		ideology_liberal
+		ideology_anti_clerical
+		#ideology_republican
+		ideology_moderate_democrat
+		ideology_anti_slavery
+	}
+	
+	enable = {
+		always = yes
+	}
+	
+	traits = {
+		ig_trait_propagandists
+		ig_trait_avant_garde
+		ig_trait_social_criticism
+	}		
+	
+	on_enable = {}
+	on_disable = {}	
+	on_character_ig_membership = {}
+	
+	pop_potential = {
+		literacy_rate > 0.25
+		NOT = { is_pop_type = peasants }
+	}	
+	
+	pop_weight = {
+		value = 0
+		
+		add = {
+			desc = "ACADEMIC_EMPLOYMENT"
+			if = {
+				limit = {
+					OR = {
+						pop_employment_building = building_university
+						pop_employment_building = building_arts_academy
+					}
+				}
+				value = 100
+			}
+		}
+
+		multiply = {
+			desc = "RURAL_POP"
+			value = 1.0
+			
+			if = {
+				limit = { 
+					OR = {
+						pop_employment_building_group = bg_agriculture
+						pop_employment_building_group = bg_ranching
+						pop_employment_building_group = bg_plantations
+						pop_employment_building_group = bg_logging
+						pop_employment_building_group = bg_rubber
+					}
+				}
+				value = 0.5
+			}
+		}
+
+		add = {
+			desc = "POP_ACADEMICS"
+			if = {
+				limit = { 
+					is_pop_type = academics
+				}
+				value = 200
+			}
+		}	
+		
+		add = {
+			desc = "POP_CLERKS"
+			if = {
+				limit = { 
+					is_pop_type = clerks
+				}
+				value = 100
+			}
+		}		
+		
+		add = {
+			desc = "POP_BUREAUCRATS"
+			if = {
+				limit = { 
+					is_pop_type = bureaucrats
+				}
+				value = 100
+			}
+		}
+
+		add = {
+			desc = "POP_ENGINEERS"
+			if = {
+				limit = { 
+					is_pop_type = engineers
+				}
+				value = 50
+			}
+		}
+		
+		add = {
+			desc = "POP_CAPITALISTS"
+			if = {
+				limit = { 
+					is_pop_type = capitalists
+				}
+				value = 50
+			}
+		}				
+		
+		add = {
+			desc = "POP_ARISTOCRATS"
+			if = {
+				limit = { 
+					is_pop_type = aristocrats
+				}
+				value = 50
+			}
+		}
+
+		add = {
+			desc = "POP_OFFICERS"
+			if = {
+				limit = { 
+					is_pop_type = officers
+				}
+				value = 25
+			}
+		}
+
+		add = {
+			desc = "POP_CLERGYMEN"
+			if = {
+				limit = { 
+					is_pop_type = clergymen
+				}
+				value = 10
+			}
+		}
+
+		add = {
+			desc = "POP_MACHINISTS"
+			if = {
+				limit = { 
+					is_pop_type = machinists
+				}
+				value = 5
+			}
+		}
+
+		add = {
+			desc = "REPUBLICAN"
+			if = {
+				limit = {
+					is_pop_type = capitalists
+					owner = {
+						ig:ig_industrialists = {
+							has_ideology = ideology_orleanist
+						}
+					}
+				}
+				value = 25
+			}
+		}
+
+		add = {
+			desc = "REPUBLICAN"
+			if = {
+				limit = {
+					is_pop_type = aristocrats
+					owner = {
+						ig:ig_industrialists = {
+							has_ideology = ideology_orleanist
+						}
+					}
+				}
+				value = 25
+			}
+		}
+
+		add = {
+			desc = "REPUBLICAN"
+			if = {
+				limit = {
+					is_pop_type = officers
+					owner = {
+						ig:ig_industrialists = {
+							has_ideology = ideology_orleanist
+						}
+					}
+				}
+				value = 25
+			}
+		}
+
+		add = {
+			desc = "LIBERAL_NOBILITY"
+			if = {
+				limit = {
+					is_pop_type = aristocrats
+					owner = {
+						OR = {
+							ig:ig_devout = {
+								has_ideology = ideology_orthodox_patriarch
+							}
+							ig:ig_devout = {
+								has_ideology = ideology_russian_patriarch
+							}
+							ig:ig_devout = {
+								has_ideology = ideology_shinto_moralist
+							}
+							ig:ig_devout = {
+								has_ideology = ideology_buddhist_moralist
+							}
+						}
+					}
+				}
+				value = 25
+			}
+		}
+
+		add = {
+			desc = "JAPAN_IMPERIALIST"
+			if = {
+				limit = {
+					is_pop_type = aristocrats
+					owner = {
+						ig:ig_intelligentsia = {
+							has_ideology = ideology_japanese_imperialist
+						}
+					}
+				}
+				value = 50
+			}
+		}
+		
+		add = {
+			desc = "JUNKERS"
+			if = {
+				limit = { 
+					is_pop_type = aristocrats
+					owner = {
+						ig:ig_landowners = {
+							has_ideology = ideology_junker_paternalistic
+						}
+					}
+				}
+				value = -25
+			}
+		}
+		
+		add = {
+			desc = "LITERACY_50_60"
+			
+			if = {
+				limit = { 
+					literacy_rate >= 0.50
+					literacy_rate < 0.60
+				}
+				add = 3
+			}
+		}		
+
+		add = {
+			desc = "LITERACY_60_70"
+			
+			if = {
+				limit = { 
+					literacy_rate >= 0.60
+					literacy_rate < 0.70
+				}
+				add = 6
+			}
+		}
+
+		add = {
+			desc = "LITERACY_70_80"
+			
+			if = {
+				limit = { 
+					literacy_rate >= 0.70
+					literacy_rate < 0.80
+				}
+				add = 9
+			}
+		}		
+	
+		add = {
+			desc = "LITERACY_80_90"
+			
+			if = {
+				limit = { 
+					literacy_rate >= 0.80
+					literacy_rate < 0.90
+				}
+				add = 12
+			}
+		}		
+
+		add = {
+			desc = "LITERACY_90_100"
+			
+			if = {
+				limit = { 
+					literacy_rate >= 0.90
+				}
+				add = 15
+			}
+		}
+		
+		add = {
+			desc = "ANTI_TOKUGAWA_DOMAIN"
+			
+			if = {
+				limit = {
+					is_pop_type = aristocrats
+					owner = {
+						ig:ig_intelligentsia = {
+							has_ideology = ideology_japanese_imperialist
+						}
+						NOT = { has_variable = meiji_restoration_complete }
+					}
+					state = {
+						state_region = {
+							has_variable = western_domain
+						} 
+					}
+				}
+				add = 100
+			}
+		}
+
+		add = {
+			desc = "PRO_TOKUGAWA_DOMAIN"
+			
+			if = {
+				limit = {
+					is_pop_type = aristocrats
+					owner = {
+						ig:ig_intelligentsia = {
+								has_ideology = ideology_japanese_imperialist
+						}
+						NOT = { has_variable = meiji_restoration_complete }
+					}
+					state = {
+						state_region = {
+							NOT = { 
+								has_variable = western_domain 
+								has_variable = capital_domain
+							}
+						} 
+					}
+				}
+				add = -100
+			}
+		}
+
+		add = {
+			desc = "SEAT_OF_THE_EMPEROR"
+			
+			if = {
+				limit = {
+					is_pop_type = aristocrats
+					owner = {
+						ig:ig_intelligentsia = {
+								has_ideology = ideology_japanese_imperialist
+						}
+						NOT = { has_variable = meiji_restoration_complete }
+					}
+					state = {
+						state_region = {
+							has_variable = capital_domain
+						} 
+					}
+				}
+				add = 50
+			}
+		}
+
+
+		multiply = { #Pops are less attracted to radical ideologies if they're not poor
+		desc = "RADICAL_LEADER"
+		value = 1.0
+		if = {
+			limit = {
+				owner = {					
+					ig:ig_intelligentsia = {
+						leader = {
+							has_ideology = ideology_vanguardist
+						}
+					}						
+				}
+				NOT = {
+					standard_of_living <= 14
+				}
+			}
+			value = 0.75
+		}
+	}
+
+	multiply = { #Pops are less attracted to radical ideologies if they're not poor
+		desc = "RADICAL_LEADER"
+		value = 1.0
+		if = {
+			limit = {
+				owner = {					
+					ig:ig_intelligentsia = {
+						leader = {
+							has_ideology = ideology_anarchist
+						}
+					}						
+				}
+				NOT = {
+					standard_of_living <= 14
+				}
+			}
+			value = 0.75
+		}
+	}
+
+	multiply = { #Pops are less attracted to radical ideologies if they're not poor
+		desc = "RADICAL_LEADER"
+		value = 1.0
+		if = {
+			limit = {
+				owner = {					
+					ig:ig_intelligentsia = {
+						leader = {
+							has_ideology = ideology_communist
+						}
+					}						
+				}
+				NOT = {
+					standard_of_living <= 14
+				}
+			}
+			value = 0.75
+		}
+	}
+
+		multiply = {
+			desc = "law_autocracy"
+			value = 1.0
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_autocracy
+					}
+				}
+				value = 1.3
+			}
+		}
+
+		multiply = {
+			desc = "law_oligarchy"
+			value = 1.0
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_oligarchy
+					}
+				}
+				value = 1.25
+			}
+		}
+
+		multiply = {
+			desc = "law_landed_voting"
+			value = 1.0
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_landed_voting
+					}
+				}
+				value = 1.25
+			}
+		}
+
+		multiply = {
+			desc = "law_weighted_wealth_voting"
+			value = 1.0
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_weighted_wealth_voting
+					}
+				}
+				value = 1.2
+			}
+		}
+
+		multiply = {
+			desc = "law_wealth_voting"
+			value = 1.0
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_wealth_voting
+					}
+				}
+				value = 1.15
+			}
+		}
+
+		multiply = {
+			desc = "law_census_voting"
+			value = 1.0
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_census_voting
+					}
+				}
+				value = 1.1
+			}
+		}
+
+		multiply = {
+			desc = "law_weighted_universal_suffrage"
+			value = 1.0
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_weighted_universal_suffrage
+					}
+				}
+				value = 1.05
+			}
+		}
+
+		multiply = {
+			desc = "law_anarchy"
+			value = 1.0
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_anarchy
+					}
+				}
+				value = 1.1
+			}
+		}
+
+		multiply = {
+			desc = "law_outlawed_dissent"
+			value = 1.0
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_outlawed_dissent
+					}
+				}
+				value = 1.2
+			}
+		}
+
+		multiply = {
+			desc = "law_censorship"
+			value = 1.0
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_censorship
+					}
+				}
+				value = 1.1
+			}
+		}
+
+		multiply = {
+			desc = "law_state_religion"
+			value = 1.0
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_state_religion
+					}
+				}
+				value = 1.2
+			}
+		}
+
+		multiply = {
+			desc = "law_no_schools"
+			value = 1.0
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_no_schools
+					}
+				}
+				value = 1.25
+			}
+		}
+
+		multiply = {
+			desc = "law_debt_slavery"
+			value = 1.0
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_debt_slavery
+					}
+				}
+				value = 1.25
+			}
+		}
+
+		multiply = {
+			desc = "law_slave_trade"
+			value = 1.0
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_slave_trade
+					}
+				}
+				value = 1.25
+			}
+		}
+
+		multiply = {
+			desc = "law_legacy_slavery"
+			value = 1.0
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_legacy_slavery
+					}
+				}
+				value = 1.2
+			}
+		}
+
+		multiply = {
+			desc = "concept_literacy"
+			value = 1.0
+			
+			if = {
+				limit = { 
+					literacy_rate < 0.5
+					literacy_rate > 0.25
+				}
+				value = literacy_rate
+				multiply = 2
+			}
+		}
+
+		multiply = {
+			desc = "concept_literacy"
+			value = 1.0
+			
+			if = {
+				limit = { 
+					literacy_rate < 0.25
+				}
+				value = literacy_rate
+			}
+		}
+		
+		multiply = {
+			desc = "LEADER_POPULARITY"
+			scope:interest_group = {
+				leader = {
+					value = popularity
+					multiply = 0.0025
+					add = 1
+					max = 1.25
+					min = 0.75
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				scope:interest_group = {
+					is_in_government = yes
+				}
+			}
+			multiply = {
+				desc = "IN_GOVERNMENT_ATTRACTION"
+				value = 1
+				add = scope:interest_group.modifier:interest_group_in_government_attraction_mult
+				min = 0
+			}
+		}
+
+		multiply = {
+			desc = "decentralized_power"	
+			value = 1.0
+			
+			if = {
+				limit = { 
+					owner = {
+						is_country_type = decentralized
+					}
+				}
+				value = 0.0
+			}		
+		}
+
+		multiply = { #Some Pops that would support TU supports Intelligentsia instead
+			desc = "NO_LABOR_MOVEMENT"	
+			value = 1.0
+			
+			if = {
+				limit = { 
+					OR = {
+						is_pop_type = laborers
+						is_pop_type = machinists
+					}
+					owner = {
+						NOT = { has_technology_researched = labor_movement }
+					}
+				}
+				value = 2
+			}		
+		}		
+
+		multiply = { #Some Pops that would support TU supports Intelligentsia instead
+			desc = "NO_EGALITARIANISM"	
+			value = 1.0
+			
+			if = {
+				limit = { 
+					OR = {
+						is_pop_type = laborers
+						is_pop_type = machinists
+					}
+					owner = {
+						NOT = { has_technology_researched = egalitarianism }
+					}
+				}
+				value = 1.25
+			}		
+		}
+
+		multiply = { #Some Pops that would support TU supports Intelligentsia instead
+			desc = "NO_SOCIALISM"	
+			value = 1.0
+			
+			if = {
+				limit = { 
+					OR = {
+						is_pop_type = laborers
+						is_pop_type = machinists
+					}
+					owner = {
+						NOT = { has_technology_researched = socialism }
+					}
+				}
+				value = 1.5
+			}		
+		}
+
+		multiply = {
+			desc = "AFROAMERICAN"
+			value = 1.0
+
+			if = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+					culture = cu:afro_american
+				}
+				value = 2
+			}
+		}
+
+		multiply = {
+			desc = "LEFTISTINTELLIGENTSIA"
+			value = 1.0
+
+			if = {
+				limit = {
+					owner = {
+						any_interest_group = { 
+							is_interest_group_type = ig_intelligentsia 
+							leader = {
+								OR = {
+									has_ideology = ideology_communist
+									has_ideology = ideology_vanguardist
+									has_ideology = ideology_anarchist
+								}
+							}
+						}
+					}
+					is_pop_type = aristocrats
+				}
+				value = 0.1
+			}
+		}
+
+		multiply = {
+			desc = "IG_IS_MARGINALIZED"
+			value = 1.0
+			
+			scope:interest_group = {
+				if = {
+					limit = {
+						is_marginal = yes
+					}
+					value = 0.5
+				}
+			}
+		}		
+	}
+	
+	monarch_weight = {
+		value = 0.25
+	}
+	
+	commander_weight = {
+		value = 1.0
+	}	
+	
+	noble_chance = {
+		value = 0.5
+	}
+	
+	female_commander_chance = {	
+		value = 0.0
+	}
+	
+	female_politician_chance = {
+		value = 0
+
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_women_own_property
+				}
+				
+			}
+			add = {
+				value = 0.05
+			}
+		}
+
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_women_in_the_workplace
+				}
+				
+			}
+			add = {
+				value = 0.05
+			}
+		}
+
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_womens_suffrage
+				}
+				
+			}
+			add = {
+				value = 0.15
+			}
+		}
+	}
+	
+	# The chance that a commander belonging to this IG takes over leadership when it changes
+	# scope:character is the most popular commander in the IG
+	commander_leader_chance = {
+		value = 0.25
+		if = {
+			limit = {
+				exists = scope:character
+			}
+			multiply = {
+				value = 1
+				add = scope:character.popularity
+				min = 0
+			}
+		}
+	}
+}

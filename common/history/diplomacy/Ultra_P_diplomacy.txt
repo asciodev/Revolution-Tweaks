@@ -1,0 +1,89 @@
+﻿DIPLOMACY = {
+	c:RUS = {
+		create_diplomatic_pact = {
+			country = c:AUS
+			type = defensive_pact
+		}
+		set_relations = { country = c:PRU value = 50 }
+		set_secret_goal = {
+			country = c:PRU
+			secret_goal = befriend
+		}	
+	}
+
+	c:PRU = {
+		set_secret_goal = {
+			country = c:RUS
+			secret_goal = befriend
+		}
+	}
+	c:AUS = {
+		set_secret_goal = {
+			country = c:RUS
+			secret_goal = befriend
+		}
+	}
+
+	c:FRA = {
+		set_secret_goal = {
+			country = c:SAR
+			secret_goal = protect
+		}
+		set_secret_goal = {
+			country = c:ALD
+			secret_goal = conquer
+		}
+		set_relations = { country = c:ALD value = -200 }
+	}
+
+	c:ALD = {
+		set_secret_goal = {
+			country = c:FRA
+			secret_goal = conquer
+		}
+		set_relations = { country = c:FRA value = -200 }
+	}
+
+	c:USA = {
+		set_secret_goal = {
+			country = c:MEX
+			secret_goal = conquer
+		}		
+	}
+
+	c:SAR = {
+		set_secret_goal = {
+			country = c:AUS
+			secret_goal = antagonize
+		}		
+	}
+
+	c:PAR = {
+		set_secret_goal = {
+			country = c:AUS
+			secret_goal = antagonize
+		}		
+	}
+
+	c:MOD = {
+		set_secret_goal = {
+			country = c:AUS
+			secret_goal = antagonize
+		}		
+	}
+
+	c:LUC = {
+		set_secret_goal = {
+			country = c:AUS
+			secret_goal = antagonize
+		}		
+	}
+
+	c:TUS = {
+		set_secret_goal = {
+			country = c:AUS
+			secret_goal = antagonize
+		}		
+	}
+
+}

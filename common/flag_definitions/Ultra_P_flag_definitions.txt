@@ -1,0 +1,261 @@
+﻿
+
+
+FRA = { # France
+	flag_definition = {
+		coa = FRA
+		subject_canton = FRA
+		allow_overlord_canton = yes
+		coa_with_overlord_canton = FRA_subject		
+		priority = 1
+	}
+	flag_definition = {
+		coa = FRA
+		subject_canton = FRA
+		allow_overlord_canton = yes		
+		overlord_canton_scale = { 0.337 0.337 }			
+		priority = 10
+		trigger = { 
+			coa_def_republic_flag_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = FRA
+		subject_canton = FRA
+		priority = 20
+		trigger = {
+			coa_def_dictatorship_flag_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = FRA_empire
+		subject_canton = FRA_empire
+		priority = 10
+		allow_overlord_canton = yes
+		coa_with_overlord_canton = FRA_subject			
+		trigger = {			
+			scope:actor = { ruler = { has_variable = is_bonapartist } }
+			coa_def_undemocratic_monarchy_flag_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = FRA_absolute_empire
+		subject_canton = FRA_absolute_empire
+		priority = 15
+		allow_overlord_canton = yes
+		coa_with_overlord_canton = FRA_subject			
+		trigger = {			
+			scope:actor = { ruler = { has_variable = is_bonapartist } }
+			coa_def_absolute_monarchy_flag_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = FRA_bourbon_white
+		subject_canton = FRA_bourbon_white
+		priority = 30
+		allow_overlord_canton = yes
+		coa_with_overlord_canton = FRA_subject			
+		trigger = {			
+			scope:actor = { 
+				ruler = { 
+					NOR = {
+						has_variable = is_orleanist
+						has_variable = is_bonapartist
+					}
+				} 
+			}
+			coa_def_undemocratic_monarchy_flag_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = FRA_bourbon_coa
+		subject_canton = FRA_bourbon_coa	
+		allow_overlord_canton = yes
+		coa_with_overlord_canton = FRA_subject			
+		priority = 35
+		trigger = {
+			scope:actor = { 
+				ruler = { 
+					NOR = {
+						has_variable = is_orleanist
+						has_variable = is_bonapartist
+					}
+				} 
+			}
+			coa_def_absolute_monarchy_flag_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = FRA_restoration_monarchy
+		subject_canton = FRA_restoration_monarchy	
+		allow_overlord_canton = yes
+		coa_with_overlord_canton = FRA_subject			
+		priority = 105
+		trigger = {
+			scope:actor = { 
+				ruler = { 
+					NOR = {
+						has_variable = is_orleanist
+						has_variable = is_bonapartist
+					}
+				} 
+			}
+			coa_def_monarchy_flag_trigger = yes
+			scope:actor = { has_law = law_type:law_landed_voting }
+		}
+	}
+	flag_definition = {
+		coa = FRA_constitutional_monarchy
+		subject_canton = FRA_constitutional_monarchy	
+		allow_overlord_canton = yes
+		coa_with_overlord_canton = FRA_subject			
+		priority = 105
+		trigger = {
+			scope:actor = { 
+				ruler = { 
+					NOR = {
+						has_variable = is_orleanist
+						has_variable = is_bonapartist
+					}
+				} 
+			}
+			coa_def_monarchy_flag_trigger = yes
+			OR = {
+				scope:actor = { has_law = law_type:law_weighted_wealth_voting }
+				scope:actor = { has_law = law_type:law_wealth_voting }
+				scope:actor = { has_law = law_type:law_census_voting }
+				scope:actor = { has_law = law_type:law_weighted_universal_suffrage }
+				scope:actor = { has_law = law_type:law_universal_suffrage }
+			}
+		}
+	}	
+	flag_definition = {
+		coa = FRA_flipped_tricolor
+		subject_canton = FRA_flipped_tricolor
+		priority = 30
+		allow_overlord_canton = yes
+		coa_with_overlord_canton = FRA_subject			
+		trigger = {			
+			scope:actor = { ruler = { has_variable = is_orleanist } }
+			coa_def_undemocratic_monarchy_flag_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = FRA_first_tricolor
+		subject_canton = FRA_first_tricolor	
+		allow_overlord_canton = yes
+		coa_with_overlord_canton = FRA_subject			
+		priority = 35
+		trigger = {
+			scope:actor = { ruler = { has_variable = is_orleanist } }
+			coa_def_absolute_monarchy_flag_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = FRA_theocracy
+		subject_canton = FRA_theocracy
+		priority = 20
+		trigger = { 
+			coa_def_theocracy_flag_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = FRA_communist
+		subject_canton = FRA_communist
+		priority = 1500
+		trigger = { 
+			coa_def_communist_flag_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = FRA_military
+		subject_canton = FRA_military
+		priority = 1500
+		trigger = { 
+			coa_def_military_junta_flag_trigger = yes
+		}
+	}	
+	flag_definition = {
+		coa = FRA_fascist
+		subject_canton = FRA_fascist
+		priority = 1550
+		trigger = { 
+			coa_def_fascist_flag_trigger = yes
+		}
+	}		
+}
+
+AUS = { # Austria
+	flag_definition = {
+		coa = AUS
+		subject_canton = AUS		
+		allow_overlord_canton = yes
+		priority = 1
+	}
+
+	flag_definition = {
+		coa = AUS_absolute_monarchy
+		subject_canton = AUS_absolute_monarchy
+		coa_with_overlord_canton = AUS_subject
+		allow_overlord_canton = yes		
+		overlord_canton_scale = { 0.337 0.337 }			
+		priority = 20
+		trigger = { 
+			coa_def_absolute_monarchy_flag_trigger = yes
+		}
+	}	
+	flag_definition = {
+		coa = AUS_republic
+		subject_canton = AUS_republic
+		priority = 10
+		trigger = { 
+			coa_def_republic_flag_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = AUS_dictatorship
+		subject_canton = AUS_dictatorship
+		priority = 20
+		trigger = { 
+			coa_def_dictatorship_flag_trigger = yes
+		}
+	}	
+	flag_definition = {
+		coa = AUS_theocracy
+		subject_canton = AUS_theocracy
+		priority = 10
+		trigger = { 
+			coa_def_theocracy_flag_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = KUK
+		subject_canton = KUK
+		priority = 100
+		trigger = { 
+			scope:actor = { country_has_primary_culture = cu:hungarian }
+			c:AUS = {
+				any_scope_state = {
+						state_region = {
+						is_homeland = cu:hungarian
+					}
+				}
+			}
+		}
+	}
+	flag_definition = {
+		coa = AUS_communist
+		priority = 1500
+		trigger = { 
+			coa_def_communist_flag_trigger = yes
+		}
+	}	
+	flag_definition = {
+		coa = AUS_fascist
+		subject_canton = AUS_fascist
+		priority = 1500
+		trigger = { 
+			coa_def_fascist_flag_trigger = yes
+		}
+	}			
+}

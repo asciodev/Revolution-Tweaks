@@ -1,0 +1,208 @@
+﻿je_italy_plombieres = {
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	should_be_pinned_by_default = yes
+
+	is_shown_when_inactive = {
+		exists = c:SAR
+		exists = c:FRA
+		exists = c:AUS
+		this = c:SAR
+	}
+
+	possible = {
+		hidden_trigger = {
+			NOT = { has_global_variable = plombieres_variable }
+			NOT = { has_variable = plombieres_var }
+		}
+		OR = {
+			exists = s:STATE_SAVOY.region_state:SAR
+			exists = s:STATE_PROVENCE.region_state:SAR
+		}
+		OR = {
+			exists = s:STATE_LOMBARDY.region_state:AUS
+			exists = s:STATE_LOMBARDY.region_state:VEN
+		}
+		c:SAR = {
+            is_subject = no
+        }
+		game_date > 1855.1.1
+	}
+
+	invalid = {
+		owns_entire_state_region = STATE_LOMBARDY
+	}
+
+	complete = {
+		c:SAR = {
+            is_at_war = no
+            is_subject = no
+        }
+        c:FRA = {
+			is_at_war = no
+			relations:root >= relations_threshold:neutral
+			NOT = { has_war_with = ROOT }
+		}
+		game_date > 1857.1.1
+		OR = {
+			c:FRA = {
+				ruler = {
+					has_variable = is_louis_napoleon
+				}
+				has_law = law_type:law_monarchy
+			}
+			game_date > 1858.1.1
+		}
+	}
+
+	on_complete = {
+		c:FRA = {
+			trigger_event = { 
+				id = italian_independence_war.4
+				popup = yes
+			}
+		}
+	}
+}
+
+je_italy_plebisciti = {
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	should_be_pinned_by_default = yes
+
+	is_shown_when_inactive = {
+		exists = c:SAR
+		this = c:SAR
+	}
+
+	possible = {
+		exists = c:SAR
+		c:SAR = {
+            is_subject = no
+        }
+	}
+
+	complete = {
+		c:SAR = {
+            is_at_war = no
+            is_subject = no
+        }
+		owns_entire_state_region = STATE_LOMBARDY
+		has_technology_researched = nationalism
+		hidden_trigger = {
+			NOT = { has_global_variable = plebiscite_variable }
+			NOT = { has_variable = plebiscite_var }
+		}
+	}
+
+	on_complete = {
+		c:SAR = {
+			trigger_event = { 
+				id = italian_independence_war.6
+				popup = yes
+			}
+		}
+	}
+}
+
+je_italy_i_mille = {
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	should_be_pinned_by_default = yes
+
+	is_shown_when_inactive = {
+		exists = c:SAR
+		exists = c:SIC
+		this = c:SAR
+		c:SAR = {
+            is_subject = no
+        }
+	}
+
+	possible = {
+		exists = c:SAR
+		exists = c:SIC
+		has_technology_researched = nationalism
+		hidden_trigger = {
+			#has_global_variable = plebiscite_variable
+	        NOT = { has_global_variable = i_mille }
+	    }
+
+	}
+
+	complete = {
+		c:SAR = {
+            is_at_war = no
+            is_subject = no
+        }
+		owns_entire_state_region = STATE_LOMBARDY
+		owns_entire_state_region = STATE_PIEDMONT
+		owns_entire_state_region = STATE_EMILIA
+		owns_entire_state_region = STATE_TUSCANY
+		owns_entire_state_region = STATE_ROMAGNA
+		
+	}
+
+	on_complete = {
+		c:SAR = {
+			trigger_event = { 
+				id = italian_independence_war.7
+				days = 30
+				popup = yes
+			}
+		}
+	}
+}
+
+je_ai_venetia_gets_annexed = { #AI event to avoid an iddle Venetia doing nothing
+
+	is_shown_when_inactive = {
+		exists = c:VEN
+		is_player = no
+		OR = {
+			exists = c:SAR
+			exists = c:ITA
+		}
+		this = c:VEN
+	}
+
+	possible = {
+		exists = c:VEN
+		is_player = no
+		OR = {
+			exists = c:SAR
+			exists = c:ITA
+		}
+		this = c:VEN
+		c:VEN = {
+            is_subject = no
+        }
+	}
+
+	complete = {
+		OR = {
+			exists = c:ITA
+			c:SAR = {
+				has_technology_researched = nationalism
+			}
+		}
+	}
+
+	on_complete = {
+		if = {
+			limit = {
+				exists = c:ITA
+				exists = c:VEN
+			}
+			c:ITA = {
+				annex = c:VEN
+			}
+		}
+		else_if = {
+			limit = {
+				exists = c:SAR
+				exists = c:VEN
+			}
+			c:SAR = {
+				annex = c:VEN
+			}
+		}
+	}
+}

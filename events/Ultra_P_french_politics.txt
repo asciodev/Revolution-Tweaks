@@ -1,0 +1,891 @@
+﻿namespace = french_politics
+
+french_politics.1 = { #July Monarchy consolidated (no Revolution nor Napoleon)
+
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/world_fair"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	title = french_politics.1.t
+	desc = french_politics.1.d
+	flavor = french_politics.1.f
+
+	duration = 3
+
+	trigger = {
+	}
+
+	option = {
+		name = french_politics.1.a
+		default_option = yes
+	}
+}
+
+french_politics.2 = {
+
+	type = country_event
+
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	title = french_politics.2.t
+	desc = french_politics.2.d
+	flavor = french_politics.2.f
+
+	duration = 3
+
+	trigger = {
+		#From JE_july_monarchy
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_law = law_type:law_presidential_republic }
+			}
+			activate_law = law_type:law_presidential_republic
+		}
+		if = {
+			limit = {
+				NOT = { has_law = law_type:law_universal_suffrage }
+			}
+			activate_law = law_type:law_universal_suffrage
+		}
+		if = {
+			limit = {
+				OR = { 
+					has_law = law_type:law_legacy_slavery
+					has_law = law_type:law_debt_slavery
+					has_law = law_type:law_slave_trade
+				}
+			}
+			activate_law = law_type:law_slavery_banned
+		}
+		every_interest_group = {
+			limit = {
+				has_ideology = ideology_pro_slavery
+			}
+			remove_ideology = ideology_pro_slavery
+		}
+		
+		if = {
+			limit = {
+				year = 1836								
+			}
+			set_next_election_date = 1841.01.01
+		}
+		else_if = {
+			limit = {
+				year = 1837
+			}
+			set_next_election_date = 1841.01.01
+		}	
+		else_if = {
+			limit = {
+				year = 1838
+			}
+			set_next_election_date = 1842.01.01
+		}	
+		else_if = {
+			limit = {
+				year = 1839
+			}
+			set_next_election_date = 1843.01.01
+		}	
+		else_if = {
+			limit = {
+				year = 1840
+			}
+			set_next_election_date = 1844.01.01
+		}	
+		else_if = {
+			limit = {
+				year = 1841
+			}
+			set_next_election_date = 1845.01.01
+		}	
+		else_if = {
+			limit = {
+				year = 1842
+			}
+			set_next_election_date = 1846.01.01
+		}	
+		else_if = {
+			limit = {
+				year = 1843
+			}
+			set_next_election_date = 1847.01.01
+		}	
+		else_if = {
+			limit = {
+				year = 1844
+			}
+			set_next_election_date = 1848.01.01
+		}	
+		else_if = {
+			limit = {
+				year = 1845
+			}
+			set_next_election_date = 1849.01.01
+		}
+		else_if = {
+			limit = {
+				year = 1846
+			}
+			set_next_election_date = 1850.01.01
+		}
+		else_if = {
+			limit = {
+				year = 1847
+			}
+			set_next_election_date = 1851.01.01
+		}
+		else_if = {
+			limit = {
+				year = 1848
+			}
+			set_next_election_date = 1852.01.01
+		}
+		else_if = {
+			limit = {
+				year = 1849
+			}
+			set_next_election_date = 1853.01.01
+		}
+		else_if = {
+			limit = {
+				year = 1850
+			}
+			set_next_election_date = 1854.01.01
+		}
+		else_if = {
+			limit = {
+				year = 1851
+			}
+			set_next_election_date = 1855.01.01
+		}
+		else_if = {
+			limit = {
+				year = 1852
+			}
+			set_next_election_date = 1856.01.01
+		}
+		else_if = {
+			limit = {
+				year = 1853
+			}
+			set_next_election_date = 1857.01.01
+		}
+	}
+
+
+	option = {
+		name = french_politics.2.a
+		hidden_effect = {
+			every_interest_group = {
+				limit = { is_in_government = yes }
+				remove_ruling_interest_group = yes
+			}
+			every_interest_group = {
+				limit = {
+					has_party = yes
+					party = {
+						is_party_type = liberal_party
+					}
+				}
+				add_ruling_interest_group = yes
+			}
+			every_interest_group = {
+				limit = {
+					has_party = no
+					is_interest_group_type = ig_intelligentsia
+				}
+				add_ruling_interest_group = yes
+			}
+			ig:ig_armed_forces = {
+				remove_ruling_interest_group = yes
+			}
+			create_character = {
+				first_name = Louis-Napoleon
+				last_name = Bonaparte
+				culture = cu:french
+				ig_leader = yes
+				interest_group = ig_petty_bourgeoisie
+				female = no
+				birth_date = 1808.4.20
+				dna = dna_emperor_napoleon_03
+				ideology = ideology_moderate
+				traits = {
+					ambitious
+					demagogue
+					charismatic
+				}
+				on_created = {
+					set_variable = is_louis_napoleon
+					set_variable = is_bonapartist
+				}
+			}
+		}
+		add_journal_entry = { type = je_first_presidential_election }
+		add_journal_entry = { type =  je_abolish_monarchy }
+	}
+}
+
+french_politics.3 = {
+
+	type = country_event
+
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_capitalists_meeting.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/london_center"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	title = french_politics.3.t
+	desc = french_politics.3.d
+	flavor = french_politics.3.f
+
+	duration = 3
+
+	trigger = {
+	}
+
+	option = {
+		name = french_politics.3.a
+		default_option = yes
+		trigger_event = { id = french_politics.2 days = 10 popup = yes }	
+		ai_chance = {
+			base = 1
+		}
+	}
+	
+	option = {
+		name = french_politics.3.b
+		add_modifier = {
+            name = laissez_faire
+            months = 61
+        }
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+french_politics.4 = {
+
+	type = country_event
+
+	event_image = {
+		video = "gfx/event_pictures/unspecific_politicians_arguing.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/london_center"
+
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	title = french_politics.4.t
+	desc = french_politics.4.d
+	flavor = french_politics.4.f
+
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		ig:ig_industrialists = {
+			leader = {
+				save_scope_as = industrialists_leader
+			}
+		}
+		ig:ig_petty_bourgeoisie = {
+			leader = {
+				save_scope_as = forces_leader
+			}
+		}
+	}
+
+
+	option = {
+		name = french_politics.4.a
+		default_option = yes
+		hidden_effect = {
+			every_interest_group = {
+				limit = { is_in_government = yes }
+				remove_ruling_interest_group = yes
+			}
+			create_character = {
+				first_name = Louis-Napoleon
+				last_name = Bonaparte
+				ruler = yes
+				culture = cu:french
+				ig_leader = yes
+				interest_group = ig_petty_bourgeoisie
+				female = no
+				birth_date = 1808.4.20
+				dna = dna_emperor_napoleon_03
+				ideology = ideology_moderate
+				traits = {
+					ambitious
+					demagogue
+					charismatic
+				}
+				on_created = {
+					set_variable = is_louis_napoleon
+					set_variable = is_bonapartist
+				}
+			}
+		}
+		add_journal_entry = { type = je_future_of_the_republic }
+		ig:ig_petty_bourgeoisie = {
+			add_ruling_interest_group = yes
+		}
+		ig:ig_armed_forces = {
+			add_ruling_interest_group = yes
+		}
+		ai_chance = {
+			base = 95
+		}
+	}
+	
+	option = {
+		name = french_politics.4.b
+		hidden_effect = {
+			every_interest_group = {
+				limit = { is_in_government = yes }
+				remove_ruling_interest_group = yes
+			}	
+		}
+		ig:ig_industrialists = {
+			add_ruling_interest_group = yes
+		}
+		ai_chance = {
+			base = 5
+		}
+	}
+}
+
+french_politics.5 = {
+
+	type = country_event
+
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_political_extremism.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/political_extremism"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	title = french_politics.5.t
+	desc = french_politics.5.d
+	flavor = french_politics.5.f
+
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		
+	}
+
+
+	option = {
+		name = french_politics.5.a
+		add_journal_entry = { type = je_creating_a_second_empire }
+		set_variable = fra_presidential_dictatorship
+		activate_law = law_type:law_oligarchy
+		hidden_effect = {
+			random_scope_character = {
+				limit = { has_variable = is_louis_napoleon }
+				kill_character = yes
+			}
+			trigger_event = { id = french_politics.6 days = 1 }
+		}
+	}
+	
+}
+
+french_politics.6 = {
+	type = country_event
+	hidden = yes
+	immediate = {
+		create_character = {
+			first_name = Louis-Napoleon
+			last_name = Bonaparte
+			culture = cu:french
+			ruler = yes		
+			interest_group = ig_petty_bourgeoisie
+			female = no
+			birth_date = 1808.4.20
+			dna = dna_emperor_napoleon_03
+			ideology = ideology_royalist
+			traits = {
+				ambitious
+				demagogue
+				charismatic
+			}
+			on_created = {
+				set_variable = is_louis_napoleon
+				set_variable = is_bonapartist
+			}
+		}
+	}
+}
+
+french_politics.7 = {
+
+	type = country_event
+	
+	event_image = {
+		video = "gfx/event_pictures/middleeast_police_breaking_door.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/world_fair"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	title = french_politics.7.t
+	desc = french_politics.7.d
+	flavor = french_politics.7.f
+
+	duration = 3
+
+	trigger = {
+	}
+
+	option = {
+		name = french_politics.7.a
+		random_scope_character = {
+			limit = { has_variable = is_louis_napoleon }
+			kill_character = yes
+		}
+		ig:ig_petty_bourgeoisie ={
+			if = {
+				limit = {
+					has_ideology = ideology_bonapartism
+				}
+				remove_ideology = ideology_bonapartism
+				add_ideology = ideology_reactionary
+			}
+		}
+		every_interest_group = {
+			limit = {
+				has_ideology = ideology_bonapartism
+			}
+			remove_ideology = ideology_bonapartism
+		}
+	}
+}
+
+french_politics.8 = {
+
+	type = country_event
+
+	event_image = {
+		video = "gfx/event_pictures/unspecific_military_parade.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/london_center"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	title = french_politics.8.t
+	desc = french_politics.8.d
+	flavor = french_politics.8.f
+
+	duration = 3
+
+	trigger = {
+	}
+
+	option = {
+		name = french_politics.8.a
+		activate_law = law_type:law_monarchy
+		#activate_law = law_type:law_universal_suffrage
+		every_interest_group = {
+			limit = {
+				has_ideology = ideology_revolutionary_republican
+			}
+			remove_ideology = ideology_revolutionary_republican
+			add_ideology = ideology_republican #After the coup, french republicans were "vaccinated" against presidential republic
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					owns_entire_state_region = STATE_ALSACE_LORRAINE
+				}
+				set_variable = french_empire_alsace_lorraine
+			}
+			random_scope_character = {
+				limit = { has_variable = is_louis_napoleon }
+				kill_character = yes
+			}
+			remove_variable = fra_presidential_dictatorship
+			set_variable = french_empire_created
+			trigger_event = { id = french_politics.9 days = 1 }
+		}
+	}
+}
+
+french_politics.9 = {
+	type = country_event
+	hidden = yes
+	immediate = {
+		remove_variable = french_empire_created
+		create_character = {
+			first_name = Louis-Napoleon
+			last_name = Bonaparte
+			culture = cu:french
+			ruler = yes		
+			interest_group = ig_petty_bourgeoisie
+			female = no
+			birth_date = 1808.4.20
+			dna = dna_emperor_napoleon_03
+			ideology = ideology_royalist
+			traits = {
+				ambitious
+				demagogue
+				charismatic
+			}
+			on_created = {
+				set_variable = is_louis_napoleon
+				set_variable = is_bonapartist
+			}
+		}
+	}
+}
+
+french_politics.10 = {
+	type = country_event
+	placement = ROOT
+
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+	
+	title = french_politics.10.t
+	desc = french_politics.10.d
+	flavor = french_politics.10.f
+
+	duration = 3
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = french_politics.10.a
+		hidden_effect = {
+			remove_variable = french_empire_alsace_lorraine
+			activate_law = law_type:law_parliamentary_republic
+			activate_law = law_type:law_universal_suffrage
+		}
+	}
+}
+
+french_politics.11 = {
+	type = country_event
+	placement = ROOT
+
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+	
+	title = french_politics.10.t
+	desc = french_politics.10.d
+	flavor = french_politics.10.f
+
+	duration = 3
+
+	cooldown = { months = normal_modifier_time }
+	
+	trigger = {
+        exists = c:FRA
+        c:FRA = ROOT
+		has_law = law_type:law_monarchy
+		OR = {
+			is_enacting_law = law_type:law_presidential_republic
+			is_enacting_law = law_type:law_parliamentary_republic
+			is_enacting_law = law_type:law_council_republic
+		}
+		ruler = { has_variable = is_bonapartist }
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = french_politics.10.a
+		hidden_effect = {
+			remove_variable = french_empire_alsace_lorraine
+		}
+	}
+}
+
+## Restauration events ##
+
+french_politics.12 = { #legitimist restauration
+	type = country_event
+	placement = ROOT
+
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_london_center.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/london_center"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	
+	title = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { has_variable = henri_restauration }
+				}
+				desc = french_politics.12.t1
+			}
+			triggered_desc = {
+				trigger = {
+					always = yes
+				}
+				desc = french_politics.12.t2
+			}
+		}
+	}
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { has_variable = henri_restauration }
+				}
+				desc = french_politics.12.d1
+			}
+			triggered_desc = {
+				trigger = {
+					always = yes
+				}
+				desc = french_politics.12.d2
+			}
+		}
+	}
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { has_variable = henri_restauration }
+				}
+				desc = french_politics.12.f1
+			}
+			triggered_desc = {
+				trigger = {
+					always = yes
+				}
+				desc = french_politics.12.f2
+			}
+		}
+	}
+
+	duration = 3
+
+	cooldown = { months = normal_modifier_time }
+	
+	trigger = {
+        exists = c:FRA
+        c:FRA = ROOT
+		is_enacting_law = law_type:law_monarchy
+		ig:ig_landowners = { 
+			is_in_government = yes
+			is_powerful = yes 
+			has_ideology = ideology_paternalistic
+		}
+		ruler = {
+			NOR = { 
+				has_variable = is_louis_napoleon 
+				has_variable = is_bonapartist 
+				has_variable = is_orleanist 
+			}
+		}	
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = french_politics.12.a
+		hidden_effect = {
+			if = { 
+				limit = {
+					NOT = { has_variable = henri_restauration }
+				}
+				create_character = {
+					first_name = "Henri"
+					last_name = "de_BorbO_n"
+					ruler = yes
+					birth_date = 1820.9.29
+					dna = dna_king_henry_05
+					interest_group = ig_landowners
+					ideology = ideology_royalist
+					traits = {
+						reserved
+					}
+					on_created = {
+						set_variable = is_married
+						set_variable = is_legitimist
+					}
+				}
+				set_variable = henri_restauration
+			}
+			else = {
+				create_random_legitimist_ruler = yes
+			}
+		}
+	}
+}
+
+french_politics.13 = { #bonapartist restauration
+	type = country_event
+	placement = ROOT
+
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_london_center.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/london_center"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	
+	title = french_politics.13.t
+	desc = french_politics.13.d
+	flavor = french_politics.13.f
+
+	duration = 3
+
+	cooldown = { months = normal_modifier_time }
+	
+	trigger = {
+        exists = c:FRA
+        c:FRA = ROOT
+		is_enacting_law = law_type:law_monarchy
+		OR = {
+			ig:ig_petty_bourgeoisie = { 
+				is_in_government = yes
+				is_powerful = yes
+				has_ideology = ideology_bonapartism
+			}
+			ig:ig_armed_forces = { 
+				is_in_government = yes
+				is_powerful = yes 
+				has_ideology = ideology_bonapartism
+			}
+		}
+		ruler = {
+			NOR = { 
+				has_variable = is_legitimist 
+				has_variable = is_orleanist 
+			}
+		}
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = french_politics.13.a
+		hidden_effect = {
+			create_random_bonapartist_ruler = yes
+			if = {
+				limit = {
+					owns_entire_state_region = STATE_ALSACE_LORRAINE
+				}
+				set_variable = french_empire_alsace_lorraine
+			}
+		}
+	}
+}
+
+french_politics.14 = { #orleanist resauration
+	type = country_event
+	placement = ROOT
+
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_london_center.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/london_center"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	
+	title = french_politics.14.t
+	desc = french_politics.14.d
+	flavor = french_politics.14.f
+
+	duration = 3
+
+	cooldown = { months = normal_modifier_time }
+	
+	trigger = {
+        exists = c:FRA
+        c:FRA = ROOT
+		is_enacting_law = law_type:law_monarchy
+		ig:ig_industrialists = { 
+			is_in_government = yes
+			is_powerful = yes
+			has_ideology = ideology_orleanist
+		}
+		ruler = {
+			NOR = { 
+				has_variable = is_louis_napoleon 
+				has_variable = is_bonapartist 
+				has_variable = is_legitimist 
+			}
+		}
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = french_politics.14.a
+		hidden_effect = {
+			create_random_orleanist_ruler = yes
+		}
+	}
+}
