@@ -1,0 +1,32 @@
+﻿GER = {
+	color = german_gray
+	
+	country_type = recognized
+
+	tier = empire
+	
+	cultures = { north_german south_german }
+	capital = STATE_BRANDENBURG
+}
+
+NGF = {
+	color = northgermanfederation
+	
+	country_type = recognized
+
+	tier = kingdom
+
+	cultures = { north_german}
+	capital = STATE_BRANDENBURG
+}
+
+SGF = {
+	color = southgermanfederation
+	
+	country_type = recognized
+
+	tier = kingdom
+
+	cultures = { south_german}
+	capital = STATE_BAVARIA
+}
