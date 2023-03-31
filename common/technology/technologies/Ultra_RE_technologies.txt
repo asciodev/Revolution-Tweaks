@@ -1,0 +1,259 @@
+﻿#Military
+
+enlightenment = {
+	# Cheatcodes for historically literate European Countries
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/human_rights.dds"
+	category = society
+	can_research = no
+	
+	modifier = {
+		country_institution_schools_max_investment_add = 2
+        state_education_access_wealth_add = 0.005
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+terakoya = {
+	# Cheatcodes for historically literate European Countries
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/empiricism.dds"
+	category = society
+	can_research = no
+	
+	modifier = {
+		country_institution_schools_max_investment_add = 1
+        state_education_access_wealth_add = 0.01
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+line_infantry = {
+	# Unlocks Line Infantry PM in Barracks
+	era = era_2
+	texture = "gfx/interface/icons/invention_icons/line_infantry.dds"
+	category = military
+	
+	unlocking_technologies = {	
+		mandatory_service
+		military_drill
+	}
+
+	ai_weight = {
+		value = 2 # Important tech in general
+	}
+}
+
+army_reserves = {
+	era = era_2
+	texture = "gfx/interface/icons/invention_icons/army_reserves.dds"
+	category = military
+	
+	modifier = {
+		state_conscription_rate_mult = 0.2
+	}
+	
+	unlocking_technologies = {	
+		line_infantry
+	}
+
+	ai_weight = {
+		value = 1
+	}
+}
+
+napoleonic_warfare = {
+	# Unlocks Mobile Artillery PM in Barracks
+	era = era_2
+	texture = "gfx/interface/icons/invention_icons/napoleonic_warfare.dds"
+	category = military
+	
+	unlocking_technologies = {
+		line_infantry
+		artillery
+	}
+
+	ai_weight = {
+		value = 1.5 # Important tech in general
+		
+		if = {
+			limit = { has_journal_entry = je_sick_man_army }
+			add = 5
+		}
+	}
+}
+
+general_staff = {
+	# Unlocks Skirmish Infantry PM in Barracks / Conscription Centers
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/general_staff.dds"
+	category = military
+	
+	unlocking_technologies = {	
+		army_reserves
+	}
+
+	ai_weight = {
+		value = 2 # Important tech in general
+	}
+	
+}
+
+#Society
+
+quinine = {
+	# Permits colonization of state regions with the Malaria trait
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/quinine.dds"
+	category = society
+
+	modifier = {
+		country_institution_colonial_affairs_max_investment_add = 1
+	}
+	
+	unlocking_technologies = {
+		colonization
+		pharmaceuticals
+	}
+
+	ai_weight = {
+		value = 1
+		
+		# Important for colonizers
+		if = {
+			limit = { 
+				navy_size >= 25
+				is_country_type = recognized
+			}
+			add = 1
+		}
+		if = {
+			limit = { 
+				has_strategy = ai_strategy_colonial_expansion
+			}
+			add = 1
+		}
+	}
+}
+
+rationalism = {
+	# Unlocks Freedom of Conscience - Church and State Law
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/rationalism.dds"
+	category = society
+	
+	modifier = {
+		country_institution_schools_max_investment_add = 1
+		state_education_access_wealth_add = 0.005
+	}
+
+	ai_weight = {
+		value = 3 # Very important in general
+	}
+}
+
+academia = {
+	# Unlocks University building
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/academia.dds"
+	category = society
+	
+	modifier = {
+		state_education_access_wealth_add = 0.0025 #was 0.005
+	}
+	
+	unlocking_technologies = {
+		rationalism
+	}
+
+	ai_weight = {
+		value = 1.5 # Important in general
+	}
+}
+
+empiricism = {
+	# Unlocks Total Separation - Church and State Law
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/empiricism.dds"
+	category = society
+	
+	modifier = {
+		country_influence_mult = 0.1
+		country_institution_schools_max_investment_add = 1
+		state_education_access_wealth_add = 0.0025 #was 0.005
+	}
+	
+	unlocking_technologies = {
+		academia
+	}
+
+	ai_weight = {
+		value = 1.5 # Important in general
+	}
+}
+
+dialectics = {
+	# Unlocks Philosophy Department PM in Universities
+	
+	era = era_2
+	texture = "gfx/interface/icons/invention_icons/dialectics.dds"
+	category = society
+	
+	modifier = {
+		#country_institution_schools_max_investment_add = 1 removed and moved to private or public school institutions
+		state_education_access_wealth_add = 0.005 #was none
+	}
+	
+	unlocking_technologies = {
+		empiricism
+	}
+
+	ai_weight = {
+		value = 1
+	}
+}
+
+philosophical_pragmatism = {
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/philosophical_pragmatism.dds"
+	category = society
+	
+	modifier = {
+		country_influence_mult = 0.1
+		state_bureaucracy_population_base_cost_factor_mult = -0.05
+		state_education_access_wealth_add = 0.0025 #was none
+	}
+	
+	unlocking_technologies = {
+		psychiatry
+	}
+
+	ai_weight = {
+		value = 1
+	}
+}
+
+analytical_philosophy = {
+	# #todo#! Does nothing at the moment
+	era = era_5
+	texture = "gfx/interface/icons/invention_icons/analytical_philosophy.dds"
+	category = society
+
+	modifier = {
+		state_education_access_wealth_add = 0.0025 #was none
+	}
+	
+	unlocking_technologies = {
+		psychoanalysis
+	}
+
+	ai_weight = {
+		value = 1
+	}
+}

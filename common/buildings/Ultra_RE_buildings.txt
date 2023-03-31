@@ -1,0 +1,23 @@
+﻿
+building_university = {
+
+	building_group = bg_technology
+
+	city_type = city
+
+	levels_per_mesh = 5
+
+	unlocking_technologies = {
+		academia
+	}
+
+	production_method_groups = {
+		pmg_base_building_university
+		pmg_university_academia
+	}
+
+	texture = "gfx/interface/icons/building_icons/building_university.dds"
+
+	required_construction = construction_cost_low
+}
+

@@ -1,0 +1,14 @@
+﻿ig_trait_pious_fiction = {
+	icon = "gfx/interface/icons/ig_trait_icons/pious_fiction.dds"
+
+	# type is for display order
+	type = unhappy
+
+	max_approval = unhappy
+	
+	modifier = {
+		state_education_access_add = -0.05
+		political_movement_radicalism_mult = 0.1
+		country_legitimacy_base_add = -5
+	}
+}
