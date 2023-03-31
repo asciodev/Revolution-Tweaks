@@ -20,15 +20,7 @@ Add dynamite requirement to survey of suez and panama - DONE
 
 switch cape and others to dominion status - DONE
 
-add strait to new zealand
-
-lock african colonization behind malaria prevention
-
 lower expel diplomats by 5 infamy - DONE
-
-givin colonies malaria modifiers internal africa
-
-Allow command economies without authoritarianism
 
 merge in historical pop growth and resources mod - DONE
 
@@ -39,3 +31,15 @@ merge in a lot of ultra historical politics mod - DONE
 rebalance french flavor - DONE
 
 add danubian federation mod - TODO
+
+givin colonies malaria modifiers internal africa
+
+Allow command economies without authoritarianism
+
+add strait to new zealand
+
+lock african colonization behind malaria prevention
+
+Skirmish Infantry lower a tier
+
+multiple naval invasion mod import
