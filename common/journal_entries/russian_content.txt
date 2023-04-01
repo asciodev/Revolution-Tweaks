@@ -1,0 +1,214 @@
+je_polish_revolution = {
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	should_be_pinned_by_default = yes
+	progressbar = no
+	is_shown_when_inactive = {
+		AND = {
+			c:RUS = this
+			c:RUS = {
+				OR = {
+					has_law = law_type:law_ethnostate		
+					has_law = law_type:law_national_supremacy				
+				}
+			}
+			hidden_trigger = {
+				NOT = {
+					has_global_variable = polish_revolution_ended
+				}
+			}
+		}
+	}
+	immediate = {
+		c:RUS = {
+			save_scope_as = russiascope
+		}
+		cu:polish = {
+			save_scope_as = polishscope
+		}
+		custom_tooltip = {
+			text = russiaturmoiltooltip
+		}
+		hidden_effect = {
+			every_scope_state = {
+				limit = {
+					state_region = {
+						OR = { 
+							is_homeland = cu:polish
+						}
+					}
+				}
+				add_modifier = {
+					name = russiaturmoil
+					months = long_modifier_time
+				}
+			}
+		}
+	}
+	possible = {
+		hidden_trigger = {
+			NOT = {
+				has_global_variable = polish_revolution_begun
+				has_global_variable = polish_revolution_ended
+			}
+		}
+		OR = {
+			cu:polish = {
+				culture_is_discriminated_in = ROOT 
+			}
+		}
+		
+		THIS = {
+			owner = {
+				any_scope_state = {
+					state_region = {
+						is_homeland = cu:polish
+					}
+				}
+			}
+		}
+	}
+	on_complete = {
+		trigger_event = { 
+			id = polish_revolution.1 
+			popup = yes
+		}
+		c:RUS = {
+			save_scope_as = russiascope
+		}
+		cu:polish = {
+			save_scope_as = polishscope
+		}
+		custom_tooltip = {
+			text = russiaturmoiltooltipwin
+		}
+		set_global_variable = polish_revolution_begun
+		hidden_effect = {
+			s:STATE_GREATER_POLAND.region_state:POL = {
+				remove_modifier = russiaturmoil
+			}
+			s:STATE_LESSER_POLAND.region_state:POL = {
+				remove_modifier = russiaturmoil
+			}
+			s:STATE_MAZOVIA.region_state:POL = {
+				remove_modifier = russiaturmoil
+			}
+		}
+	}
+	complete = {
+		AND = {
+			cu:polish = {
+				culture_is_discriminated_in = ROOT 
+			}	
+		}
+		hidden_trigger{
+			OR = {
+				year >= 1860
+				c:VEN = {
+					exists = yes
+					is_at_war = no
+					is_subject = no
+				}
+				c:HUN = {
+					exists = yes
+					is_at_war = no
+					is_subject = no
+				}
+				c:BOH = {
+					exists = yes
+					is_at_war = no
+					is_subject = no
+				}
+			}
+		}
+		custom_tooltip = {
+			text = austrianstatesrevolt
+		}
+	}
+	weight = 100
+}	
+
+je_polish_revolution_2 = {
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	should_be_pinned_by_default = yes
+	progressbar = no
+	is_shown_when_inactive = {
+		AND = {
+			this = c:RUS
+			hidden_trigger = {
+					has_global_variable = polish_revolution_begun
+				NOT = {
+					has_global_variable = polish_revolution_ended
+				}
+			}
+			c:POL = {
+				is_subject_of = c:RUS
+			}
+		}
+	}
+	immediate = {
+		c:RUS = {
+			save_scope_as = russiascope
+		}
+		cu:polish = {
+			save_scope_as = polishscope
+		}
+	}
+	possible = {
+		this = c:RUS
+		hidden_trigger = {
+			has_global_variable = polish_revolution_begun
+			has_variable = polish_revolution_begun_var
+			NOT = {
+				has_global_variable = polish_revolution_ended
+				has_variable = polish_revolution_ended_var
+			}
+		}
+		c:RUS = {
+			NOT = {country_has_primary_culture = cu:polish }
+		}
+		c:POL = {
+			is_subject_of = c:RUS
+			has_war_with = c:RUS
+		}
+	}
+	on_complete = {
+		trigger_event = { 
+			id = polish_revolution.7
+			popup = yes
+		}
+	}
+	complete = {
+		hidden_trigger = {
+			AND = {
+				has_global_variable = polish_revolution_begun
+				OR = {
+					NOT = {
+						exists = c:POL
+					}
+					c:POL = {
+						is_at_war = no
+						is_subject_of = c:RUS
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			text = polishrevolutionover
+		}
+	}
+
+	fail = {
+		c:POL = {
+            is_at_war = no
+            is_subject = no
+        }
+	}
+
+	on_fail = {
+		trigger_event = { 
+			id = polish_revolution.4
+			popup = yes
+		}
+	}
+	weight = 100
+}

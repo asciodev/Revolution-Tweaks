@@ -66,6 +66,15 @@
  je_hungarian_revolution_2:0 "End the Hungarian Uprising"
  je_hungarian_revolution_2_reason:0 "The integrity of the Empire is threatened. We must crush the hungarian uprising before the Empire collapses!"
 
+ #Polish Revolution
+
+ je_polish_revolution:0 "Polish Revolution"
+ je_polish_revolution_reason:0 "Polish nobles are lining up and preparing for future emancipation, should this come to pass revolution will become inevitable."
+ je_polish_revolution_goal:0 "Revolution will happen after 3 months"
+
+ je_polish_revolution_2:0 "End the Polish Uprising"
+ je_polish_revolution_2_reason:0 "The integrity of the Empire is threatened. We must crush the polish uprising before the Empire collapses!"
+
  #German politics
 
  schleswig_holstein_question:0 "The Schleswig-Holstein Question"

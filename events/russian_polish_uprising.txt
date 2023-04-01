@@ -1,0 +1,225 @@
+namespace = polish_revolution
+
+# Polish Uprising Starts
+polish_revolution.1 = {
+    type = country_event
+    placement = ROOT
+
+    title = polish_revolution.1.t
+    desc = polish_revolution.1.d
+    flavor = polish_revolution.1.f
+
+    event_image = {
+        video = "gfx/event_pictures/europenorthamerica_political_extremism.bk2"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+    immediate = {
+        create_country = {
+            tag = POL
+            origin = this
+            state = s:STATE_GREATER_POLAND.region_state:RUS
+            state = s:STATE_LESSER_POLAND.region_state:RUS
+            state = s:STATE_MAZOVIA.region_state:RUS
+        }
+        s:STATE_WEST_GALICIA = {
+            add_claim = c:POL
+        }
+        s:STATE_EAST_GALICIA = {
+            add_claim = c:POL
+        }
+        s:STATE_SILESIA = {
+            add_claim = c:POL
+        }
+        s:STATE_WEST_PRUSSIA = {
+            add_claim = c:POL
+        }
+        c:RUS = {
+            create_diplomatic_pact = {
+                country = c:POL
+                type = puppet
+            }
+        }
+        c:POL = {
+            add_modifier = {
+                name = polish_partisans
+                months = short_modifier_time
+            }
+        }
+        set_global_variable = polish_revolution_begun
+        set_variable = polish_revolution_begun_var
+	}
+    
+    trigger = {
+        #triggered by je_polish_revolution
+    }
+    
+    option = {
+        name = polish_revolution.1.a
+		default_option = yes
+        create_diplomatic_play = {
+            name = polish_revolution_dp
+            escalation = 0
+            war = NO
+            type = dp_annex_war
+            target_country = c:POL
+            add_war_goal = {
+                holder = c:POL
+                target_country = c:RUS
+                type = independence
+            }
+            add_war_goal = {
+                holder = c:POL
+                target_country = c:RUS
+                type = REVOKE_ALL_CLAIMS
+            }
+            add_war_goal = {
+                holder = c:POL
+                target_country = c:RUS
+                type = war_reparations
+            }
+        }
+        add_journal_entry = { type = je_polish_revolution_2 }
+        
+        ai_chance = {
+            base = 100
+        }
+    }
+    option = {
+        name = polish_revolution.1.b
+        create_truce = {
+            country = c:POL
+            months = 48
+        }
+        custom_tooltip = losesrussianclaimspol
+        hidden_effect = {
+            s:STATE_GREATER_POLAND = {
+                remove_claim = c:RUS
+            }
+            s:STATE_LESSER_POLAND = {
+                remove_claim = c:RUS
+            }
+            s:STATE_MAZOVIA = {
+                remove_claim = c:RUS
+            }
+        }
+        c:RUS = {
+            remove_diplomatic_pact = {
+                country = c:POL
+                type = puppet
+            }
+        }
+        ai_chance = {
+            base = 0
+        }
+    }
+    option = {
+        name = polish_revolution.1.c
+        play_as = c:POL
+        create_diplomatic_play = {
+            name = polish_revolution_dp
+            escalation = 0
+            war = NO
+            type = dp_annex_war
+            target_country = c:POL
+            add_war_goal = {
+                holder = c:POL
+                target_country = c:RUS
+                type = independence
+            }
+            add_war_goal = {
+                holder = c:POL
+                target_country = c:RUS
+                type = REVOKE_ALL_CLAIMS
+            }
+            add_war_goal = {
+                holder = c:POL
+                target_country = c:RUS
+                type = war_reparations
+            }
+        }
+
+        add_journal_entry = { type = je_polish_revolution_2 }
+
+        ai_chance = {
+            base = 0
+        }
+    }
+}
+
+polish_revolution.4 = { #poland Wins
+    type = country_event
+    placement = ROOT
+
+    title = polish_revolution.4.t
+    desc = polish_revolution.4.d
+    flavor = polish_revolution.4.f
+
+    event_image = {
+        video = "gfx/event_pictures/europenorthamerica_political_extremism.bk2"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+    trigger = {
+        #triggered by je_polish_revolution_2
+    }
+    immediate = {
+        set_global_variable = polish_revolution_ended
+        set_variable = polish_revolution_ended_var
+    }
+    option = {
+        name = polish_revolution.4.a
+    }
+}
+
+polish_revolution.7 = { #russia Wins
+    type = country_event
+    placement = ROOT
+
+    title = polish_revolution.7.t
+    desc = polish_revolution.7.d
+
+    event_image = {
+        video = "gfx/event_pictures/europenorthamerica_political_extremism.bk2"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+     trigger = {
+        #triggered by je_polish_revolution_2
+    }
+    immediate = {
+        set_global_variable = polish_revolution_ended
+        set_variable = polish_revolution_ended_var
+    }
+    option = {
+        name = polish_revolution.7.a
+        c:RUS = {
+            if = {
+                limit = {
+                    exists = c:POL
+                }
+                annex = c:POL
+            }
+        }
+        s:STATE_GREATER_POLAND = {
+            region_state:RUS={
+                set_state_type = incorporated
+            }
+        }
+        s:STATE_LESSER_POLAND = {
+            region_state:RUS={
+                set_state_type = incorporated
+            }
+        }
+        s:STATE_MAZOVIA = {
+            region_state:RUS={
+                set_state_type = incorporated
+            }
+        }
+    } 
+}

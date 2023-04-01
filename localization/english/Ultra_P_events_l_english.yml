@@ -120,6 +120,37 @@
  french_politics.14.f:0 "«Citizens of Paris! The deputies of France, assembled at this moment in Paris, expressed their desire that I should go to the capital to exercise there the function of Lieutenant General of the kingdom. I did not hesitate to come and share your perils, placed myself among your heroic population, and made every effort to keep you safe from civil war and anarchy. When I returned to Paris, I proudly wore those glorious colors which you took away, and which I myself wore for a long time. The Houses are meeting; they will confer on the means of securing a regime of laws and maintaining the rights of the nation. The Charter will henceforth be the truth.» - Louis-Philippe d'Orléans"
  french_politics.14.a:0 "La Liberté rouvre ses bras!"
 
+#Russian Politics events
+
+ #Polish Revolution
+polish_revolution.1.t:0 "Revolution in Warsaw"
+polish_revolution.1.d:0 "Tensions in the Polish realm have reached a boiling point and revolution has become inevitable. Inspired by the movements of 1848, the Polish Government, newly formed, has declared independence."
+polish_revolution.1.f:0 "On your feet, the homeland calls! The time is here, now or never! Shall we be slaves or free? This is the question, choose your answer! By the God of the Poles, We vow, We vow, that we won't be slaves any longer!"
+polish_revolution.1.a:0 "Put the rabid dog down!"
+polish_revolution.1.b:0 "It is not worth the fight."
+polish_revolution.1.c:0 "Perhaps they have a point after all.."
+polish_revolution.2.d:0 "[ROOT.GetCountry.GetName] has faced disaster after disaster on the battlefield against the #bold Polish #! army, if this misfortune continues we may be forced to capitulate, perhaps we can seek assistance "
+polish_revolution.2.f:0 ""The house of Romanov, perjured in the sight of God and man, had forfeited the Polish throne."
+polish_revolution.4.t:0 "The Revolution Triumphant"
+polish_revolution.4.d:0 "The Revolution stands triumphant, Thousands of Poles have gathered around Warsaw to celebrate the proclamation of a new Polish state, both nations must now look to lick their wounds and recover from the ravages of war.."
+polish_revolution.4.f:0 "The Polish name will be great again, Worthy of its old, great honor."
+polish_revolution.4.a:0 "Cum Deo pro Patria et Libertate!"
+polish_revolution.7.t:0 "The Revolution in Tatters"
+polish_revolution.7.d:0 "Our army stand triumphant, The Polish revolt has been quelled and at least for now, the mere idea of secession has been dismantled."
+polish_revolution.7.a:0 "Long live the Tsar!"
+
+polish_partisans:0 "Polish Partisans"
+polish_partisans_desc:0 "Polish Partisans fighting for Independance on their own land"
+
+polish_revolution_dp:0 "Polish Revolution"
+
+russiaturmoiltooltip:0 " [SCOPE.sCountry('russiascope').GetName] will get Turmoil on all [SCOPE.sCulture('polishscope').GetName] lands."
+russiaturmoiltooltipwin:0 " [SCOPE.sCountry('russiascope').GetName] will lose Turmoil effects on all [SCOPE.sCulture('polishscope').GetName] lands."
+polishrevolutionover:0 " The Polish Revolution has been crushed. "
+losesrussianclaimspol:0 "Russia will lose all claims to Poland"
+russiaturmoil:0 "Separatism"
+austrianstatesrevolt:0 "States gaining their indepenence from the Austrian Empire may inspire separatists at home to rise early, but it's only a matter of time."
+
  #Austrian Politics events
 
  # Hungarian Revolution
@@ -127,7 +158,7 @@ hungarian_revolution.1.t:0 "Revolution in Pest"
 hungarian_revolution.1.d:0 "Tensions in the Hungarian realm have reached a boiling point and revolution has become inevitable. With support from Slovaks, Germans, Rusyns, Hungarian Sloevenes and various other peoples, the Hungarian Government, newly formed, has declared independence."
 hungarian_revolution.1.f:0 "On your feet, Magyar,the homeland calls! The time is here, now or never! Shall we be slaves or free? This is the question, choose your answer! By the God of the Hungarians, We vow, We vow, that we won't be slaves any longer!"
 hungarian_revolution.1.a:0 "Put the rabid dog down!"
-hungarian_revolution.1.b:0 "It isn't not worth the fight"
+hungarian_revolution.1.b:0 "It is not worth the fight."
 hungarian_revolution.1.c:0 "Perhaps they have a point after all.."
 hungarian_revolution.2.t:0 "Request Assistance"
 hungarian_revolution.2.d:0 "[ROOT.GetCountry.GetName] has faced disaster after disaster on the battlefield against the #bold Hungarian #! army, if this misfortune continues we may be forced to capitulate, perhaps we can seek assistance "

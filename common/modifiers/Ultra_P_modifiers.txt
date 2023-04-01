@@ -28,6 +28,12 @@ austriaturmoil = {
 	state_tax_capacity_mult = -0.35
 }
 
+russiaturmoil = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	state_radicals_from_discrimination_mult = 1
+	state_tax_capacity_mult = -0.35
+}
+
 AI_political_stability = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
 	#interest_group_approval_add = 5
