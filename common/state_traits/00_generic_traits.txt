@@ -10,6 +10,7 @@
 
 state_trait_malaria_mortality_2 = {
 	icon = "gfx/interface/icons/state_trait_icons/malaria.dds"
+	
 	modifier = {
 		state_non_homeland_mortality_mult = 0.15
 	}
@@ -19,7 +20,6 @@ state_trait_malaria = {
     icon = "gfx/interface/icons/state_trait_icons/malaria.dds"
 	required_techs_for_colonization = { "quinine" }
 	disabling_technologies = { "quinine" }
-	}
 }
 
 state_trait_severe_malaria = {
@@ -27,7 +27,6 @@ state_trait_severe_malaria = {
 	required_techs_for_colonization = { "malaria_prevention" }
 	disabling_technologies = { "malaria_prevention" }
 	}
-}
 
 state_trait_natural_harbors = {
 	icon = "gfx/interface/icons/state_trait_icons/natural_harbors.dds"
