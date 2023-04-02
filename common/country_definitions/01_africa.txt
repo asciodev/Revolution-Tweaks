@@ -406,7 +406,7 @@ FTJ = {
 BUG = {
 	color = { 21 21 227 }
 	
-	country_type = unrecognized
+	country_type = decentralized
 	
 	tier = principality
 	
@@ -551,7 +551,7 @@ LBA = {
 BNY = {
 	color = { 174 24 66 }
 	
-	country_type = unrecognized
+	country_type = decentralized
 	
 	tier = principality
 	
@@ -562,7 +562,7 @@ BNY = {
 ANK = {
 	color = { 126 162 98 }
 	
-	country_type = unrecognized
+	country_type = decentralized
 	
 	tier = principality
 	
@@ -573,7 +573,7 @@ ANK = {
 ACH = {
 	color = { 166 225 217 }
 	
-	country_type = unrecognized
+	country_type = decentralized
 	
 	tier = principality
 	
@@ -584,7 +584,7 @@ ACH = {
 KRG = {
 	color = { 48 177 169 }
 	
-	country_type = unrecognized
+	country_type = decentralized
 	
 	tier = principality
 	
@@ -595,7 +595,7 @@ KRG = {
 RWD = {
 	color = { 213 160 18 }
 	
-	country_type = unrecognized
+	country_type = decentralized
 	
 	tier = principality
 	
@@ -606,7 +606,7 @@ RWD = {
 BRD = {
 	color = { 21 191 16 }
 	
-	country_type = unrecognized
+	country_type = decentralized
 	
 	tier = principality
 	
@@ -927,7 +927,7 @@ BGM = {
 
 BOR = {
 	color = { 30 131 162 }
-	country_type = unrecognized
+	country_type = decentralized
 	
 	tier = principality
 	
