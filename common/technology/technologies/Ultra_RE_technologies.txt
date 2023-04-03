@@ -90,7 +90,7 @@ napoleonic_warfare = {
 
 general_staff = {
 	# Unlocks Skirmish Infantry PM in Barracks / Conscription Centers
-	era = era_3
+	era = era_2
 	texture = "gfx/interface/icons/invention_icons/general_staff.dds"
 	category = military
 	
