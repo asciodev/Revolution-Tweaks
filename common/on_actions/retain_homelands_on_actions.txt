@@ -47,8 +47,8 @@ on_country_released_as_independent = {
 								limit = {
 									restoral_culture = cu:polish
 								}
+								add_homeland = polish
 							}
-							add_homeland = polish
 						}
 					}
 				}
@@ -110,8 +110,8 @@ on_country_released_as_own_subject = {
 								limit = {
 									restoral_culture = cu:polish
 								}
+								add_homeland = polish
 							}
-							add_homeland = polish
 						}
 					}
 				}
@@ -173,8 +173,8 @@ on_country_released_as_overlord_subject = {
 								limit = {
 									restoral_culture = cu:polish
 								}
+								add_homeland = polish
 							}
-							add_homeland = polish
 						}
 					}
 				}

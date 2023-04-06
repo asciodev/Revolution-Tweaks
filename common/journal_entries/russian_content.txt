@@ -7,8 +7,8 @@ je_polish_revolution = {
 			c:RUS = this
 			c:RUS = {
 				OR = {
-					has_law = law_type:law_ethnostate		
-					has_law = law_type:law_national_supremacy				
+					has_law = law_type:law_ethnostate
+					has_law = law_type:law_national_supremacy
 				}
 			}
 			hidden_trigger = {
@@ -32,7 +32,7 @@ je_polish_revolution = {
 			every_scope_state = {
 				limit = {
 					state_region = {
-						OR = { 
+						OR = {
 							is_homeland = cu:polish
 						}
 					}
@@ -53,10 +53,10 @@ je_polish_revolution = {
 		}
 		OR = {
 			cu:polish = {
-				culture_is_discriminated_in = ROOT 
+				culture_is_discriminated_in = ROOT
 			}
 		}
-		
+
 		THIS = {
 			owner = {
 				any_scope_state = {
@@ -68,8 +68,8 @@ je_polish_revolution = {
 		}
 	}
 	on_complete = {
-		trigger_event = { 
-			id = polish_revolution.1 
+		trigger_event = {
+			id = polish_revolution.1
 			popup = yes
 		}
 		c:RUS = {
@@ -97,10 +97,10 @@ je_polish_revolution = {
 	complete = {
 		AND = {
 			cu:polish = {
-				culture_is_discriminated_in = ROOT 
-			}	
+				culture_is_discriminated_in = ROOT
+			}
 		}
-		hidden_trigger{
+		hidden_trigger = {
 			OR = {
 				year >= 1860
 				c:VEN = {
@@ -125,7 +125,7 @@ je_polish_revolution = {
 		}
 	}
 	weight = 100
-}	
+}
 
 je_polish_revolution_2 = {
     icon = "gfx/interface/icons/event_icons/event_portrait.dds"
@@ -172,7 +172,7 @@ je_polish_revolution_2 = {
 		}
 	}
 	on_complete = {
-		trigger_event = { 
+		trigger_event = {
 			id = polish_revolution.7
 			popup = yes
 		}
@@ -205,7 +205,7 @@ je_polish_revolution_2 = {
 	}
 
 	on_fail = {
-		trigger_event = { 
+		trigger_event = {
 			id = polish_revolution.4
 			popup = yes
 		}
