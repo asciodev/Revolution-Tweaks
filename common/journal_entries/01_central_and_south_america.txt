@@ -11,49 +11,34 @@
 	}
 
 	complete = {
-		any_scope_state = {	
+		any_scope_state = {
 			state_region = s:STATE_GUATEMALA
 			turmoil < 0.2
 		}
-		any_scope_state = {	
+		any_scope_state = {
 			state_region = s:STATE_GUATEMALA
 			turmoil < 0.2
 		}
-		any_scope_state = {	
+		any_scope_state = {
 			state_region = s:STATE_COSTA_RICA
 			turmoil < 0.2
 		}
-		any_scope_state = {	
+		any_scope_state = {
 			state_region = s:STATE_SAN_SALVADOR
 			turmoil < 0.2
 		}
-		any_scope_state = {	
+		any_scope_state = {
 			state_region = s:STATE_NICARAGUA
 			turmoil < 0.2
 		}
 	}
 
 	fail = {
-		custom_tooltip = {
-			text = central_america_fail_tt
-			any_scope_state = {
-				OR = {
-					state_region = s:STATE_GUATEMALA
-					state_region = s:STATE_HONDURAS
-					state_region = s:STATE_COSTA_RICA
-					state_region = s:STATE_SAN_SALVADOR
-					state_region = s:STATE_NICARAGUA
-				}
-				count < 3
-			}
-		}
 	}
 
 	on_fail = {
-		trigger_event = { id = central_america.2 popup = yes }
-		custom_tooltip = central_america_capital_tt
 	}
-	
+
 	status_desc = {
 		first_valid = {
 			triggered_desc = {
